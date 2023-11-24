@@ -1,5 +1,5 @@
 import React from "react";
-
+import "react-lazy-load-image-component/src/effects/blur.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
@@ -10,6 +10,7 @@ import "./css/Home.css";
 
 // import required modules
 import { Navigation, Autoplay } from "swiper/modules";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const Home = () => {
   return (
@@ -132,9 +133,10 @@ const Home = () => {
                                         className="slider_container slider_swiper swiper-slider-container slider_direction_horizontal slider_nopagination slider_one slider_type_bg slider_nocontrols slider_nocentered slider_overflow_hidden slider_notitles slider_resize slider_swipe slider_height_auto"
                                       >
                                         <div className="slider-wrapper swiper-wrapper">
-                                          <img
+                                          <LazyLoadImage
                                             src="https://i.ibb.co/hLY3X7W/welcome.gif"
-                                            alt="loll"
+                                            alt="header-Img"
+                                            effect="blur"
                                           />
                                         </div>
                                       </div>
@@ -777,14 +779,11 @@ const Home = () => {
                                       className="sc_services_item sc_item_container post_container without_content with_image sc_services_item_featured_top post-951 cpt_services type-cpt_services status-publish has-post-thumbnail hentry cpt_services_group-automation"
                                     >
                                       <div className="post_featured with_thumb hover_link sc_services_item_thumb">
-                                        <img
-                                          loading="lazy"
-                                          width={890}
-                                          height={664}
+                                        <LazyLoadImage
                                           src="https://i.ibb.co/gjf3X7T/image.png"
                                           className="attachment-optima-thumb-square size-optima-thumb-square wp-post-image"
                                           alt=""
-                                          decoding="async"
+                                          effect="blur"
                                         />
                                         <div className="mask" />
                                       </div>
@@ -823,14 +822,11 @@ const Home = () => {
                                       className="sc_services_item sc_item_container post_container without_content with_image sc_services_item_featured_top post-950 cpt_services type-cpt_services status-publish has-post-thumbnail hentry cpt_services_group-automation"
                                     >
                                       <div className="post_featured with_thumb hover_link sc_services_item_thumb">
-                                        <img
-                                          loading="lazy"
-                                          width={890}
-                                          height={664}
+                                        <LazyLoadImage
                                           src="https://i.ibb.co/9c1NbPG/image.png"
                                           className="attachment-optima-thumb-square size-optima-thumb-square wp-post-image"
                                           alt=""
-                                          decoding="async"
+                                          effect="blur"
                                         />
                                         <div className="mask" />
                                       </div>
