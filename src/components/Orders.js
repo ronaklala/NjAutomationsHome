@@ -129,6 +129,11 @@ const Orders = () => {
                                         {moment(o.createdAt).format("LLL")}
                                       </span>
                                     </div>{" "}
+                                    <div className="post_meta">
+                                      <span className="post_meta_item post_date">
+                                        Quantity Ordered: {o.qty}
+                                      </span>
+                                    </div>{" "}
                                   </div>
                                 </article>
                               </>
