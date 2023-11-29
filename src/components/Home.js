@@ -41,7 +41,7 @@ const Home = () => {
                   >
                     <SwiperSlide>
                       <img
-                        src="https://firebasestorage.googleapis.com/v0/b/nptel-ca959.appspot.com/o/capture.png?alt=media&token=ce2d40b9-b7a5-41a7-9de9-2f295f2771ba&_gl=1*431gme*_ga*MTM2MDgxMTM1NS4xNjk3Mjk3NTcw*_ga_CW55HF8NVT*MTY5ODY1NTgzOC44LjEuMTY5ODY1NjMyNy4yLjAuMA.."
+                        src="https://firebasestorage.googleapis.com/v0/b/njautomations-f8156.appspot.com/o/capture.webp?alt=media&token=19dcc36e-2fdc-4046-8843-478aa92deba3"
                         alt="Slide 1"
                       />
                       <div class="slider-text">
@@ -823,7 +823,7 @@ const Home = () => {
                                     >
                                       <div className="post_featured with_thumb hover_link sc_services_item_thumb">
                                         <LazyLoadImage
-                                          src="https://i.ibb.co/9c1NbPG/image.png"
+                                          src="https://firebasestorage.googleapis.com/v0/b/njautomations-f8156.appspot.com/o/image%5B1%5D.webp?alt=media&token=8189cad4-7d0f-4ef0-bd17-1a3b97678036"
                                           className="attachment-optima-thumb-square size-optima-thumb-square wp-post-image"
                                           alt=""
                                           effect="blur"
@@ -865,14 +865,11 @@ const Home = () => {
                                       className="sc_services_item sc_item_container post_container without_content with_image sc_services_item_featured_top post-949 cpt_services type-cpt_services status-publish has-post-thumbnail hentry cpt_services_group-automation"
                                     >
                                       <div className="post_featured with_thumb hover_link sc_services_item_thumb">
-                                        <img
-                                          loading="lazy"
-                                          width={890}
-                                          height={664}
-                                          src="https://i.ibb.co/phXr7Hz/image.png"
+                                        <LazyLoadImage
+                                          src="https://firebasestorage.googleapis.com/v0/b/njautomations-f8156.appspot.com/o/image%5B1%5D%20(1).webp?alt=media&token=206ad354-c4b4-459e-a534-c9de63dea3d8"
                                           className="attachment-optima-thumb-square size-optima-thumb-square wp-post-image"
                                           alt=""
-                                          decoding="async"
+                                          effect="blur"
                                         />
                                         <div className="mask" />
                                       </div>

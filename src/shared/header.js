@@ -51,11 +51,8 @@ const Header = () => {
                       >
                         <img
                           className="logo_image"
-                          src="https://i.ibb.co/RT0XJDz/image-removebg-preview.png"
-                          srcSet="
-                              wp-content/uploads/2023/03/Logo_light_x2-nocopyright.png 2x
-                            "
-                          alt="Optima"
+                          src={process.env.REACT_APP_LOGO}
+                          alt={process.env.REACT_APP_LOGO}
                           width="115"
                           height="35"
                         />
@@ -183,11 +180,8 @@ const Header = () => {
                       >
                         <img
                           className="logo_image"
-                          src="https://i.ibb.co/RT0XJDz/image-removebg-preview.png"
-                          srcSet="
-                              wp-content/uploads/2023/03/Logo_light_x2-nocopyright.png 2x
-                            "
-                          alt="Optima"
+                          src={process.env.REACT_APP_LOGO}
+                          alt={process.env.REACT_APP_LOGO}
                           width="115"
                           height="35"
                         />
@@ -314,11 +308,8 @@ const Header = () => {
                       >
                         <img
                           className="logo_image"
-                          src="https://i.ibb.co/RT0XJDz/image-removebg-preview.png"
-                          srcSet="
-                          https://i.ibb.co/RT0XJDz/image-removebg-preview.png 2x
-                            "
-                          alt="Optima"
+                          src={process.env.REACT_APP_LOGO}
+                          alt={process.env.REACT_APP_LOGO}
                           width="115"
                           height="35"
                         />

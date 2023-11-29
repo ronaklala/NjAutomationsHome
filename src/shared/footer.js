@@ -1,3 +1,9 @@
+import {
+  FacebookLogo,
+  InstagramLogo,
+  TwitterLogo,
+  WhatsappLogo,
+} from "phosphor-react";
 import React from "react";
 
 const Footer = () => {
@@ -76,11 +82,8 @@ const Footer = () => {
                       >
                         <img
                           className="logo_image"
-                          src="https://i.ibb.co/RT0XJDz/image-removebg-preview.png"
-                          srcSet="
-                        wp-content/uploads/2023/03/Logo_light_x2-nocopyright.png 2x
-                      "
-                          alt="Optima"
+                          src={process.env.REACT_APP_LOGO}
+                          alt={process.env.REACT_APP_LOGO}
                           width={115}
                           height={35}
                         />
@@ -208,9 +211,13 @@ const Footer = () => {
                           >
                             <span
                               className="social_icon social_icon_facebook-1"
-                              style={{}}
+                              style={{
+                                display: "flex",
+                                justifyContent: "center",
+                                alignItems: "center",
+                              }}
                             >
-                              <span className="icon-facebook-1" />
+                              <FacebookLogo size={28} />
                             </span>
                           </a>
                           <a
@@ -221,9 +228,13 @@ const Footer = () => {
                           >
                             <span
                               className="social_icon social_icon_twitter-new"
-                              style={{}}
+                              style={{
+                                display: "flex",
+                                justifyContent: "center",
+                                alignItems: "center",
+                              }}
                             >
-                              <span className="icon-twitter-new" />
+                              <TwitterLogo size={28} />
                             </span>
                           </a>
                           <a
@@ -233,10 +244,14 @@ const Footer = () => {
                             className="social_item social_item_style_icons sc_icon_type_icons social_item_type_icons"
                           >
                             <span
-                              className="social_icon social_icon_dribble-new"
-                              style={{}}
+                              className="social_icon"
+                              style={{
+                                display: "flex",
+                                justifyContent: "center",
+                                alignItems: "center",
+                              }}
                             >
-                              <span className="icon-dribble-new" />
+                              <WhatsappLogo size={28} />
                             </span>
                           </a>
                           <a
@@ -247,9 +262,13 @@ const Footer = () => {
                           >
                             <span
                               className="social_icon social_icon_instagram"
-                              style={{}}
+                              style={{
+                                display: "flex",
+                                justifyContent: "center",
+                                alignItems: "center",
+                              }}
                             >
-                              <span className="icon-instagram" />
+                              <InstagramLogo size={28} />
                             </span>
                           </a>
                         </div>
@@ -333,7 +352,7 @@ const Footer = () => {
                         target="_blank"
                         rel="noreferrer"
                       >
-                        AncoraThemes
+                        {process.env.REACT_APP_APP_NAME}
                       </a>
                       © 2023. All rights reserved.
                     </div>

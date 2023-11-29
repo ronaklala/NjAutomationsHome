@@ -26,10 +26,7 @@ const MobileMenu = () => {
           <div className="menu_mobile_header_wrap">
             <a className="sc_layouts_logo" href="/">
               <img
-                src="https://i.ibb.co/RT0XJDz/image-removebg-preview.png"
-                srcSet="
-                wp-content/uploads/2023/03/Logo_light_x2-nocopyright.png 2x
-              "
+                src={process.env.REACT_APP_Logo}
                 alt="Optima"
                 width={115}
                 height={35}

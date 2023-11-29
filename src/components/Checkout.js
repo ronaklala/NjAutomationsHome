@@ -74,12 +74,12 @@ const Checkout = () => {
       toast.error("The Entered Quantity is not in Stock At the moment");
     } else {
       var options = {
-        key: "rzp_test_ErzbiMbmfK5N8T",
+        key: process.env.REACT_APP_RAZORPAYKEY,
         amount: product.disc_price * order.qty * 100,
         currency: "INR",
-        name: "NJ Automations",
+        name: process.env.REACT_APP_APP_NAME,
         description: product.name,
-        image: "https://i.ibb.co/RT0XJDz/image-removebg-preview.png",
+        image: process.env.REACT_APP_LOGO,
         handler: function (response) {
           order.razorpay_id = response.razorpay_payment_id;
           axios
