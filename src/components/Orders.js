@@ -82,62 +82,72 @@ const Orders = () => {
                       >
                         {!loading ? (
                           <>
-                            {orders.map((o, i) => (
+                            {orders.length === 0 ? (
                               <>
-                                <article
-                                  id="post-2588"
-                                  data-post-id={2588}
-                                  className="post_item post_item_container post_layout_band post_format_standard post-2588 post type-post status-publish format-standard has-post-thumbnail hentry category-factory tag-engineering tag-steel"
-                                >
-                                  <div
-                                    className="post_featured with_thumb hover_link post_featured_bg"
-                                    data-ratio="1:1"
-                                  >
-                                    <LazyLoadImage
-                                      alt={o.productDetails[0].image}
-                                      effect="blur"
-                                      src={o.productDetails[0].image}
-                                      style={{ maxHeight: "250px" }}
-                                    />
-                                    <span className="post_thumb post_thumb_bg bg_in optima_inline_1144827720" />{" "}
-                                    <div className="mask" />
-                                  </div>
-                                  <div className="post_content_wrap">
-                                    {" "}
-                                    <div className="post_header entry-header">
-                                      <div className="post_category">
+                                <h1 style={{ fontSize: "42px" }}>
+                                  No Orders Found
+                                </h1>
+                              </>
+                            ) : (
+                              <>
+                                {orders.map((o, i) => (
+                                  <>
+                                    <article
+                                      id="post-2588"
+                                      data-post-id={2588}
+                                      className="post_item post_item_container post_layout_band post_format_standard post-2588 post type-post status-publish format-standard has-post-thumbnail hentry category-factory tag-engineering tag-steel"
+                                    >
+                                      <div
+                                        className="post_featured with_thumb hover_link post_featured_bg"
+                                        data-ratio="1:1"
+                                      >
+                                        <LazyLoadImage
+                                          alt={o.productDetails[0].image}
+                                          effect="blur"
+                                          src={o.productDetails[0].image}
+                                          style={{ maxHeight: "250px" }}
+                                        />
+                                        <span className="post_thumb post_thumb_bg bg_in optima_inline_1144827720" />{" "}
+                                        <div className="mask" />
+                                      </div>
+                                      <div className="post_content_wrap">
+                                        {" "}
+                                        <div className="post_header entry-header">
+                                          <div className="post_category">
+                                            <div className="post_meta">
+                                              <span className="post_meta_item post_categories">
+                                                <a href="#/" rel="category tag">
+                                                  {o.status}
+                                                </a>
+                                              </span>
+                                            </div>{" "}
+                                          </div>
+                                          <h4 className="post_title entry-title">
+                                            {o.productDetails[0].name}
+                                          </h4>{" "}
+                                        </div>
+                                        <div className="post_content entry-content">
+                                          <div className="post_content_inner">
+                                            {o.address}
+                                          </div>{" "}
+                                        </div>
                                         <div className="post_meta">
-                                          <span className="post_meta_item post_categories">
-                                            <a href="#/" rel="category tag">
-                                              {o.status}
-                                            </a>
+                                          <span className="post_meta_item post_date">
+                                            Ordered on{" "}
+                                            {moment(o.createdAt).format("LLL")}
+                                          </span>
+                                        </div>{" "}
+                                        <div className="post_meta">
+                                          <span className="post_meta_item post_date">
+                                            Quantity Ordered: {o.qty}
                                           </span>
                                         </div>{" "}
                                       </div>
-                                      <h4 className="post_title entry-title">
-                                        {o.productDetails[0].name}
-                                      </h4>{" "}
-                                    </div>
-                                    <div className="post_content entry-content">
-                                      <div className="post_content_inner">
-                                        {o.address}
-                                      </div>{" "}
-                                    </div>
-                                    <div className="post_meta">
-                                      <span className="post_meta_item post_date">
-                                        Ordered on{" "}
-                                        {moment(o.createdAt).format("LLL")}
-                                      </span>
-                                    </div>{" "}
-                                    <div className="post_meta">
-                                      <span className="post_meta_item post_date">
-                                        Quantity Ordered: {o.qty}
-                                      </span>
-                                    </div>{" "}
-                                  </div>
-                                </article>
+                                    </article>
+                                  </>
+                                ))}
                               </>
-                            ))}
+                            )}
                           </>
                         ) : (
                           <></>
