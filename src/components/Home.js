@@ -41,16 +41,9 @@ const Home = () => {
                   >
                     <SwiperSlide>
                       <img
-                        src="https://firebasestorage.googleapis.com/v0/b/njautomations-f8156.appspot.com/o/capture.webp?alt=media&token=19dcc36e-2fdc-4046-8843-478aa92deba3"
-                        alt="Slide 1"
+                        src="https://victorypcb.usa02.wondercdn.com/public/static/images/home/en-us/20220719.webp"
+                        alt="herobanner"
                       />
-                      <div class="slider-text">
-                        {/* <h3>
-                          One Stop Solution of
-                          <br />
-                          wp-content/uploads/2023/08/1.pngRINTED CIRCUIT BOARDS ( PCB )
-                        </h3> */}
-                      </div>
                     </SwiperSlide>
                   </Swiper>
                   <section

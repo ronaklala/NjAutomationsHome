@@ -465,7 +465,7 @@
 .elementor :after,
 .elementor :before {
   box-sizing: border-box;
-  font-family: 'Righteous', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 .elementor a {
   box-shadow: none;

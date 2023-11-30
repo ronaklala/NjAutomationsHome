@@ -5,7 +5,6 @@ import Footer from "../shared/footer";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import "react-lazy-load-image-component/src/effects/blur.css";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const SingleProduct = () => {
   const params = useParams();
@@ -101,12 +100,11 @@ const SingleProduct = () => {
                                       <div
                                         id="controller-tools-3_sc_swiper"
                                         className="slider_container slider_swiper swiper-slider-container slider_direction_horizontal slider_nopagination slider_one slider_type_bg slider_nocontrols slider_nocentered slider_overflow_hidden slider_notitles slider_resize slider_swipe slider_height_auto controller-tools-3_sc_swiper inited swiper-container-initialized swiper-container-horizontal"
-                                        data-slides-min-width={150}
                                         style={{
                                           display: "block",
                                           opacity: 1,
                                           cursor: "grab",
-                                          height: 463,
+                                          height: "450px",
                                         }}
                                         data-busy={0}
                                         data-ratio="522.917:468.003"
@@ -117,14 +115,16 @@ const SingleProduct = () => {
                                             transform:
                                               "translate3d(0px, 0px, 0px)",
                                             transitionDuration: "0ms",
+                                            justifyContent: "center",
+                                            alignItems: "center",
+                                            objectFit: "cover",
+                                            background:
+                                              "url(" + product.image + ")",
+                                            backgroundRepeat: "no-repeat",
+                                            backgroundPosition: "center",
+                                            backgroundSize: "contain",
                                           }}
-                                        >
-                                          <LazyLoadImage
-                                            src={product.image}
-                                            alt={product.image}
-                                            effect="blur"
-                                          />
-                                        </div>
+                                        ></div>
                                         <span
                                           className="swiper-notification"
                                           aria-live="assertive"

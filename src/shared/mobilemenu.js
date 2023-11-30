@@ -26,7 +26,7 @@ const MobileMenu = () => {
           <div className="menu_mobile_header_wrap">
             <a className="sc_layouts_logo" href="/">
               <img
-                src={process.env.REACT_APP_Logo}
+                src={process.env.REACT_APP_LOGO}
                 alt="Optima"
                 width={115}
                 height={35}
@@ -60,13 +60,14 @@ const MobileMenu = () => {
                     </a>
                   </li>
 
+                  <li className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-29547">
+                    <a href="/Shop">
+                      <span>Shop</span>
+                    </a>
+                  </li>
+
                   {user ? (
                     <>
-                      <li className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-29578">
-                        <a href="#/">
-                          <span>{user.name}</span>
-                        </a>
-                      </li>
                       <li className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-29546">
                         <a href="/Orders">
                           <span>Orders</span>
@@ -87,12 +88,6 @@ const MobileMenu = () => {
                       </li>
                     </>
                   )}
-
-                  <li className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-29547">
-                    <a href="/Shop">
-                      <span>Shop</span>
-                    </a>
-                  </li>
                 </ul>
               </nav>
             </div>

@@ -99,6 +99,15 @@ const Header = () => {
                               <span>About Us</span>
                             </a>
                           </li>
+
+                          <li
+                            id="menu-item-29547"
+                            className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-29547"
+                          >
+                            <a href="/Shop">
+                              <span>Shop</span>
+                            </a>
+                          </li>
                           {!user ? (
                             <>
                               <li
@@ -112,14 +121,6 @@ const Header = () => {
                             </>
                           ) : (
                             <>
-                              <li
-                                id="menu-item-29617"
-                                className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-29617"
-                              >
-                                <a href="#/">
-                                  <span>{user.name}</span>
-                                </a>
-                              </li>
                               <li
                                 id="menu-item-29617"
                                 className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-29617"
@@ -138,15 +139,6 @@ const Header = () => {
                               </li>
                             </>
                           )}
-
-                          <li
-                            id="menu-item-29547"
-                            className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-29547"
-                          >
-                            <a href="/Shop">
-                              <span>Shop</span>
-                            </a>
-                          </li>
                         </ul>
                       </nav>
                     </div>
