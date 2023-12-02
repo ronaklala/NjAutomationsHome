@@ -73,9 +73,20 @@ const Checkout = () => {
     if (parseInt(product.qty) < order.qty) {
       toast.error("The Entered Quantity is not in Stock At the moment");
     } else {
+      let total;
+
+      if (order.qty >= product.offerQty) {
+        let price = product.disc_price * order.qty * 100;
+        let percent = product.offerQty / 100;
+        let discount = price * percent;
+        total = price - discount;
+      } else {
+        total = product.disc_price * order.qty * 100;
+      }
+
       var options = {
         key: process.env.REACT_APP_RAZORPAYKEY,
-        amount: product.disc_price * order.qty * 100,
+        amount: total,
         currency: "INR",
         name: process.env.REACT_APP_APP_NAME,
         description: product.name,
@@ -343,6 +354,11 @@ const Checkout = () => {
                                         </span>
                                       </div>
                                       <p className="wpgdprc-checkbox comment-form-wpgdprc">
+                                        (*Order minimum of {product.offerQty}{" "}
+                                        quantity to get {product.offerDisc}%
+                                        Discount*)
+                                      </p>
+                                      <p className="wpgdprc-checkbox comment-form-wpgdprc">
                                         <input
                                           type="checkbox"
                                           name="wpgdprc"
@@ -351,7 +367,7 @@ const Checkout = () => {
                                         />
                                         <label htmlFor="wpgdprc">
                                           I agree that my submitted data is
-                                          being
+                                          being &nbsp;
                                           <a href="#/">collected and stored</a>.
                                           <abbr
                                             className="wpgdprc-required"

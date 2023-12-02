@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "./css/login.css";
+import Spinner from "./Spinner";
 
 const Register = () => {
   const [user, setUesr] = useState({
@@ -11,6 +12,8 @@ const Register = () => {
     password: "",
     cp: "",
   });
+
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -23,6 +26,7 @@ const Register = () => {
   };
 
   const handleSubmit = (e) => {
+    e.preventDefault();
     if (
       user.cp === "" ||
       user.email === "" ||
@@ -34,6 +38,7 @@ const Register = () => {
     } else if (user.password !== user.cp) {
       toast.error("Passwords Do Not Match");
     } else {
+      setLoading(true);
       axios
         .post(
           "https://nj-automations-api.vercel.app/api/user/register_uesr",
@@ -41,6 +46,7 @@ const Register = () => {
         )
         .then((res) => {
           if (res.status === 200) {
+            setLoading(false);
             toast.success("User Registered Successfully");
             setTimeout(() => {
               window.location.href = "/Login";
@@ -48,6 +54,7 @@ const Register = () => {
           }
         })
         .catch((err) => {
+          setLoading(false);
           toast.error("Internal Server Erorr");
         });
     }
@@ -70,7 +77,7 @@ const Register = () => {
               alt="register_img"
             />
           </div>
-          <form action="">
+          <form action="#/">
             <h3>Registration Form</h3>
             <div className="form-group">
               <input
@@ -86,6 +93,8 @@ const Register = () => {
               <input
                 type="email"
                 placeholder="john@njautomations.com"
+                id="email"
+                name="email"
                 defaultValue={user.email}
                 onChange={handleChange}
                 maxLength={100}
@@ -130,8 +139,18 @@ const Register = () => {
               />
               <i className="zmdi zmdi-lock" />
               <button onClick={handleSubmit} style={{ margin: "0" }}>
-                Register
-                <i className="zmdi zmdi-arrow-right" />
+                {!loading ? (
+                  <>
+                    {" "}
+                    Register
+                    <i className="zmdi zmdi-arrow-right" />
+                  </>
+                ) : (
+                  <>
+                    {" "}
+                    <Spinner />
+                  </>
+                )}
               </button>{" "}
             </div>
             <br />

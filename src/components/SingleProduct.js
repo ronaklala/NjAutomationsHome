@@ -36,6 +36,18 @@ const SingleProduct = () => {
       });
   }, [params.id]);
 
+  const addETrimToUrl = (url) => {
+    // Define the pattern to match
+    const pattern = /(upload\/)(v\d+)/;
+
+    // Replace the pattern with 'upload/e_trim/v169...'
+    const modifiedUrl = url.replace(pattern, "upload/e_trim/$2");
+
+    console.log(modifiedUrl);
+
+    return modifiedUrl;
+  };
+
   return (
     <>
       <div className="body_wrap">
@@ -119,7 +131,9 @@ const SingleProduct = () => {
                                             alignItems: "center",
                                             objectFit: "cover",
                                             background:
-                                              "url(" + product.image + ")",
+                                              "url(" +
+                                              addETrimToUrl(product.image) +
+                                              ")",
                                             backgroundRepeat: "no-repeat",
                                             backgroundPosition: "center",
                                             backgroundSize: "contain",
@@ -409,7 +423,9 @@ const SingleProduct = () => {
                                                         loading="lazy"
                                                         width={890}
                                                         height={664}
-                                                        src={r.image}
+                                                        src={addETrimToUrl(
+                                                          r.image
+                                                        )}
                                                         className="attachment-optima-thumb-square size-optima-thumb-square wp-post-image"
                                                         alt=""
                                                         decoding="async"

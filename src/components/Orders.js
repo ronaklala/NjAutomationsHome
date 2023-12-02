@@ -7,6 +7,7 @@ import { toast } from "react-toastify";
 import moment from "moment/moment";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import Spinner from "./Spinner";
 
 const Orders = () => {
   const [orders, setOrders] = useState();
@@ -34,6 +35,18 @@ const Orders = () => {
       }
     }
   }, []);
+
+  const addETrimToUrl = (url) => {
+    // Define the pattern to match
+    const pattern = /(upload\/)(v\d+)/;
+
+    // Replace the pattern with 'upload/e_trim/v169...'
+    const modifiedUrl = url.replace(pattern, "upload/e_trim/$2");
+
+    console.log(modifiedUrl);
+
+    return modifiedUrl;
+  };
 
   return (
     <>
@@ -104,7 +117,9 @@ const Orders = () => {
                                         <LazyLoadImage
                                           alt={o.productDetails[0].image}
                                           effect="blur"
-                                          src={o.productDetails[0].image}
+                                          src={addETrimToUrl(
+                                            o.productDetails[0].image
+                                          )}
                                           style={{ maxHeight: "250px" }}
                                         />
                                         <span className="post_thumb post_thumb_bg bg_in optima_inline_1144827720" />{" "}
@@ -150,7 +165,9 @@ const Orders = () => {
                             )}
                           </>
                         ) : (
-                          <></>
+                          <>
+                            <Spinner class="orange" />
+                          </>
                         )}
                       </div>
                     </div>

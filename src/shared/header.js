@@ -46,7 +46,7 @@ const Header = () => {
                   >
                     <div className="elementor-widget-container">
                       <a
-                        href="#/"
+                        href="/"
                         className="sc_layouts_logo sc_layouts_logo_default trx_addons_inline_885828837"
                       >
                         <img
@@ -95,8 +95,8 @@ const Header = () => {
                             id="menu-item-17792"
                             className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-17792"
                           >
-                            <a href="#About">
-                              <span>About Us</span>
+                            <a href="/Our-Products">
+                              <span>Our Products</span>
                             </a>
                           </li>
 
@@ -167,7 +167,7 @@ const Header = () => {
                   >
                     <div className="elementor-widget-container">
                       <a
-                        href="#/"
+                        href="/"
                         className="sc_layouts_logo sc_layouts_logo_default trx_addons_inline_1939099467"
                       >
                         <img
@@ -216,8 +216,16 @@ const Header = () => {
                             id="menu-item-29615"
                             className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-29615"
                           >
-                            <a href="/#About">
-                              <span>About Us</span>
+                            <a href="/Our-Products">
+                              <span>Our Products</span>
+                            </a>
+                          </li>
+                          <li
+                            id="menu-item-29547"
+                            className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-29547"
+                          >
+                            <a href="/Shop">
+                              <span>Shop</span>
                             </a>
                           </li>
                           {!user ? (
@@ -237,14 +245,6 @@ const Header = () => {
                                 id="menu-item-29617"
                                 className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-29617"
                               >
-                                <a href="#/">
-                                  <span>{user.name}</span>
-                                </a>
-                              </li>
-                              <li
-                                id="menu-item-29617"
-                                className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-29617"
-                              >
                                 <a href="/Orders">
                                   <span>Orders</span>
                                 </a>
@@ -259,14 +259,6 @@ const Header = () => {
                               </li>
                             </>
                           )}
-                          <li
-                            id="menu-item-29547"
-                            className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-29547"
-                          >
-                            <a href="/Shop">
-                              <span>Shop</span>
-                            </a>
-                          </li>
                         </ul>
                       </nav>
                     </div>
@@ -295,7 +287,7 @@ const Header = () => {
                   >
                     <div className="elementor-widget-container">
                       <a
-                        href="#/"
+                        href="/"
                         className="sc_layouts_logo sc_layouts_logo_default trx_addons_inline_424621951"
                       >
                         <img

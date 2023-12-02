@@ -97,54 +97,62 @@ const Home = () => {
                     style={{ padding: "10px" }}
                   >
                     <div className="elementor-container elementor-column-gap-extended">
-                      <div
-                        className="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-55a0f21 sc_inner_width_none sc_content_align_inherit sc_layouts_column_icons_position_left sc_fly_static"
-                        data-id="55a0f21"
-                        data-element_type="column"
-                      >
-                        <div className="elementor-widget-wrap elementor-element-populated">
+                      {window.innerWidth > 768 ? (
+                        <>
                           <div
-                            className="elementor-element elementor-element-d6c13e5 no-inner-padding sc_fly_static elementor-widget elementor-widget-trx_widget_slider"
-                            data-id="d6c13e5"
-                            data-element_type="widget"
-                            id="controller-tools-3"
-                            data-widget_type="trx_widget_slider.default"
+                            className="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-55a0f21 sc_inner_width_none sc_content_align_inherit sc_layouts_column_icons_position_left sc_fly_static"
+                            data-id="55a0f21"
+                            data-element_type="column"
                           >
-                            <div className="elementor-widget-container">
+                            <div className="elementor-widget-wrap elementor-element-populated">
                               <div
-                                id="controller-tools-3_sc"
-                                className="widget_area sc_widget_slider"
+                                className="elementor-element elementor-element-d6c13e5 no-inner-padding sc_fly_static elementor-widget elementor-widget-trx_widget_slider"
+                                data-id="d6c13e5"
+                                data-element_type="widget"
+                                id="controller-tools-3"
+                                data-widget_type="trx_widget_slider.default"
                               >
-                                <aside className="widget widget_slider">
-                                  <div className="slider_wrap slider_engine_swiper">
-                                    <div
-                                      id="controller-tools-3_sc_swiper_outer"
-                                      className="slider_outer slider_swiper_outer slider_style_default slider_source_custom slider_outer_direction_horizontal slider_outer_one slider_outer_nopagination slider_outer_nocontrols slider_outer_nocentered slider_outer_overflow_hidden slider_outer_notitles slider_outer_height_auto"
-                                    >
-                                      <div
-                                        id="controller-tools-3_sc_swiper"
-                                        className="slider_container slider_swiper swiper-slider-container slider_direction_horizontal slider_nopagination slider_one slider_type_bg slider_nocontrols slider_nocentered slider_overflow_hidden slider_notitles slider_resize slider_swipe slider_height_auto"
-                                      >
-                                        <div className="slider-wrapper swiper-wrapper">
-                                          <LazyLoadImage
-                                            src="https://i.ibb.co/hLY3X7W/welcome.gif"
-                                            alt="header-Img"
-                                            effect="blur"
-                                          />
+                                <div className="elementor-widget-container">
+                                  <div
+                                    id="controller-tools-3_sc"
+                                    className="widget_area sc_widget_slider"
+                                  >
+                                    <aside className="widget widget_slider">
+                                      <div className="slider_wrap slider_engine_swiper">
+                                        <div
+                                          id="controller-tools-3_sc_swiper_outer"
+                                          className="slider_outer slider_swiper_outer slider_style_default slider_source_custom slider_outer_direction_horizontal slider_outer_one slider_outer_nopagination slider_outer_nocontrols slider_outer_nocentered slider_outer_overflow_hidden slider_outer_notitles slider_outer_height_auto"
+                                        >
+                                          <div
+                                            id="controller-tools-3_sc_swiper"
+                                            className="slider_container slider_swiper swiper-slider-container slider_direction_horizontal slider_nopagination slider_one slider_type_bg slider_nocontrols slider_nocentered slider_overflow_hidden slider_notitles slider_resize slider_swipe slider_height_auto"
+                                          >
+                                            <div className="slider-wrapper swiper-wrapper">
+                                              <img
+                                                src="https://i.ibb.co/hLY3X7W/welcome.gif"
+                                                alt="header-Img"
+                                                effect="blur"
+                                              />
+                                            </div>
+                                          </div>
                                         </div>
                                       </div>
-                                    </div>
+                                    </aside>
                                   </div>
-                                </aside>
+                                </div>
                               </div>
                             </div>
                           </div>
-                        </div>
-                      </div>
+                        </>
+                      ) : (
+                        <></>
+                      )}
+
                       <div
                         className="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-c05f288 sc_inner_width_none sc_content_align_inherit sc_layouts_column_icons_position_left sc_fly_static"
                         data-id="c05f288"
                         data-element_type="column"
+                        id="About"
                       >
                         <div className="elementor-widget-wrap elementor-element-populated">
                           <div
