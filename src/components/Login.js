@@ -4,6 +4,8 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Spinner from "./Spinner";
+import "react-lazy-load-image-component/src/effects/blur.css";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const Login = () => {
   const [user, setUser] = useState({
@@ -70,10 +72,11 @@ const Login = () => {
       >
         <div className="inner">
           <div className="image-holder">
-            <img
+            <LazyLoadImage
               src="https://www.pgftech.com/wp-content/uploads/2023/06/DSC_0016.png"
               style={{ height: "100%" }}
               alt="register_img"
+              effect="blur"
             />
           </div>
           <form action="#/">

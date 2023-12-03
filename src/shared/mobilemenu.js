@@ -55,8 +55,8 @@ const MobileMenu = () => {
                     </a>
                   </li>
                   <li className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-17792">
-                    <a href="/#About">
-                      <span>About Us</span>
+                    <a href="/Our-Products">
+                      <span>Our Products</span>
                     </a>
                   </li>
 

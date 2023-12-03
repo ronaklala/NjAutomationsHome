@@ -175,7 +175,10 @@ const SingleProduct = () => {
                               <div className="sc_title sc_title_default">
                                 <h1
                                   className="sc_item_title sc_title_title sc_item_title_style_default sc_item_title_tag"
-                                  style={{ fontSize: "32px" }}
+                                  style={{
+                                    fontSize: "20px",
+                                    marginTop: "15px",
+                                  }}
                                 >
                                   {product.name}
                                 </h1>

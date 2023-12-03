@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "./css/login.css";
 import Spinner from "./Spinner";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 const Register = () => {
   const [user, setUesr] = useState({
@@ -71,10 +73,11 @@ const Register = () => {
       >
         <div className="inner">
           <div className="image-holder">
-            <img
+            <LazyLoadImage
               src="https://www.pgftech.com/wp-content/uploads/2023/06/DSC_0016.png"
               style={{ height: "100%" }}
               alt="register_img"
+              effect="blur"
             />
           </div>
           <form action="#/">
