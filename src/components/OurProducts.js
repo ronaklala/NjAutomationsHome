@@ -18,7 +18,7 @@ const OurProducts = () => {
 
   useEffect(() => {
     axios
-      .get("https://nj-automations-api.vercel.app/api/admin/getProducts")
+      .get("https://determined-pear-apron.cyclic.app/api/admin/getProducts")
       .then((res) => {
         setProducts(res.data);
         setLoading(false);

@@ -23,7 +23,7 @@ const Orders = () => {
       if (userId !== "") {
         axios
           .get(
-            "https://nj-automations-api.vercel.app/api/user/orders/" + userId
+            "https://determined-pear-apron.cyclic.app/api/user/orders/" + userId
           )
           .then((res) => {
             setOrders(res.data);

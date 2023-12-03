@@ -18,7 +18,7 @@ const SingleProduct = () => {
   useEffect(() => {
     axios
       .get(
-        "https://nj-automations-api.vercel.app/api/admin/singleProduct/" +
+        "https://determined-pear-apron.cyclic.app/api/admin/singleProduct/" +
           params.id
       )
       .then((res) => {

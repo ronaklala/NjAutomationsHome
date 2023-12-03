@@ -36,7 +36,7 @@ const Checkout = () => {
       setUesr(JSON.parse(localStorage.getItem("user")));
       axios
         .get(
-          "https://nj-automations-api.vercel.app/api/admin/singleProduct/" +
+          "https://determined-pear-apron.cyclic.app/api/admin/singleProduct/" +
             params.id
         )
         .then((res) => {
@@ -95,7 +95,7 @@ const Checkout = () => {
           order.razorpay_id = response.razorpay_payment_id;
           axios
             .post(
-              "https://nj-automations-api.vercel.app/api/user/checkout/",
+              "https://determined-pear-apron.cyclic.app/api/user/checkout/",
               order
             )
             .then((res) => {

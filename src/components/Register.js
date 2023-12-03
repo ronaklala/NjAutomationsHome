@@ -41,7 +41,7 @@ const Register = () => {
       setLoading(true);
       axios
         .post(
-          "https://nj-automations-api.vercel.app/api/user/register_uesr",
+          "https://determined-pear-apron.cyclic.app/api/user/register_uesr",
           user
         )
         .then((res) => {

@@ -30,7 +30,10 @@ const Login = () => {
     } else {
       setLoading(true);
       axios
-        .post("https://nj-automations-api.vercel.app/api/user/login_user", user)
+        .post(
+          "https://determined-pear-apron.cyclic.app/api/user/login_user",
+          user
+        )
         .then((res) => {
           if (res.status === 200) {
             setLoading(false);
