@@ -139,8 +139,11 @@ const Footer = () => {
                             id="menu-item-34977"
                             className="menu-item menu-item-type-post_type menu-item-object-page menu-item-34977"
                           >
-                            <a href="/#About">
-                              <span>About Us</span>
+                            <a
+                              href="https://merchant.razorpay.com/policy/N9455Bmo10Euj4/privacy
+"
+                            >
+                              <span>Privacy Policy</span>
                             </a>
                           </li>
 
@@ -148,8 +151,11 @@ const Footer = () => {
                             id="menu-item-29630"
                             className="menu-item menu-item-type-post_type menu-item-object-page menu-item-29630"
                           >
-                            <a href="/Shop">
-                              <span>Shop</span>
+                            <a
+                              href="https://merchant.razorpay.com/policy/N9455Bmo10Euj4/terms
+"
+                            >
+                              <span>Terms and Conditions</span>
                             </a>
                           </li>
 
@@ -157,8 +163,29 @@ const Footer = () => {
                             id="menu-item-29630"
                             className="menu-item menu-item-type-post_type menu-item-object-page menu-item-29630"
                           >
-                            <a href="/Contact">
+                            <a href="https://merchant.razorpay.com/policy/N9455Bmo10Euj4/contact_us ">
                               <span>Contact Us</span>
+                            </a>
+                          </li>
+
+                          <li
+                            id="menu-item-29630"
+                            className="menu-item menu-item-type-post_type menu-item-object-page menu-item-29630"
+                          >
+                            <a
+                              href="https://merchant.razorpay.com/policy/N9455Bmo10Euj4/refund
+ "
+                            >
+                              <span>Returns and Refunds</span>
+                            </a>
+                          </li>
+
+                          <li
+                            id="menu-item-29630"
+                            className="menu-item menu-item-type-post_type menu-item-object-page menu-item-29630"
+                          >
+                            <a href="https://merchant.razorpay.com/policy/N9455Bmo10Euj4/shipping">
+                              <span>Shipping</span>
                             </a>
                           </li>
                         </ul>
