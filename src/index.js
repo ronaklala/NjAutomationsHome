@@ -13,6 +13,8 @@ import Checkout from "./components/Checkout";
 import OrderSuccess from "./components/OrderSuccess";
 import Orders from "./components/Orders";
 import OurProducts from "./components/OurProducts";
+import Services from "./components/Services";
+import SingleService from "./components/SingleService";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -28,6 +30,8 @@ root.render(
         <Route path="/:id/order/success" element={<OrderSuccess />} />
         <Route path="/Orders" element={<Orders />} />
         <Route path="/Our-Products" element={<OurProducts />} />
+        <Route path="/Services" element={<Services />} />
+        <Route path="/Service/:id" element={<SingleService />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

@@ -173,22 +173,23 @@ const Home = () => {
                                 </h1>
                                 <div className="sc_item_descr sc_title_descr">
                                   <p>
-                                    Welcome to Acme Circuit, & company with ISO
-                                    9001:2015 Plant in Ahmedabad, Gujarat,
-                                    India. Our business goal is to be the most
-                                    professional PCB Manufacturer for
-                                    prototyping & Medium-High Volume production
-                                    to work with in the world. We are committees
-                                    to meeting the needs of our customers from
-                                    different industries. The ever increasing
-                                    demand for PCB in the market leads us to the
-                                    formation of best quality PCB. From the
-                                    formation to its end that is from PCB layout
-                                    to PCB assembly, fabrication each process is
-                                    done under the guidance of experts who works
-                                    consistently to provide you the best quality
-                                    products and will assist you in all your
-                                    technological requirements
+                                    Your trusted partner in electronic circuit
+                                    board manufacturing. At NJ Automations, we
+                                    are passionate about precision and
+                                    innovation in the world of electronics. Our
+                                    commitment to quality and cutting-edge
+                                    technology has made us a leader in the
+                                    industry.
+                                  </p>
+                                  <p>
+                                    As you navigate through our website, you'll
+                                    discover the expertise, dedication, and
+                                    state-of-the-art facilities that define us.
+                                    Whether you're an industry professional, an
+                                    entrepreneur with a vision, or an enthusiast
+                                    exploring the world of electronics, we're
+                                    here to meet your circuit board
+                                    manufacturing needs.
                                   </p>
                                 </div>
                               </div>
@@ -255,6 +256,159 @@ const Home = () => {
                                     </span>
                                   </span>
                                 </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+
+                  <section
+                    className="elementor-section elementor-top-section elementor-element elementor-element-af57dad elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default sc_fly_static"
+                    data-id="af57dad"
+                    data-element_type="section"
+                    style={{ padding: "10px" }}
+                  >
+                    <div className="elementor-container elementor-column-gap-extended">
+                      <div
+                        className="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-c05f288 sc_inner_width_none sc_content_align_inherit sc_layouts_column_icons_position_left sc_fly_static"
+                        data-id="c05f288"
+                        data-element_type="column"
+                        id="About"
+                      >
+                        <div className="elementor-widget-wrap elementor-element-populated">
+                          <div
+                            className="elementor-element elementor-element-32e35e4 sc_fly_static elementor-widget elementor-widget-trx_sc_title"
+                            data-id="32e35e4"
+                            data-element_type="widget"
+                            data-widget_type="trx_sc_title.default"
+                          >
+                            <div className="elementor-widget-container">
+                              <div className="sc_title sc_title_default">
+                                <span className="sc_item_subtitle sc_title_subtitle sc_item_subtitle_above sc_item_title_style_default">
+                                  NJ AUTOMATIONS
+                                </span>
+                                <h1 className="sc_item_title sc_title_title sc_item_title_style_default sc_item_title_tag">
+                                  <span className="sc_item_title_text">
+                                    Visson
+                                  </span>
+                                </h1>
+                                <div className="sc_item_descr sc_title_descr">
+                                  <p>
+                                    Our aim is to become a globally recognized
+                                    brand, offering economical electronic
+                                    circuit board solutions, with an enduring
+                                    dedication to exceeding customer
+                                    expectations.
+                                  </p>
+                                </div>
+                                <br />
+                                <h1 className="sc_item_title sc_title_title sc_item_title_style_default sc_item_title_tag">
+                                  <span className="sc_item_title_text">
+                                    Mission
+                                  </span>
+                                </h1>
+                                <div className="sc_item_descr sc_title_descr">
+                                  <p>
+                                    Our mission is to empower innovation and
+                                    technological advancement by delivering
+                                    cutting-edge electronic circuit board
+                                    solutions that exceed industry standards. We
+                                    are dedicated to fostering success among our
+                                    partners and customers through unwavering
+                                    quality, sustainability, and
+                                    customer-centric collaboration.
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            className="elementor-element elementor-element-0e96e5f sc_fly_static elementor-widget elementor-widget-spacer"
+                            data-id="0e96e5f"
+                            data-element_type="widget"
+                            data-widget_type="spacer.default"
+                          >
+                            <div className="elementor-widget-container">
+                              <div className="elementor-spacer">
+                                <div className="elementor-spacer-inner" />
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            className="elementor-element elementor-element-5ad6b2c sc_fly_static elementor-widget elementor-widget-trx_sc_slider_controls"
+                            data-id="5ad6b2c"
+                            data-element_type="widget"
+                            data-widget_type="trx_sc_slider_controls.default"
+                          >
+                            <div className="elementor-widget-container">
+                              <div
+                                className="sc_slider_controls sc_slider_controls_light slider_pagination_style_title sc_align_left"
+                                data-slider-id="controller-tools-3"
+                                data-style="light"
+                                data-pagination-style="title"
+                              >
+                                <div className="slider_controls_wrap">
+                                  <div className="slider_pagination_wrap" />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            className="elementor-element elementor-element-1a3b169 sc_fly_static elementor-widget elementor-widget-spacer"
+                            data-id="1a3b169"
+                            data-element_type="widget"
+                            data-widget_type="spacer.default"
+                          >
+                            <div className="elementor-widget-container">
+                              <div className="elementor-spacer">
+                                <div className="elementor-spacer-inner" />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div
+                        className="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-55a0f21 sc_inner_width_none sc_content_align_inherit sc_layouts_column_icons_position_left sc_fly_static"
+                        data-id="55a0f21"
+                        data-element_type="column"
+                      >
+                        <div className="elementor-widget-wrap elementor-element-populated">
+                          <div
+                            className="elementor-element elementor-element-d6c13e5 no-inner-padding sc_fly_static elementor-widget elementor-widget-trx_widget_slider"
+                            data-id="d6c13e5"
+                            data-element_type="widget"
+                            id="controller-tools-3"
+                            data-widget_type="trx_widget_slider.default"
+                          >
+                            <div className="elementor-widget-container">
+                              <div
+                                id="controller-tools-3_sc"
+                                className="widget_area sc_widget_slider"
+                              >
+                                <aside className="widget widget_slider">
+                                  <div className="slider_wrap slider_engine_swiper">
+                                    <div
+                                      id="controller-tools-3_sc_swiper_outer"
+                                      className="slider_outer slider_swiper_outer slider_style_default slider_source_custom slider_outer_direction_horizontal slider_outer_one slider_outer_nopagination slider_outer_nocontrols slider_outer_nocentered slider_outer_overflow_hidden slider_outer_notitles slider_outer_height_auto"
+                                    >
+                                      <div
+                                        id="controller-tools-3_sc_swiper"
+                                        className="slider_container slider_swiper swiper-slider-container slider_direction_horizontal slider_nopagination slider_one slider_type_bg slider_nocontrols slider_nocentered slider_overflow_hidden slider_notitles slider_resize slider_swipe slider_height_auto"
+                                      >
+                                        <div className="slider-wrapper swiper-wrapper">
+                                          <img
+                                            src="https://www.liquidplanner.com/wp-content/uploads/2013/12/iStock-520289888-2-e1641284826152.jpg"
+                                            alt="header-Img"
+                                            effect="blur"
+                                          />
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </aside>
                               </div>
                             </div>
                           </div>
@@ -781,7 +935,7 @@ const Home = () => {
                                     >
                                       <div className="post_featured with_thumb hover_link sc_services_item_thumb">
                                         <LazyLoadImage
-                                          src="https://i.ibb.co/gjf3X7T/image.png"
+                                          src="https://firebasestorage.googleapis.com/v0/b/njautomation-99e2a.appspot.com/o/6f1886097e18fbea10709a6e6037fc27.jpg?alt=media&token=d2aadb8f-4d76-4bd1-a257-50166f13bb86"
                                           className="attachment-optima-thumb-square size-optima-thumb-square wp-post-image"
                                           alt=""
                                           effect="blur"
@@ -792,7 +946,7 @@ const Home = () => {
                                         <div className="sc_services_item_header">
                                           <div className="sc_services_item_title_wrap">
                                             <h4 className="sc_services_item_title entry-title">
-                                              <a href="#/">
+                                              <a href="/Service/01">
                                                 <span className="sc_services_item_number">
                                                   01.
                                                 </span>
@@ -803,7 +957,7 @@ const Home = () => {
                                             </h4>
                                             <div className="sc_services_item_button sc_item_button">
                                               <a
-                                                href="#/"
+                                                href="/Service/01"
                                                 className="sc_services_item_more_link"
                                               >
                                                 <span className="link_text">
@@ -824,7 +978,7 @@ const Home = () => {
                                     >
                                       <div className="post_featured with_thumb hover_link sc_services_item_thumb">
                                         <LazyLoadImage
-                                          src="https://firebasestorage.googleapis.com/v0/b/njautomations-f8156.appspot.com/o/image%5B1%5D.webp?alt=media&token=8189cad4-7d0f-4ef0-bd17-1a3b97678036"
+                                          src="https://i.ibb.co/gjf3X7T/image.png"
                                           className="attachment-optima-thumb-square size-optima-thumb-square wp-post-image"
                                           alt=""
                                           effect="blur"
@@ -840,13 +994,13 @@ const Home = () => {
                                                   02.
                                                 </span>
                                                 <span className="sc_services_item_title_text">
-                                                  PCB Layout Services
+                                                  PROGRAMMING AND TESTING
                                                 </span>
                                               </a>
                                             </h4>
                                             <div className="sc_services_item_button sc_item_button">
                                               <a
-                                                href="#/"
+                                                href="/Service/02"
                                                 className="sc_services_item_more_link"
                                               >
                                                 <span className="link_text">
@@ -867,7 +1021,7 @@ const Home = () => {
                                     >
                                       <div className="post_featured with_thumb hover_link sc_services_item_thumb">
                                         <LazyLoadImage
-                                          src="https://firebasestorage.googleapis.com/v0/b/njautomations-f8156.appspot.com/o/image%5B1%5D%20(1).webp?alt=media&token=206ad354-c4b4-459e-a534-c9de63dea3d8"
+                                          src="https://firebasestorage.googleapis.com/v0/b/njautomation-99e2a.appspot.com/o/5076f849b5ebf4c6caf3ec1fe821c638.jpg?alt=media&token=c2d8b827-612c-4b4d-be3e-c122e356a0b5"
                                           className="attachment-optima-thumb-square size-optima-thumb-square wp-post-image"
                                           alt=""
                                           effect="blur"
@@ -878,18 +1032,18 @@ const Home = () => {
                                         <div className="sc_services_item_header">
                                           <div className="sc_services_item_title_wrap">
                                             <h4 className="sc_services_item_title entry-title">
-                                              <a href="#/">
+                                              <a href={"/Service/03"}>
                                                 <span className="sc_services_item_number">
                                                   03.
                                                 </span>
                                                 <span className="sc_services_item_title_text">
-                                                  PCB Fabrication
+                                                  Embedded Systems
                                                 </span>
                                               </a>
                                             </h4>
                                             <div className="sc_services_item_button sc_item_button">
                                               <a
-                                                href="#/"
+                                                href={"/Service/03"}
                                                 className="sc_services_item_more_link"
                                               >
                                                 <span className="link_text">
@@ -928,7 +1082,7 @@ const Home = () => {
                             <div className="elementor-widget-container">
                               <div className="sc_item_button sc_button_wrap sc_align_center">
                                 <a
-                                  href="#/"
+                                  href="/Services"
                                   className="sc_button sc_button_decoration sc_button_size_normal sc_button_icon_left"
                                 >
                                   <span className="sc_button_text">
