@@ -34,7 +34,7 @@
     --wp--preset--color--bd-color: #cfd7dd;
     --wp--preset--color--text-dark: #1e2831;
     --wp--preset--color--text-light: #909090;
-    --wp--preset--color--text-link: #ec6008;
+    --wp--preset--color--text-link: #002BAD;
     --wp--preset--color--text-hover: #d65300;
     --wp--preset--color--text-link-2: #10396a;
     --wp--preset--color--text-hover-2: #09284e;
@@ -724,7 +724,7 @@
     .elementor-element.elementor-element-858c379
     > .elementor-motion-effects-container
     > .elementor-motion-effects-layer {
-    background-color: #ec6008;
+    background-color: #002BAD;
   }
   .elementor-29507
     .elementor-element.elementor-element-858c379

@@ -360,7 +360,7 @@ const About = () => {
                                 >
                                   <div className="slider-wrapper swiper-wrapper">
                                     <img
-                                      src="https://www.liquidplanner.com/wp-content/uploads/2013/12/iStock-520289888-2-e1641284826152.jpg"
+                                      src="https://firebasestorage.googleapis.com/v0/b/njautomation-99e2a.appspot.com/o/a47l0-p3xzh.avif?alt=media&token=2d782211-0844-4db3-9ff1-6efcf361d8b7"
                                       alt="header-Img"
                                       effect="blur"
                                     />

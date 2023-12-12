@@ -144,15 +144,15 @@ const Home = () => {
                                       <div className="slider_wrap slider_engine_swiper">
                                         <div
                                           id="controller-tools-3_sc_swiper_outer"
-                                          className="slider_outer slider_swiper_outer slider_style_default slider_source_custom slider_outer_direction_horizontal slider_outer_one slider_outer_nopagination slider_outer_nocontrols slider_outer_nocentered slider_outer_overflow_hidden slider_outer_notitles slider_outer_height_auto"
+                                          className="slider_outer slider_swiper_outer slider_style_default slider_source_custom slider_outer_direction_horizontal slider_outer_one slider_outer_nopagination slider_outer_nocontrols slider_outer_nocentered slider_outer_overflow_hidden slider_outer_notitles "
                                         >
                                           <div
                                             id="controller-tools-3_sc_swiper"
-                                            className="slider_container slider_swiper swiper-slider-container slider_direction_horizontal slider_nopagination slider_one slider_type_bg slider_nocontrols slider_nocentered slider_overflow_hidden slider_notitles slider_resize slider_swipe slider_height_auto"
+                                            className=""
                                           >
                                             <div className="slider-wrapper swiper-wrapper">
-                                              <img
-                                                src="https://i.ibb.co/hLY3X7W/welcome.gif"
+                                              <LazyLoadImage
+                                                src="https://firebasestorage.googleapis.com/v0/b/njautomation-99e2a.appspot.com/o/ezgif.com-jpg-to-avif-converted.avif?alt=media&token=c602c994-4791-401b-834f-e20b2448ca40"
                                                 alt="header-Img"
                                                 effect="blur"
                                               />
@@ -423,7 +423,7 @@ const Home = () => {
                                       >
                                         <div className="slider-wrapper swiper-wrapper">
                                           <img
-                                            src="https://www.liquidplanner.com/wp-content/uploads/2013/12/iStock-520289888-2-e1641284826152.jpg"
+                                            src="https://firebasestorage.googleapis.com/v0/b/njautomation-99e2a.appspot.com/o/a47l0-p3xzh.avif?alt=media&token=2d782211-0844-4db3-9ff1-6efcf361d8b7"
                                             alt="header-Img"
                                             effect="blur"
                                           />
@@ -1133,7 +1133,7 @@ const Home = () => {
                       </div>
                     </div>
                   </section>
-
+                  {/* 
                   <section
                     className="elementor-section elementor-inner-section elementor-element elementor-element-a105360 elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default sc_fly_static"
                     data-id="a105360"
@@ -1296,7 +1296,7 @@ const Home = () => {
                         </div>
                       </div>
                     </div>
-                  </section>
+                  </section> */}
                   <section
                     className="elementor-section elementor-top-section elementor-element elementor-element-48642f6 elementor-section-boxed elementor-section-height-default elementor-section-height-default sc_fly_static"
                     data-id="48642f6"

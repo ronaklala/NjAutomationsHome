@@ -90,7 +90,7 @@ const Shop = () => {
                 <svg
                   class="banner-about__content-bg"
                   viewBox="0 0 56 32"
-                  style={{ height: "50%", width: "80vw" }}
+                  style={{ height: "50%", width: "50vw" }}
                 >
                   <path
                     style={{
