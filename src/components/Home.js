@@ -64,7 +64,7 @@ const Home = () => {
                   >
                     <SwiperSlide>
                       <img
-                        src="https://victorypcb.usa02.wondercdn.com/public/static/images/home/en-us/20220719.webp"
+                        src="https://firebasestorage.googleapis.com/v0/b/njautomation-99e2a.appspot.com/o/20220719%5B1%5D.webp?alt=media&token=b452ae8d-f0ba-4ab1-bb3e-7e2bf2d31c07"
                         alt="herobanner"
                       />
                     </SwiperSlide>
