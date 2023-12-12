@@ -10,6 +10,7 @@ import "swiper/css/navigation";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import Spinner from "./Spinner";
+import { Helmet } from "react-helmet";
 
 const Shop = () => {
   const [products, setProducts] = useState();
@@ -42,6 +43,28 @@ const Shop = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Shop - NJ Automation</title>
+        <meta
+          name="description"
+          content="Explore a wide range of high-quality PCB boards for your electronics projects at our e-commerce store. Find custom-designed printed circuit boards (PCBs) in various sizes and specifications. From prototype to production, we offer reliable and efficient solutions for electronic enthusiasts, hobbyists, and businesses. Shop now for top-notch PCBs to bring your innovations to life."
+        />
+        <meta name="robots" content="index,follow" />
+        <meta
+          name="keywords"
+          content="PCB boards, printed circuit boards, custom PCB, electronic components, circuit board design, PCB fabrication, prototype boards, electronic projects, circuit board shop, PCB manufacturing, NJ Automation, NJAutomations"
+        ></meta>
+        <meta property="og:title" content="Shop - NJ Automation"></meta>
+        <meta
+          property="og:description"
+          content="Explore a wide range of high-quality PCB boards for your electronics projects at our e-commerce store. Find custom-designed printed circuit boards (PCBs) in various sizes and specifications. From prototype to production, we offer reliable and efficient solutions for electronic enthusiasts, hobbyists, and businesses. Shop now for top-notch PCBs to bring your innovations to life."
+        ></meta>
+        <meta
+          property="og:image"
+          content="https://firebasestorage.googleapis.com/v0/b/njautomations-f8156.appspot.com/o/image-removebg-preview%5B1%5D.webp?alt=media&token=f624d0a0-f802-4e8e-9114-9534a862fc52"
+        ></meta>
+        <link rel="canonical" href="https://njautomation.in/Shop"></link>
+      </Helmet>
       <div className="body_wrap">
         <div className="page_wrap">
           <Header />
@@ -169,17 +192,23 @@ const Shop = () => {
                                                 <div className="trx_addons_column-1_3">
                                                   <div className="sc_services_item sc_item_container post_container without_content with_image sc_services_item_featured_top post-951 cpt_services type-cpt_services status-publish has-post-thumbnail hentry cpt_services_group-automation">
                                                     <div className="post_featured with_thumb hover_link sc_services_item_thumb">
-                                                      <img
-                                                        loading="lazy"
-                                                        width={890}
-                                                        height={664}
-                                                        src={addETrimToUrl(
-                                                          prod.image
-                                                        )}
-                                                        className="attachment-optima-thumb-square size-optima-thumb-square wp-post-image"
-                                                        alt=""
-                                                        decoding="async"
-                                                      />
+                                                      <a
+                                                        href={
+                                                          "/product/" + prod._id
+                                                        }
+                                                      >
+                                                        <img
+                                                          loading="lazy"
+                                                          width={890}
+                                                          height={664}
+                                                          src={addETrimToUrl(
+                                                            prod.image
+                                                          )}
+                                                          className="attachment-optima-thumb-square size-optima-thumb-square wp-post-image"
+                                                          alt=""
+                                                          decoding="async"
+                                                        />
+                                                      </a>
                                                       <div className="mask" />
                                                     </div>
                                                     <div className="sc_services_item_info">

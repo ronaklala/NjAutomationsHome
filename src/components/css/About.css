@@ -13,6 +13,10 @@
     text-decoration: none;
   }
 
+  .lazy-load-image-loaded img{
+    border-radius: 15px !important;
+  }
+
   body {
     --wp--preset--color--black: #000000;
     --wp--preset--color--cyan-bluish-gray: #abb8c3;

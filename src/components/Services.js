@@ -4,10 +4,33 @@ import Header from "../shared/header";
 import MobileMenu from "../shared/mobilemenu";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import services from "./mock/services";
+import { Helmet } from "react-helmet";
 
 const Services = () => {
   return (
     <>
+      <Helmet>
+        <title>Our Services</title>
+        <meta
+          name="description"
+          content="Explore our comprehensive PCB services at Nj Automations. We specialize in PCB Assembly, Programming and Testing, Electronic Component Supply, Electronic Cable Assembly, PCB Layout, and PCB Fabrication. Trust us for end-to-end solutions, ensuring top-notch quality and precision in every electronic component. Discover the excellence of our services and elevate your electronic projects with Nj Automations."
+        />
+        <meta name="robots" content="index,follow" />
+        <meta
+          name="keywords"
+          content="PCB boards, printed circuit boards, custom PCB, electronic components, circuit board design, PCB fabrication, prototype boards, electronic projects, circuit board shop, PCB manufacturing, NJ Automation, NJAutomations"
+        ></meta>
+        <meta property="og:title" content="Our Services"></meta>
+        <meta
+          property="og:description"
+          content="Explore our comprehensive PCB services at Nj Automations. We specialize in PCB Assembly, Programming and Testing, Electronic Component Supply, Electronic Cable Assembly, PCB Layout, and PCB Fabrication. Trust us for end-to-end solutions, ensuring top-notch quality and precision in every electronic component. Discover the excellence of our services and elevate your electronic projects with Nj Automations."
+        ></meta>
+        <meta
+          property="og:image"
+          content="https://firebasestorage.googleapis.com/v0/b/njautomations-f8156.appspot.com/o/image-removebg-preview%5B1%5D.webp?alt=media&token=f624d0a0-f802-4e8e-9114-9534a862fc52"
+        ></meta>
+        <link rel="canonical" href="https://njautomation.in/Services"></link>
+      </Helmet>
       <div className="body_wrap">
         <div className="page_wrap">
           <Header />

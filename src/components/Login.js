@@ -6,6 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Spinner from "./Spinner";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import { Helmet } from "react-helmet";
 
 const Login = () => {
   const [user, setUser] = useState({
@@ -63,6 +64,28 @@ const Login = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Sign In Now</title>
+        <meta
+          name="description"
+          content="Log in to our PCB board e-commerce platform for seamless access to your account. Explore our comprehensive selection of high-quality printed circuit boards for manufacturing and purchase. Discover cutting-edge technology and reliable solutions at Nj Automations."
+        />
+        <meta name="robots" content="index,follow" />
+        <meta
+          name="keywords"
+          content="PCB boards, printed circuit boards, electronic components, PCB manufacturing, circuit board assembly, customer login, e-commerce platform, technology solutions, electronics manufacturing, circuit board design, PCB supplier, Nj Automations"
+        ></meta>
+        <meta property="og:title" content="Sign In Now"></meta>
+        <meta
+          property="og:description"
+          content="Log in to our PCB board e-commerce platform for seamless access to your account. Explore our comprehensive selection of high-quality printed circuit boards for manufacturing and purchase. Discover cutting-edge technology and reliable solutions at Nj Automations."
+        ></meta>
+        <meta
+          property="og:image"
+          content="https://firebasestorage.googleapis.com/v0/b/njautomations-f8156.appspot.com/o/image-removebg-preview%5B1%5D.webp?alt=media&token=f624d0a0-f802-4e8e-9114-9534a862fc52"
+        ></meta>
+        <link rel="canonical" href="https://njautomation.in/Login"></link>
+      </Helmet>
       <div
         className="wrapper"
         style={{

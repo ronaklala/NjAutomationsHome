@@ -5,6 +5,7 @@ import Footer from "../shared/footer";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import "react-lazy-load-image-component/src/effects/blur.css";
+import { Helmet } from "react-helmet";
 
 const SingleProduct = () => {
   const params = useParams();
@@ -98,6 +99,40 @@ const SingleProduct = () => {
                           <></>
                         ) : (
                           <>
+                            <Helmet>
+                              <title>{product.name}</title>
+                              <meta
+                                name="description"
+                                content={product.description}
+                              />
+                              <meta name="robots" content="index,follow" />
+                              <meta
+                                name="keywords"
+                                content={
+                                  "PCB boards, printed circuit boards, custom PCB, electronic components, circuit board design, PCB fabrication, prototype boards, electronic projects, circuit board shop, PCB manufacturing, NJ Automation, NJAutomations," +
+                                  product.name
+                                }
+                              ></meta>
+                              <meta
+                                property="og:title"
+                                content={product.name}
+                              ></meta>
+                              <meta
+                                property="og:description"
+                                content={product.description}
+                              ></meta>
+                              <meta
+                                property="og:image"
+                                content={product.image}
+                              ></meta>
+                              <link
+                                rel="canonical"
+                                href={
+                                  "https://njautomation.in/product" +
+                                  product._id
+                                }
+                              ></link>
+                            </Helmet>
                             <div className="elementor-widget-container">
                               <div
                                 id="controller-tools-3_sc"

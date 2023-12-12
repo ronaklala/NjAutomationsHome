@@ -2,10 +2,26 @@ import React from "react";
 import Header from "../shared/header";
 import MobileMenu from "../shared/mobilemenu";
 import Footer from "../shared/footer";
+import { Helmet } from "react-helmet";
 
 const OrderSuccess = () => {
   return (
     <>
+      <Helmet>
+        <title>Order Placed Successfully</title>
+
+        <meta name="robots" content="noindex,nofollow" />
+        <meta
+          name="keywords"
+          content="PCB boards, printed circuit boards, electronic components, PCB manufacturing, circuit board assembly, customer login, e-commerce platform, technology solutions, electronics manufacturing, circuit board design, PCB supplier, Nj Automations"
+        ></meta>
+        <meta property="og:title" content="Order Placed Successfully"></meta>
+
+        <meta
+          property="og:image"
+          content="https://firebasestorage.googleapis.com/v0/b/njautomations-f8156.appspot.com/o/image-removebg-preview%5B1%5D.webp?alt=media&token=f624d0a0-f802-4e8e-9114-9534a862fc52"
+        ></meta>
+      </Helmet>
       <div className="body_wrap">
         <div className="page_wrap">
           <Header />

@@ -5,6 +5,7 @@ import "./css/login.css";
 import Spinner from "./Spinner";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
+import { Helmet } from "react-helmet";
 
 const Register = () => {
   const [user, setUesr] = useState({
@@ -64,6 +65,28 @@ const Register = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Sign Up Now</title>
+        <meta
+          name="description"
+          content="Register with us at Nj Automations to unlock a seamless experience in PCB board solutions. Sign up for exclusive access to a diverse range of high-quality printed circuit boards for various applications. Join our community of electronics enthusiasts, engineers, and businesses. Accelerate your projects with our cutting-edge PCB manufacturing and selling services. Register now for personalized recommendations, order tracking, and priority customer support. Your journey towards reliable and advanced PCB solutions begins here."
+        />
+        <meta name="robots" content="index,follow" />
+        <meta
+          name="keywords"
+          content="PCB boards, printed circuit boards, PCB manufacturing, circuit board design, electronics components, PCB for sale, electronic components store, custom PCB, circuit board assembly, electronics manufacturing services, register for an account, customer registration"
+        ></meta>
+        <meta property="og:title" content="Sign Up Now"></meta>
+        <meta
+          property="og:description"
+          content="Register with us at Nj Automations to unlock a seamless experience in PCB board solutions. Sign up for exclusive access to a diverse range of high-quality printed circuit boards for various applications. Join our community of electronics enthusiasts, engineers, and businesses. Accelerate your projects with our cutting-edge PCB manufacturing and selling services. Register now for personalized recommendations, order tracking, and priority customer support. Your journey towards reliable and advanced PCB solutions begins here."
+        ></meta>
+        <meta
+          property="og:image"
+          content="https://firebasestorage.googleapis.com/v0/b/njautomations-f8156.appspot.com/o/image-removebg-preview%5B1%5D.webp?alt=media&token=f624d0a0-f802-4e8e-9114-9534a862fc52"
+        ></meta>
+        <link rel="canonical" href="https://njautomation.in/Register"></link>
+      </Helmet>
       <div
         className="wrapper"
         style={{

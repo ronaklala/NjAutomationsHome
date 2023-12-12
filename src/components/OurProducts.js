@@ -10,6 +10,7 @@ import "swiper/css/navigation";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import Spinner from "./Spinner";
+import { Helmet } from "react-helmet";
 
 const OurProducts = () => {
   const [products, setProducts] = useState();
@@ -42,6 +43,31 @@ const OurProducts = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Products - NJ Automation</title>
+        <meta
+          name="description"
+          content="Explore a wide range of high-quality PCB boards for your electronics projects at our e-commerce store. Find custom-designed printed circuit boards (PCBs) in various sizes and specifications. From prototype to production, we offer reliable and efficient solutions for electronic enthusiasts, hobbyists, and businesses. Shop now for top-notch PCBs to bring your innovations to life."
+        />
+        <meta name="robots" content="index,follow" />
+        <meta
+          name="keywords"
+          content="PCB boards, printed circuit boards, custom PCB, electronic components, circuit board design, PCB fabrication, prototype boards, electronic projects, circuit board shop, PCB manufacturing, NJ Automation, NJAutomations"
+        ></meta>
+        <meta property="og:title" content="Products - NJ Automation"></meta>
+        <meta
+          property="og:description"
+          content="Explore a wide range of high-quality PCB boards for your electronics projects at our e-commerce store. Find custom-designed printed circuit boards (PCBs) in various sizes and specifications. From prototype to production, we offer reliable and efficient solutions for electronic enthusiasts, hobbyists, and businesses. Shop now for top-notch PCBs to bring your innovations to life."
+        ></meta>
+        <meta
+          property="og:image"
+          content="https://firebasestorage.googleapis.com/v0/b/njautomations-f8156.appspot.com/o/image-removebg-preview%5B1%5D.webp?alt=media&token=f624d0a0-f802-4e8e-9114-9534a862fc52"
+        ></meta>
+        <link
+          rel="canonical"
+          href="https://njautomation.in/Our-Products"
+        ></link>
+      </Helmet>
       <div className="body_wrap">
         <div className="page_wrap">
           <Header />

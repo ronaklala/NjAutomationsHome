@@ -139,6 +139,15 @@ const Footer = () => {
                             id="menu-item-34977"
                             className="menu-item menu-item-type-post_type menu-item-object-page menu-item-34977"
                           >
+                            <a href="/About">
+                              <span>About Us</span>
+                            </a>
+                          </li>
+
+                          <li
+                            id="menu-item-34977"
+                            className="menu-item menu-item-type-post_type menu-item-object-page menu-item-34977"
+                          >
                             <a
                               href="https://merchant.razorpay.com/policy/N9455Bmo10Euj4/privacy
 "

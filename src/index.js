@@ -15,6 +15,7 @@ import Orders from "./components/Orders";
 import OurProducts from "./components/OurProducts";
 import Services from "./components/Services";
 import SingleService from "./components/SingleService";
+import About from "./components/About";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -30,6 +31,7 @@ root.render(
         <Route path="/:id/order/success" element={<OrderSuccess />} />
         <Route path="/Orders" element={<Orders />} />
         <Route path="/Our-Products" element={<OurProducts />} />
+        <Route path="/About" element={<About />} />
         <Route path="/Services" element={<Services />} />
         <Route path="/Service/:id" element={<SingleService />} />
         <Route path="*" element={<NotFound />} />
