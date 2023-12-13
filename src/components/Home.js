@@ -424,7 +424,7 @@ const Home = () => {
                                         className="slider_container slider_swiper swiper-slider-container slider_direction_horizontal slider_nopagination slider_one slider_type_bg slider_nocontrols slider_nocentered slider_overflow_hidden slider_notitles slider_resize slider_swipe slider_height_auto"
                                       >
                                         <div className="slider-wrapper swiper-wrapper">
-                                          <img
+                                          <LazyLoadImage
                                             src="https://firebasestorage.googleapis.com/v0/b/njautomation-99e2a.appspot.com/o/a47l0-p3xzh.avif?alt=media&token=2d782211-0844-4db3-9ff1-6efcf361d8b7"
                                             alt="header-Img"
                                             effect="blur"
