@@ -64,7 +64,9 @@ const Home = () => {
                   >
                     <SwiperSlide>
                       <img
-                        src="https://firebasestorage.googleapis.com/v0/b/njautomation-99e2a.appspot.com/o/20220719%5B1%5D.webp?alt=media&token=b452ae8d-f0ba-4ab1-bb3e-7e2bf2d31c07"
+                        src={
+                          process.env.PUBLIC_URL + "/assets/20220719[1][1].webp"
+                        }
                         alt="herobanner"
                       />
                     </SwiperSlide>
@@ -755,7 +757,7 @@ const Home = () => {
                                         <div className="sc_icons_item sc_icons_item_linked">
                                           <div className="sc_icons_icon ">
                                             <img
-                                              src="https://www.acmecircuit.com/wp-content/uploads/2022/07/custom.svg"
+                                              src="/assets/custom[2].svg"
                                               style={{ height: "80px" }}
                                               alt="custom-svg"
                                             />
@@ -778,7 +780,7 @@ const Home = () => {
                                         <div className="sc_icons_item sc_icons_item_linked">
                                           <div className="sc_icons_icon">
                                             <img
-                                              src="https://www.acmecircuit.com/wp-content/uploads/2022/07/time-delivery.svg"
+                                              src="/assets/time-delivery[1].svg"
                                               style={{ height: "80px" }}
                                               alt="custom-svg"
                                             />
@@ -819,7 +821,7 @@ const Home = () => {
                                         <div className="sc_icons_item sc_icons_item_linked">
                                           <div className="sc_icons_icon">
                                             <img
-                                              src="https://www.acmecircuit.com/wp-content/uploads/2022/07/quality.svg"
+                                              src="/assets/quality[1].svg"
                                               style={{ height: "80px" }}
                                               alt="custom-svg"
                                             />
@@ -840,7 +842,7 @@ const Home = () => {
                                         <div className="sc_icons_item sc_icons_item_linked">
                                           <div className="sc_icons_icon">
                                             <img
-                                              src="https://www.acmecircuit.com/wp-content/uploads/2022/07/new-technology.svg"
+                                              src="/assets/new-technology[1].svg"
                                               style={{ height: "80px" }}
                                               alt="custom-svg"
                                             />
@@ -958,7 +960,7 @@ const Home = () => {
                                     >
                                       <div className="post_featured with_thumb hover_link sc_services_item_thumb">
                                         <LazyLoadImage
-                                          src="https://firebasestorage.googleapis.com/v0/b/njautomation-99e2a.appspot.com/o/6f1886097e18fbea10709a6e6037fc27.jpg?alt=media&token=d2aadb8f-4d76-4bd1-a257-50166f13bb86"
+                                          src="assets/6f1886097e18fbea10709a6e6037fc27[1].jpg"
                                           className="attachment-optima-thumb-square size-optima-thumb-square wp-post-image"
                                           alt=""
                                           effect="blur"
@@ -1001,7 +1003,7 @@ const Home = () => {
                                     >
                                       <div className="post_featured with_thumb hover_link sc_services_item_thumb">
                                         <LazyLoadImage
-                                          src="https://i.ibb.co/gjf3X7T/image.png"
+                                          src="assets/image[2].png"
                                           className="attachment-optima-thumb-square size-optima-thumb-square wp-post-image"
                                           alt=""
                                           effect="blur"
@@ -1044,7 +1046,7 @@ const Home = () => {
                                     >
                                       <div className="post_featured with_thumb hover_link sc_services_item_thumb">
                                         <LazyLoadImage
-                                          src="https://firebasestorage.googleapis.com/v0/b/njautomation-99e2a.appspot.com/o/5076f849b5ebf4c6caf3ec1fe821c638.jpg?alt=media&token=c2d8b827-612c-4b4d-be3e-c122e356a0b5"
+                                          src="assets/5076f849b5ebf4c6caf3ec1fe821c638[1].jpg"
                                           className="attachment-optima-thumb-square size-optima-thumb-square wp-post-image"
                                           alt=""
                                           effect="blur"
