@@ -132,6 +132,10 @@ const SingleProduct = () => {
                                   product._id
                                 }
                               ></link>
+                              <meta
+                                http-equiv="Cache-Control"
+                                content="public, max-age=31536000. must-revalidate"
+                              />
                             </Helmet>
                             <div className="elementor-widget-container">
                               <div

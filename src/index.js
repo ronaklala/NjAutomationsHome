@@ -17,26 +17,33 @@ import Services from "./components/Services";
 import SingleService from "./components/SingleService";
 import About from "./components/About";
 
+import { QueryClient, QueryClientProvider } from "react-query";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
+const query = new QueryClient();
+
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<App />} title="Home" />
-        <Route path="/Shop" element={<Shop />} />
-        <Route path="/product/:id" element={<SingleProduct />} />
-        <Route path="/Login" element={<Login />} />
-        <Route path="/Register" element={<Register />} />
-        <Route path="/checkout/:id" element={<Checkout />} />
-        <Route path="/:id/order/success" element={<OrderSuccess />} />
-        <Route path="/Orders" element={<Orders />} />
-        <Route path="/Our-Products" element={<OurProducts />} />
-        <Route path="/About" element={<About />} />
-        <Route path="/Services" element={<Services />} />
-        <Route path="/Service/:id" element={<SingleService />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </BrowserRouter>
+    <QueryClientProvider client={query}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<App />} title="Home" />
+          <Route path="/Shop" element={<Shop />} />
+          <Route path="/product/:id" element={<SingleProduct />} />
+          <Route path="/Login" element={<Login />} />
+          <Route path="/Register" element={<Register />} />
+          <Route path="/checkout/:id" element={<Checkout />} />
+          <Route path="/:id/order/success" element={<OrderSuccess />} />
+          <Route path="/Orders" element={<Orders />} />
+          <Route path="/Our-Products" element={<OurProducts />} />
+          <Route path="/About" element={<About />} />
+          <Route path="/Services" element={<Services />} />
+          <Route path="/Service/:id" element={<SingleService />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </QueryClientProvider>
   </React.StrictMode>
 );
 

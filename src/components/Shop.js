@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Header from "../shared/header";
 import MobileMenu from "../shared/mobilemenu";
 import Footer from "../shared/footer";
@@ -11,23 +11,22 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import Spinner from "./Spinner";
 import { Helmet } from "react-helmet";
+import { useQuery } from "react-query";
 
 const Shop = () => {
-  const [products, setProducts] = useState();
+  const getProduct = () => {
+    return axios.get(
+      "https://determined-pear-apron.cyclic.app/api/admin/getProducts"
+    );
+  };
 
-  const [loading, setLoading] = useState(true);
+  const { isLoading, isError, data } = useQuery("products", getProduct, {
+    cacheTime: 5000,
+  });
 
-  useEffect(() => {
-    axios
-      .get("https://determined-pear-apron.cyclic.app/api/admin/getProducts")
-      .then((res) => {
-        setProducts(res.data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        toast.error("Internal Server Error");
-      });
-  }, []);
+  if (isError) {
+    toast.error("Internal Server Error");
+  }
 
   const addETrimToUrl = (url) => {
     // Define the pattern to match
@@ -64,6 +63,10 @@ const Shop = () => {
           content="https://firebasestorage.googleapis.com/v0/b/njautomations-f8156.appspot.com/o/image-removebg-preview%5B1%5D.webp?alt=media&token=f624d0a0-f802-4e8e-9114-9534a862fc52"
         ></meta>
         <link rel="canonical" href="https://njautomation.in/Shop"></link>
+        <meta
+          http-equiv="Cache-Control"
+          content="public, max-age=31536000. must-revalidate"
+        />
       </Helmet>
       <div className="body_wrap">
         <div className="page_wrap">
@@ -181,14 +184,14 @@ const Shop = () => {
                                 data-settings='{"_animation":"optima-fadeinup","_animation_delay":100}'
                                 data-widget_type="trx_sc_services.default"
                               >
-                                {loading !== true ? (
+                                {isLoading !== true ? (
                                   <>
-                                    {products.length !== 0 ? (
+                                    {data.data.length !== 0 ? (
                                       <>
                                         <div className="elementor-widget-container">
                                           <div className="sc_services sc_services_unusual sc_services_featured_top">
                                             <div className="sc_services_columns_wrap sc_item_columns sc_item_posts_container sc_item_columns_3 trx_addons_columns_wrap columns_padding_bottom columns_in_single_row">
-                                              {products.map((prod, i) => (
+                                              {data.data.map((prod, i) => (
                                                 <div className="trx_addons_column-1_3">
                                                   <div className="sc_services_item sc_item_container post_container without_content with_image sc_services_item_featured_top post-951 cpt_services type-cpt_services status-publish has-post-thumbnail hentry cpt_services_group-automation">
                                                     <div className="post_featured with_thumb hover_link sc_services_item_thumb">

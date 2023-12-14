@@ -37,6 +37,10 @@ const Home = () => {
           content="https://firebasestorage.googleapis.com/v0/b/njautomations-f8156.appspot.com/o/image-removebg-preview%5B1%5D.webp?alt=media&token=f624d0a0-f802-4e8e-9114-9534a862fc52"
         ></meta>
         <link rel="canonical" href="https://njautomation.in"></link>
+        <meta
+          http-equiv="Cache-Control"
+          content="public, max-age=31536000. must-revalidate"
+        />
       </Helmet>
       <div className="page_content_wrap">
         <div className="content_wrap_fullscreen">
@@ -419,17 +423,12 @@ const Home = () => {
                                       id="controller-tools-3_sc_swiper_outer"
                                       className="slider_outer slider_swiper_outer slider_style_default slider_source_custom slider_outer_direction_horizontal slider_outer_one slider_outer_nopagination slider_outer_nocontrols slider_outer_nocentered slider_outer_overflow_hidden slider_outer_notitles slider_outer_height_auto"
                                     >
-                                      <div
-                                        id="controller-tools-3_sc_swiper"
-                                        className="slider_container slider_swiper swiper-slider-container slider_direction_horizontal slider_nopagination slider_one slider_type_bg slider_nocontrols slider_nocentered slider_overflow_hidden slider_notitles slider_resize slider_swipe slider_height_auto"
-                                      >
-                                        <div className="slider-wrapper swiper-wrapper">
-                                          <LazyLoadImage
-                                            src="https://firebasestorage.googleapis.com/v0/b/njautomation-99e2a.appspot.com/o/a47l0-p3xzh.avif?alt=media&token=2d782211-0844-4db3-9ff1-6efcf361d8b7"
-                                            alt="header-Img"
-                                            effect="blur"
-                                          />
-                                        </div>
+                                      <div className="slider-wrapper swiper-wrapper">
+                                        <LazyLoadImage
+                                          src="https://firebasestorage.googleapis.com/v0/b/njautomation-99e2a.appspot.com/o/a47l0-p3xzh.avif?alt=media&token=2d782211-0844-4db3-9ff1-6efcf361d8b7"
+                                          alt="header-Img"
+                                          effect="blur"
+                                        />
                                       </div>
                                     </div>
                                   </div>
@@ -554,7 +553,7 @@ const Home = () => {
                                                   data-ed=""
                                                   data-style="counter"
                                                 >
-                                                  0
+                                                  39
                                                 </div>
                                               </div>
                                               <div className="sc_skills_item_title">

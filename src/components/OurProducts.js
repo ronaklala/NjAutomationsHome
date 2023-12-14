@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Header from "../shared/header";
 import MobileMenu from "../shared/mobilemenu";
 import Footer from "../shared/footer";
@@ -8,26 +8,21 @@ import "react-toastify/dist/ReactToastify.css";
 import "swiper/css";
 import "swiper/css/navigation";
 import axios from "axios";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import Spinner from "./Spinner";
 import { Helmet } from "react-helmet";
+import { useQuery } from "react-query";
 
 const OurProducts = () => {
-  const [products, setProducts] = useState();
+  const getProducts = () => {
+    return axios.get(
+      "https://determined-pear-apron.cyclic.app/api/admin/getProducts"
+    );
+  };
 
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    axios
-      .get("https://determined-pear-apron.cyclic.app/api/admin/getProducts")
-      .then((res) => {
-        setProducts(res.data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        toast.error("Internal Server Error");
-      });
-  }, []);
+  const { isLoading, data } = useQuery("products", getProducts, {
+    cacheTime: 5000,
+  });
 
   const addETrimToUrl = (url) => {
     // Define the pattern to match
@@ -35,8 +30,6 @@ const OurProducts = () => {
 
     // Replace the pattern with 'upload/e_trim/v169...'
     const modifiedUrl = url.replace(pattern, "upload/e_trim/$2");
-
-    console.log(modifiedUrl);
 
     return modifiedUrl;
   };
@@ -154,14 +147,14 @@ const OurProducts = () => {
                                 data-settings='{"_animation":"optima-fadeinup","_animation_delay":100}'
                                 data-widget_type="trx_sc_services.default"
                               >
-                                {loading !== true ? (
+                                {isLoading !== true ? (
                                   <>
-                                    {products.length !== 0 ? (
+                                    {data.data.length !== 0 ? (
                                       <>
                                         <div className="elementor-widget-container">
                                           <div className="sc_services sc_services_unusual sc_services_featured_top">
                                             <div className="sc_services_columns_wrap sc_item_columns sc_item_posts_container sc_item_columns_3 trx_addons_columns_wrap columns_padding_bottom columns_in_single_row">
-                                              {products.map((prod, i) => (
+                                              {data.data.map((prod, i) => (
                                                 <div className="trx_addons_column-1_3">
                                                   <div className="sc_services_item sc_item_container post_container without_content with_image sc_services_item_featured_top post-951 cpt_services type-cpt_services status-publish has-post-thumbnail hentry cpt_services_group-automation">
                                                     <div className="post_featured with_thumb hover_link sc_services_item_thumb">
