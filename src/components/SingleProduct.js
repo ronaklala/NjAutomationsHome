@@ -1,41 +1,25 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Header from "../shared/header";
 import MobileMenu from "../shared/mobilemenu";
 import Footer from "../shared/footer";
 import { useParams } from "react-router-dom";
-import axios from "axios";
+
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { Helmet } from "react-helmet";
+import { getSingleProduct } from "./Api";
+import { useQuery } from "react-query";
+import SingleRelatedProduct from "./ChilComponents/SingleRelatedProduct";
 
 const SingleProduct = () => {
-  const params = useParams();
+  let params = useParams();
 
-  const [product, setProduct] = useState();
-
-  const [relatedProducts, setRelatedProducts] = useState();
-
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    axios
-      .get(
-        "https://determined-pear-apron.cyclic.app/api/admin/singleProduct/" +
-          params.id
-      )
-      .then((res) => {
-        console.log(res);
-        if (res.status === 200) {
-          setProduct(res.data.product);
-          setRelatedProducts(res.data.relatedProducts);
-          setLoading(false);
-        } else {
-          window.location.href = "/NotFound";
-        }
-      })
-      .catch((err) => {
-        window.location.href = "/NotFound";
-      });
-  }, [params.id]);
+  const { isLoading, data } = useQuery(
+    ["singleProduct", params.id],
+    () => getSingleProduct(params.id),
+    {
+      cacheTime: 5000,
+    }
+  );
 
   const addETrimToUrl = (url) => {
     // Define the pattern to match
@@ -95,41 +79,41 @@ const SingleProduct = () => {
                         id="controller-tools-3"
                         data-widget_type="trx_widget_slider.default"
                       >
-                        {loading ? (
+                        {isLoading ? (
                           <></>
                         ) : (
                           <>
                             <Helmet>
-                              <title>{product.name}</title>
+                              <title>{data.data.product.name}</title>
                               <meta
                                 name="description"
-                                content={product.description}
+                                content={data.data.product.description}
                               />
                               <meta name="robots" content="index,follow" />
                               <meta
                                 name="keywords"
                                 content={
                                   "PCB boards, printed circuit boards, custom PCB, electronic components, circuit board design, PCB fabrication, prototype boards, electronic projects, circuit board shop, PCB manufacturing, NJ Automation, NJAutomations," +
-                                  product.name
+                                  data.data.product.name
                                 }
                               ></meta>
                               <meta
                                 property="og:title"
-                                content={product.name}
+                                content={data.data.product.name}
                               ></meta>
                               <meta
                                 property="og:description"
-                                content={product.description}
+                                content={data.data.product.description}
                               ></meta>
                               <meta
                                 property="og:image"
-                                content={product.image}
+                                content={data.data.product.image}
                               ></meta>
                               <link
                                 rel="canonical"
                                 href={
                                   "https://njautomation.in/product" +
-                                  product._id
+                                  data.data.product._id
                                 }
                               ></link>
                               <meta
@@ -171,7 +155,9 @@ const SingleProduct = () => {
                                             objectFit: "cover",
                                             background:
                                               "url(" +
-                                              addETrimToUrl(product.image) +
+                                              addETrimToUrl(
+                                                data.data.product.image
+                                              ) +
                                               ")",
                                             backgroundRepeat: "no-repeat",
                                             backgroundPosition: "center",
@@ -194,7 +180,7 @@ const SingleProduct = () => {
                       </div>
                     </div>
                   </div>
-                  {loading ? (
+                  {isLoading ? (
                     <></>
                   ) : (
                     <>
@@ -219,7 +205,7 @@ const SingleProduct = () => {
                                     marginTop: "15px",
                                   }}
                                 >
-                                  {product.name}
+                                  {data.data.product.name}
                                 </h1>
                                 <br />
                                 <p
@@ -236,7 +222,7 @@ const SingleProduct = () => {
                                         <span className="woocommerce-Price-currencySymbol">
                                           Rs{" "}
                                         </span>
-                                        {product.price}
+                                        {data.data.product.price}
                                       </s>
                                     </bdi>
                                   </span>{" "}
@@ -246,13 +232,13 @@ const SingleProduct = () => {
                                       <span className="woocommerce-Price-currencySymbol">
                                         Rs{" "}
                                       </span>
-                                      {product.disc_price}
+                                      {data.data.product.disc_price}
                                     </bdi>
                                   </span>
                                 </p>
 
                                 <div class="product_meta">
-                                  {parseInt(product.qty) !== 0 ? (
+                                  {parseInt(data.data.product.qty) !== 0 ? (
                                     <>
                                       <span
                                         class="product_id"
@@ -276,7 +262,8 @@ const SingleProduct = () => {
 
                                 <div class="product_meta">
                                   <span class="product_id">
-                                    Product ID: <span>{product._id}</span>
+                                    Product ID:{" "}
+                                    <span>{data.data.product._id}</span>
                                   </span>
                                 </div>
                                 <br />
@@ -287,7 +274,7 @@ const SingleProduct = () => {
                                     fontWeight: "bold",
                                   }}
                                 >
-                                  {product.description}
+                                  {data.data.product.description}
                                 </p>
                               </div>
                             </div>
@@ -336,7 +323,7 @@ const SingleProduct = () => {
                             </div>
                           </div>
                           <br />
-                          {parseInt(product.qty) !== 0 ? (
+                          {parseInt(data.data.product.qty) !== 0 ? (
                             <>
                               <div
                                 className="elementor-element elementor-element-6ba1525 sc_fly_static elementor-widget elementor-widget-trx_sc_button trx_addons_parallax_layers_inited trx_addons_parallax_blocks_inited"
@@ -347,8 +334,10 @@ const SingleProduct = () => {
                                 <div className="elementor-widget-container">
                                   <div className="sc_item_button sc_button_wrap">
                                     <a
-                                      href={"/checkout/" + product._id}
-                                      className="sc_button sc_button_decoration sc_button_size_normal sc_button_icon_left"
+                                      href={
+                                        "/checkout/" + data.data.product._id
+                                      }
+                                      className="sc_button"
                                     >
                                       <span className="sc_button_text">
                                         <span className="sc_button_title">
@@ -446,94 +435,22 @@ const SingleProduct = () => {
                                   data-settings='{"_animation":"optima-fadeinup","_animation_delay":100}'
                                   data-widget_type="trx_sc_services.default"
                                 >
-                                  {loading ? (
+                                  {isLoading ? (
                                     <></>
                                   ) : (
                                     <>
                                       <div className="elementor-widget-container">
                                         <div className="sc_services sc_services_unusual sc_services_featured_top">
                                           <div className="sc_services_columns_wrap sc_item_columns sc_item_posts_container sc_item_columns_3 trx_addons_columns_wrap columns_padding_bottom columns_in_single_row">
-                                            {relatedProducts.map((r, i) => (
-                                              <>
-                                                <div className="trx_addons_column-1_3">
-                                                  <div
-                                                    data-post-id={951}
-                                                    className="sc_services_item sc_item_container post_container without_content with_image sc_services_item_featured_top post-951 cpt_services type-cpt_services status-publish has-post-thumbnail hentry cpt_services_group-automation"
-                                                  >
-                                                    <div className="post_featured with_thumb hover_link sc_services_item_thumb">
-                                                      <img
-                                                        loading="lazy"
-                                                        width={890}
-                                                        height={664}
-                                                        src={addETrimToUrl(
-                                                          r.image
-                                                        )}
-                                                        className="attachment-optima-thumb-square size-optima-thumb-square wp-post-image"
-                                                        alt=""
-                                                        decoding="async"
-                                                      />
-                                                      <div className="mask" />
-                                                    </div>
-                                                    <div className="sc_services_item_info">
-                                                      <div className="sc_services_item_header">
-                                                        <div class="post_data_inner">
-                                                          <div class="post_header entry-header">
-                                                            <h4 class="woocommerce-loop-product__title">
-                                                              <a
-                                                                href={
-                                                                  "/product/" +
-                                                                  r._id
-                                                                }
-                                                              >
-                                                                {r.name}
-                                                              </a>
-                                                            </h4>{" "}
-                                                          </div>
-                                                          <div class="price_wrap">
-                                                            <span class="price">
-                                                              <span class="woocommerce-Price-amount amount">
-                                                                <bdi>
-                                                                  <s>
-                                                                    <span class="woocommerce-Price-currencySymbol">
-                                                                      ₹
-                                                                    </span>
-                                                                    {r.price}
-                                                                  </s>
-                                                                </bdi>
-                                                              </span>{" "}
-                                                              –{" "}
-                                                              <span class="woocommerce-Price-amount amount">
-                                                                <bdi>
-                                                                  <span class="woocommerce-Price-currencySymbol">
-                                                                    ₹
-                                                                  </span>
-                                                                  {r.disc_price}
-                                                                </bdi>
-                                                              </span>
-                                                            </span>
-                                                          </div>
-                                                          <a
-                                                            href={
-                                                              "/product/" +
-                                                              r._id
-                                                            }
-                                                            data-quantity="1"
-                                                            class="button product_type_variable add_to_cart_button"
-                                                            data-product_id="27614"
-                                                            data-product_sku="012"
-                                                            aria-label="Select options for “Adhesive tape”"
-                                                            aria-describedby="This product has multiple variants. The options may be chosen on the product page"
-                                                            rel="nofollow"
-                                                          >
-                                                            Buy now
-                                                          </a>{" "}
-                                                        </div>
-                                                      </div>
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                              </>
-                                            ))}
+                                            {data.data.relatedProducts.map(
+                                              (r, i) => (
+                                                <>
+                                                  <SingleRelatedProduct
+                                                    product={r}
+                                                  />
+                                                </>
+                                              )
+                                            )}
                                           </div>
                                         </div>
                                       </div>

@@ -2,9 +2,9 @@ import React from "react";
 import Footer from "../shared/footer";
 import Header from "../shared/header";
 import MobileMenu from "../shared/mobilemenu";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import services from "./mock/services";
 import { Helmet } from "react-helmet";
+import SingleService from "./ChilComponents/SingleService";
 
 const Services = () => {
   return (
@@ -112,58 +112,7 @@ const Services = () => {
                           <div className="sc_services_columns_wrap sc_item_columns sc_item_posts_container sc_item_columns_3 trx_addons_columns_wrap columns_padding_bottom columns_in_single_row">
                             {services.map((s) => (
                               <>
-                                <div
-                                  className="trx_addons_column-1_3"
-                                  style={{ marginTop: "15px" }}
-                                >
-                                  <div
-                                    data-post-id={951}
-                                    className="sc_services_item sc_item_container post_container without_content with_image sc_services_item_featured_top post-951 cpt_services type-cpt_services status-publish has-post-thumbnail hentry cpt_services_group-automation"
-                                  >
-                                    <div
-                                      className="post_featured with_thumb hover_link sc_services_item_thumb"
-                                      style={{
-                                        display: "flex",
-                                        justifyContent: "center",
-                                      }}
-                                    >
-                                      <LazyLoadImage
-                                        src={s.img}
-                                        className="attachment-optima-thumb-square size-optima-thumb-square wp-post-image"
-                                        alt=""
-                                        effect="blur"
-                                      />
-                                      <div className="mask" />
-                                    </div>
-                                    <div className="sc_services_item_info">
-                                      <div className="sc_services_item_header">
-                                        <div className="sc_services_item_title_wrap">
-                                          <h4 className="sc_services_item_title entry-title">
-                                            <a href={"/Service/" + s.id}>
-                                              <span className="sc_services_item_number">
-                                                {s.id}
-                                              </span>
-                                              <span className="sc_services_item_title_text">
-                                                {s.name}
-                                              </span>
-                                            </a>
-                                          </h4>
-                                          <div className="sc_services_item_button sc_item_button">
-                                            <a
-                                              href={"/Service/" + s.id}
-                                              className="sc_services_item_more_link"
-                                            >
-                                              <span className="link_text">
-                                                Read More
-                                              </span>
-                                              <span className="link_icon" />
-                                            </a>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
+                                <SingleService service={s} />
                               </>
                             ))}
                           </div>

@@ -1,53 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Header from "../shared/header";
 import MobileMenu from "../shared/mobilemenu";
 import Footer from "../shared/footer";
-import axios from "axios";
-import { toast } from "react-toastify";
-import moment from "moment/moment";
 import "react-lazy-load-image-component/src/effects/blur.css";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import Spinner from "./Spinner";
 import { Helmet } from "react-helmet";
+import SingleOrder from "./ChilComponents/SingleOrder";
+import { getOrders } from "./Api";
+import { useQuery } from "react-query";
 
 const Orders = () => {
-  const [orders, setOrders] = useState();
-
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    if (localStorage.getItem("user") === null) {
-      window.location.href = "/login";
-    } else {
-      const userdata = JSON.parse(localStorage.getItem("user"));
-      const userId = userdata._id;
-      if (userId !== "") {
-        axios
-          .get(
-            "https://determined-pear-apron.cyclic.app/api/user/orders/" + userId
-          )
-          .then((res) => {
-            setOrders(res.data);
-            setLoading(false);
-          })
-          .catch((err) => {
-            toast.error("Internal Server Error");
-          });
-      }
-    }
-  }, []);
-
-  const addETrimToUrl = (url) => {
-    // Define the pattern to match
-    const pattern = /(upload\/)(v\d+)/;
-
-    // Replace the pattern with 'upload/e_trim/v169...'
-    const modifiedUrl = url.replace(pattern, "upload/e_trim/$2");
-
-    console.log(modifiedUrl);
-
-    return modifiedUrl;
-  };
+  const { isLoading, data } = useQuery("orders", getOrders, {
+    cacheTime: 5000,
+  });
 
   return (
     <>
@@ -109,9 +74,9 @@ const Orders = () => {
                         className="posts_container band_wrap band_1 inited_open_full_post"
                         style={{ width: "100%" }}
                       >
-                        {!loading ? (
+                        {!isLoading ? (
                           <>
-                            {orders.length === 0 ? (
+                            {data.data.length === 0 ? (
                               <>
                                 <h1 style={{ fontSize: "42px" }}>
                                   No Orders Found
@@ -119,62 +84,9 @@ const Orders = () => {
                               </>
                             ) : (
                               <>
-                                {orders.map((o, i) => (
+                                {data.data.map((o, i) => (
                                   <>
-                                    <article
-                                      id="post-2588"
-                                      data-post-id={2588}
-                                      className="post_item post_item_container post_layout_band post_format_standard post-2588 post type-post status-publish format-standard has-post-thumbnail hentry category-factory tag-engineering tag-steel"
-                                    >
-                                      <div
-                                        className="post_featured with_thumb hover_link post_featured_bg"
-                                        data-ratio="1:1"
-                                      >
-                                        <LazyLoadImage
-                                          alt={o.productDetails[0].image}
-                                          effect="blur"
-                                          src={addETrimToUrl(
-                                            o.productDetails[0].image
-                                          )}
-                                          style={{ maxHeight: "250px" }}
-                                        />
-                                        <span className="post_thumb post_thumb_bg bg_in optima_inline_1144827720" />{" "}
-                                        <div className="mask" />
-                                      </div>
-                                      <div className="post_content_wrap">
-                                        {" "}
-                                        <div className="post_header entry-header">
-                                          <div className="post_category">
-                                            <div className="post_meta">
-                                              <span className="post_meta_item post_categories">
-                                                <a href="#/" rel="category tag">
-                                                  {o.status}
-                                                </a>
-                                              </span>
-                                            </div>{" "}
-                                          </div>
-                                          <h4 className="post_title entry-title">
-                                            {o.productDetails[0].name}
-                                          </h4>{" "}
-                                        </div>
-                                        <div className="post_content entry-content">
-                                          <div className="post_content_inner">
-                                            {o.address}
-                                          </div>{" "}
-                                        </div>
-                                        <div className="post_meta">
-                                          <span className="post_meta_item post_date">
-                                            Ordered on{" "}
-                                            {moment(o.createdAt).format("LLL")}
-                                          </span>
-                                        </div>{" "}
-                                        <div className="post_meta">
-                                          <span className="post_meta_item post_date">
-                                            Quantity Ordered: {o.qty}
-                                          </span>
-                                        </div>{" "}
-                                      </div>
-                                    </article>
+                                    <SingleOrder order={o} />
                                   </>
                                 ))}
                               </>

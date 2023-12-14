@@ -1,4 +1,3 @@
-import axios from "axios";
 import React, { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "./css/login.css";
@@ -6,6 +5,7 @@ import Spinner from "./Spinner";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { Helmet } from "react-helmet";
+import { useRegister } from "./Api";
 
 const Register = () => {
   const [user, setUesr] = useState({
@@ -16,7 +16,7 @@ const Register = () => {
     cp: "",
   });
 
-  const [loading, setLoading] = useState(false);
+  const { mutate: registerUser, isLoading } = useRegister();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -41,25 +41,7 @@ const Register = () => {
     } else if (user.password !== user.cp) {
       toast.error("Passwords Do Not Match");
     } else {
-      setLoading(true);
-      axios
-        .post(
-          "https://determined-pear-apron.cyclic.app/api/user/register_uesr",
-          user
-        )
-        .then((res) => {
-          if (res.status === 200) {
-            setLoading(false);
-            toast.success("User Registered Successfully");
-            setTimeout(() => {
-              window.location.href = "/Login";
-            }, 1000);
-          }
-        })
-        .catch((err) => {
-          setLoading(false);
-          toast.error("Internal Server Erorr");
-        });
+      registerUser(user);
     }
   };
 
@@ -165,7 +147,7 @@ const Register = () => {
               />
               <i className="zmdi zmdi-lock" />
               <button onClick={handleSubmit} style={{ margin: "0" }}>
-                {!loading ? (
+                {!isLoading ? (
                   <>
                     {" "}
                     Register

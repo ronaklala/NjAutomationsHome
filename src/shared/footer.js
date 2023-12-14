@@ -205,116 +205,116 @@ const Footer = () => {
               </div>
             </div>
           </section>
-          <section
-            className="elementor-section elementor-top-section elementor-element elementor-element-48606658 sc_layouts_row sc_layouts_row_type_compact scheme_dark elementor-section-boxed elementor-section-height-default elementor-section-height-default sc_fly_static"
-            data-id={48606658}
-            data-element_type="section"
-            data-settings='{"background_background":"classic"}'
-          >
-            <div className="elementor-container elementor-column-gap-extended">
-              <div
-                className="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-79182abe sc_layouts_column_align_center sc_layouts_column sc_inner_width_none sc_content_align_inherit sc_layouts_column_icons_position_left sc_fly_static"
-                data-id="79182abe"
-                data-element_type="column"
-              >
-                <div className="elementor-widget-wrap elementor-element-populated">
-                  <div
-                    className="sc_layouts_item elementor-element elementor-element-6bf25c56 sc_layouts_hide_on_mobile sc_fly_static elementor-widget elementor-widget-spacer"
-                    data-id="6bf25c56"
-                    data-element_type="widget"
-                    data-widget_type="spacer.default"
-                  >
-                    <div className="elementor-widget-container">
-                      <div className="elementor-spacer">
-                        <div className="elementor-spacer-inner" />
+          {/* <section
+              className="elementor-section elementor-top-section elementor-element elementor-element-48606658 sc_layouts_row sc_layouts_row_type_compact scheme_dark elementor-section-boxed elementor-section-height-default elementor-section-height-default sc_fly_static"
+              data-id={48606658}
+              data-element_type="section"
+              data-settings='{"background_background":"classic"}'
+            >
+              <div className="elementor-container elementor-column-gap-extended">
+                <div
+                  className="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-79182abe sc_layouts_column_align_center sc_layouts_column sc_inner_width_none sc_content_align_inherit sc_layouts_column_icons_position_left sc_fly_static"
+                  data-id="79182abe"
+                  data-element_type="column"
+                >
+                  <div className="elementor-widget-wrap elementor-element-populated">
+                    <div
+                      className="sc_layouts_item elementor-element elementor-element-6bf25c56 sc_layouts_hide_on_mobile sc_fly_static elementor-widget elementor-widget-spacer"
+                      data-id="6bf25c56"
+                      data-element_type="widget"
+                      data-widget_type="spacer.default"
+                    >
+                      <div className="elementor-widget-container">
+                        <div className="elementor-spacer">
+                          <div className="elementor-spacer-inner" />
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div
-                    className="sc_layouts_item elementor-element elementor-element-4d6b5de6 sc_fly_static elementor-widget elementor-widget-trx_sc_socials"
-                    data-id="4d6b5de6"
-                    data-element_type="widget"
-                    data-widget_type="trx_sc_socials.default"
-                  >
-                    <div className="elementor-widget-container">
-                      <div className="sc_socials sc_socials_default sc_align_none">
-                        <div className="socials_wrap sc_item_content">
-                          <a
-                            target="_blank"
-                            rel="noreferrer"
-                            href="https://www.facebook.com/AncoraThemes/"
-                            className="social_item social_item_style_icons sc_icon_type_icons social_item_type_icons"
-                          >
-                            <span
-                              className="social_icon social_icon_facebook-1"
-                              style={{
-                                display: "flex",
-                                justifyContent: "center",
-                                alignItems: "center",
-                              }}
+                    <div
+                      className="sc_layouts_item elementor-element elementor-element-4d6b5de6 sc_fly_static elementor-widget elementor-widget-trx_sc_socials"
+                      data-id="4d6b5de6"
+                      data-element_type="widget"
+                      data-widget_type="trx_sc_socials.default"
+                    >
+                      <div className="elementor-widget-container">
+                        <div className="sc_socials sc_socials_default sc_align_none">
+                          <div className="socials_wrap sc_item_content">
+                            <a
+                              target="_blank"
+                              rel="noreferrer"
+                              href="https://www.facebook.com/AncoraThemes/"
+                              className="social_item social_item_style_icons sc_icon_type_icons social_item_type_icons"
                             >
-                              <FacebookLogo size={28} />
-                            </span>
-                          </a>
-                          <a
-                            target="_blank"
-                            rel="noreferrer"
-                            href="https://twitter.com/themes_ancora"
-                            className="social_item social_item_style_icons sc_icon_type_icons social_item_type_icons"
-                          >
-                            <span
-                              className="social_icon social_icon_twitter-new"
-                              style={{
-                                display: "flex",
-                                justifyContent: "center",
-                                alignItems: "center",
-                              }}
+                              <span
+                                className="social_icon social_icon_facebook-1"
+                                style={{
+                                  display: "flex",
+                                  justifyContent: "center",
+                                  alignItems: "center",
+                                }}
+                              >
+                                <FacebookLogo size={28} />
+                              </span>
+                            </a>
+                            <a
+                              target="_blank"
+                              rel="noreferrer"
+                              href="https://twitter.com/themes_ancora"
+                              className="social_item social_item_style_icons sc_icon_type_icons social_item_type_icons"
                             >
-                              <TwitterLogo size={28} />
-                            </span>
-                          </a>
-                          <a
-                            target="_blank"
-                            rel="noreferrer"
-                            href="https://dribbble.com/AncoraThemes"
-                            className="social_item social_item_style_icons sc_icon_type_icons social_item_type_icons"
-                          >
-                            <span
-                              className="social_icon"
-                              style={{
-                                display: "flex",
-                                justifyContent: "center",
-                                alignItems: "center",
-                              }}
+                              <span
+                                className="social_icon social_icon_twitter-new"
+                                style={{
+                                  display: "flex",
+                                  justifyContent: "center",
+                                  alignItems: "center",
+                                }}
+                              >
+                                <TwitterLogo size={28} />
+                              </span>
+                            </a>
+                            <a
+                              target="_blank"
+                              rel="noreferrer"
+                              href="https://dribbble.com/AncoraThemes"
+                              className="social_item social_item_style_icons sc_icon_type_icons social_item_type_icons"
                             >
-                              <WhatsappLogo size={28} />
-                            </span>
-                          </a>
-                          <a
-                            target="_blank"
-                            rel="noreferrer"
-                            href="https://www.instagram.com/ancora_themes/"
-                            className="social_item social_item_style_icons sc_icon_type_icons social_item_type_icons"
-                          >
-                            <span
-                              className="social_icon social_icon_instagram"
-                              style={{
-                                display: "flex",
-                                justifyContent: "center",
-                                alignItems: "center",
-                              }}
+                              <span
+                                className="social_icon"
+                                style={{
+                                  display: "flex",
+                                  justifyContent: "center",
+                                  alignItems: "center",
+                                }}
+                              >
+                                <WhatsappLogo size={28} />
+                              </span>
+                            </a>
+                            <a
+                              target="_blank"
+                              rel="noreferrer"
+                              href="https://www.instagram.com/ancora_themes/"
+                              className="social_item social_item_style_icons sc_icon_type_icons social_item_type_icons"
                             >
-                              <InstagramLogo size={28} />
-                            </span>
-                          </a>
+                              <span
+                                className="social_icon social_icon_instagram"
+                                style={{
+                                  display: "flex",
+                                  justifyContent: "center",
+                                  alignItems: "center",
+                                }}
+                              >
+                                <InstagramLogo size={28} />
+                              </span>
+                            </a>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </section>
+            </section> */}
           <section
             className="elementor-section elementor-top-section elementor-element elementor-element-41f49d03 sc_layouts_row sc_layouts_row_type_compact scheme_dark elementor-section-boxed elementor-section-height-default elementor-section-height-default sc_fly_static"
             data-id="41f49d03"
@@ -383,11 +383,7 @@ const Footer = () => {
                     data-widget_type="text-editor.default"
                   >
                     <div className="elementor-widget-container">
-                      <a
-                        href="https://ancorathemes.com/"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
+                      <a href="/" target="_blank" rel="noreferrer">
                         {process.env.REACT_APP_APP_NAME}
                       </a>
                       © 2023. All rights reserved.

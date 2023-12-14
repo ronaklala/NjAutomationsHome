@@ -12,6 +12,7 @@ import "./css/Home.css";
 import { Navigation, Autoplay } from "swiper/modules";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Helmet } from "react-helmet";
+import { ArrowRight } from "phosphor-react";
 
 const Home = () => {
   return (
@@ -269,27 +270,6 @@ const Home = () => {
                               </div>
                             </div>
                           </div>
-                          <div
-                            className="elementor-element elementor-element-6ba1525 sc_fly_static elementor-widget elementor-widget-trx_sc_button"
-                            data-id="6ba1525"
-                            data-element_type="widget"
-                            data-widget_type="trx_sc_button.default"
-                          >
-                            <div className="elementor-widget-container">
-                              <div className="sc_item_button sc_button_wrap">
-                                <a
-                                  href="#/"
-                                  className="sc_button sc_button_decoration sc_button_size_normal sc_button_icon_left"
-                                >
-                                  <span className="sc_button_text">
-                                    <span className="sc_button_title">
-                                      Learn more
-                                    </span>
-                                  </span>
-                                </a>
-                              </div>
-                            </div>
-                          </div>
                         </div>
                       </div>
                     </div>
@@ -533,7 +513,7 @@ const Home = () => {
                                                   data-ed=""
                                                   data-style="counter"
                                                 >
-                                                  0
+                                                  25
                                                 </div>
                                               </div>
                                               <div className="sc_skills_item_title">
@@ -577,7 +557,7 @@ const Home = () => {
                                                   data-ed=""
                                                   data-style="counter"
                                                 >
-                                                  0
+                                                  3
                                                 </div>
                                               </div>
                                               <div className="sc_skills_item_title">
@@ -599,7 +579,7 @@ const Home = () => {
                                                   data-ed=""
                                                   data-style="counter"
                                                 >
-                                                  0
+                                                  2
                                                 </div>
                                               </div>
                                               <div className="sc_skills_item_title">
@@ -714,8 +694,8 @@ const Home = () => {
                                     <div className="elementor-widget-container">
                                       <div className="sc_item_button sc_button_wrap">
                                         <a
-                                          href="/Contact"
-                                          className="sc_button sc_button_decoration sc_button_size_normal sc_button_icon_left color_style_link2"
+                                          href="https://merchant.razorpay.com/policy/N9455Bmo10Euj4/contact_us"
+                                          className="sc_button"
                                         >
                                           <span className="sc_button_text">
                                             <span className="sc_button_title">
@@ -986,14 +966,10 @@ const Home = () => {
                                               </a>
                                             </h4>
                                             <div className="sc_services_item_button sc_item_button">
-                                              <a
-                                                href="/Service/01"
-                                                className="sc_services_item_more_link"
-                                              >
+                                              <a href="/Service/01">
                                                 <span className="link_text">
-                                                  Read More
+                                                  <ArrowRight size={24} />
                                                 </span>
-                                                <span className="link_icon" />
                                               </a>
                                             </div>
                                           </div>
@@ -1029,14 +1005,10 @@ const Home = () => {
                                               </a>
                                             </h4>
                                             <div className="sc_services_item_button sc_item_button">
-                                              <a
-                                                href="/Service/02"
-                                                className="sc_services_item_more_link"
-                                              >
+                                              <a href="/Service/02">
                                                 <span className="link_text">
-                                                  Read More
+                                                  <ArrowRight size={24} />
                                                 </span>
-                                                <span className="link_icon" />
                                               </a>
                                             </div>
                                           </div>
@@ -1072,14 +1044,10 @@ const Home = () => {
                                               </a>
                                             </h4>
                                             <div className="sc_services_item_button sc_item_button">
-                                              <a
-                                                href={"/Service/03"}
-                                                className="sc_services_item_more_link"
-                                              >
+                                              <a href={"/Service/03"}>
                                                 <span className="link_text">
-                                                  Read More
+                                                  <ArrowRight size={24} />
                                                 </span>
-                                                <span className="link_icon" />
                                               </a>
                                             </div>
                                           </div>
@@ -1111,10 +1079,7 @@ const Home = () => {
                           >
                             <div className="elementor-widget-container">
                               <div className="sc_item_button sc_button_wrap sc_align_center">
-                                <a
-                                  href="/Services"
-                                  className="sc_button sc_button_decoration sc_button_size_normal sc_button_icon_left"
-                                >
+                                <a href="/Services" className="sc_button">
                                   <span className="sc_button_text">
                                     <span className="sc_button_title">
                                       View More

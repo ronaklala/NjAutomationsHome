@@ -1,3 +1,4 @@
+import { X } from "phosphor-react";
 import React from "react";
 import { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
@@ -37,8 +38,7 @@ const MobileMenu = () => {
               tabIndex={0}
               href="#/"
             >
-              <span className="menu_button_close_text">Close</span>
-              <span className="menu_button_close_icon" />
+              <X size={28} className="menu_button_close_text" />
             </a>
           </div>
           <div className="menu_mobile_content_wrap content_wrap">
@@ -49,18 +49,18 @@ const MobileMenu = () => {
                 itemType="https://schema.org/SiteNavigationElement"
               >
                 <ul id="menu_mobile_1655158356">
-                  <li className="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-29544">
+                  <li className="menu-item ">
                     <a href="/">
                       <span>Home</span>
                     </a>
                   </li>
-                  <li className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-17792">
+                  <li className="menu-item ">
                     <a href="/Our-Products">
                       <span>Our Products</span>
                     </a>
                   </li>
 
-                  <li className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-29547">
+                  <li className="menu-item  menu-item-29547">
                     <a href="/Shop">
                       <span>Shop</span>
                     </a>
@@ -68,12 +68,12 @@ const MobileMenu = () => {
 
                   {user ? (
                     <>
-                      <li className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-29546">
+                      <li className="menu-item  menu-item-29546">
                         <a href="/Orders">
                           <span>Orders</span>
                         </a>
                       </li>
-                      <li className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-29546">
+                      <li className="menu-item  menu-item-29546">
                         <a href="#/" onClick={handleLogout}>
                           <span>Logout</span>
                         </a>
@@ -81,7 +81,7 @@ const MobileMenu = () => {
                     </>
                   ) : (
                     <>
-                      <li className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-29546">
+                      <li className="menu-item menu-item-29546">
                         <a href="/Login">
                           <span>Login</span>
                         </a>

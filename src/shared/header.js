@@ -1,3 +1,4 @@
+import { List } from "phosphor-react";
 import React, { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 
@@ -326,7 +327,7 @@ const Header = () => {
                           className="sc_layouts_item_link sc_layouts_iconed_text_link"
                           href="#/"
                         >
-                          <span className="sc_layouts_item_icon sc_layouts_iconed_text_icon trx_addons_icon-menu"></span>
+                          <List size={24} color="black" />
                         </a>
                       </div>
                     </div>
