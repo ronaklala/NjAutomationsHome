@@ -72,6 +72,8 @@ const Home = () => {
                           process.env.PUBLIC_URL + "/assets/20220719[1][1].webp"
                         }
                         alt="herobanner"
+                        height={80}
+                        width={140}
                       />
                     </SwiperSlide>
                   </Swiper>
@@ -757,8 +759,9 @@ const Home = () => {
                                           <div className="sc_icons_icon ">
                                             <img
                                               src="/assets/custom[2].svg"
-                                              style={{ height: "80px" }}
                                               alt="custom-svg"
+                                              height={30}
+                                              width={60}
                                             />
                                           </div>
                                           <div className="sc_icons_item_details">
@@ -780,8 +783,9 @@ const Home = () => {
                                           <div className="sc_icons_icon">
                                             <img
                                               src="/assets/time-delivery[1].svg"
-                                              style={{ height: "80px" }}
                                               alt="custom-svg"
+                                              height={30}
+                                              width={60}
                                             />
                                           </div>
                                           <div className="sc_icons_item_details">
@@ -821,7 +825,8 @@ const Home = () => {
                                           <div className="sc_icons_icon">
                                             <img
                                               src="/assets/quality[1].svg"
-                                              style={{ height: "80px" }}
+                                              height={30}
+                                              width={60}
                                               alt="custom-svg"
                                             />
                                           </div>
@@ -842,7 +847,8 @@ const Home = () => {
                                           <div className="sc_icons_icon">
                                             <img
                                               src="/assets/new-technology[1].svg"
-                                              style={{ height: "80px" }}
+                                              height={30}
+                                              width={60}
                                               alt="custom-svg"
                                             />
                                           </div>
