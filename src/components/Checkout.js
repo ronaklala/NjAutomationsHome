@@ -5,10 +5,19 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import Footer from "../shared/footer";
+import { load } from "@cashfreepayments/cashfree-js";
 import { Helmet } from "react-helmet";
 
 const Checkout = () => {
   const [user, setUesr] = useState();
+
+  let cashfree;
+  var initializeSDK = async function () {
+    cashfree = await load({
+      mode: "sandbox",
+    });
+  };
+  initializeSDK();
 
   const [order, setOrder] = useState({
     name: "",
@@ -65,6 +74,8 @@ const Checkout = () => {
   };
 
   const handleSubmit = () => {
+    const random = "order_" + Math.floor(Math.random() * 1000000000);
+
     order.email = user.email;
     order.name = user.name;
     order.phno = user.phno;
@@ -77,17 +88,17 @@ const Checkout = () => {
       let total;
 
       if (order.qty >= product.offerQty) {
-        let price = product.disc_price * order.qty * 100;
+        let price = product.disc_price * order.qty;
         let percent = product.offerQty / 100;
         let discount = price * percent;
         total = price - discount;
       } else {
-        total = product.disc_price * order.qty * 100;
+        total = product.disc_price * order.qty;
       }
 
       var options = {
         key: process.env.REACT_APP_RAZORPAYKEY,
-        amount: total,
+        amount: total * 100,
         currency: "INR",
         name: process.env.REACT_APP_APP_NAME,
         description: product.name,
@@ -373,25 +384,6 @@ const Checkout = () => {
                                         (*Order minimum of {product.offerQty}{" "}
                                         quantity to get {product.offerDisc}%
                                         Discount*)
-                                      </p>
-                                      <p className="wpgdprc-checkbox comment-form-wpgdprc">
-                                        <input
-                                          type="checkbox"
-                                          name="wpgdprc"
-                                          id="wpgdprc"
-                                          defaultValue={1}
-                                        />
-                                        <label htmlFor="wpgdprc">
-                                          I agree that my submitted data is
-                                          being &nbsp;
-                                          <a href="#/">collected and stored</a>.
-                                          <abbr
-                                            className="wpgdprc-required"
-                                            title="You need to accept this checkbox."
-                                          >
-                                            *
-                                          </abbr>
-                                        </label>
                                       </p>
                                       <p className="form-submit">
                                         <input
