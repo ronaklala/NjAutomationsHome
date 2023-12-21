@@ -19,6 +19,14 @@ const Home = () => {
     <>
       <Helmet>
         <title>Home - NJ Automation</title>
+        <meta property="og:site_name" content="NJ Automations" />
+        <meta property="og:url" content="https://njautomation.in/" />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:image"
+          content="https://firebasestorage.googleapis.com/v0/b/njautomations-f8156.appspot.com/o/image-removebg-preview%5B1%5D.webp?alt=media&token=f624d0a0-f802-4e8e-9114-9534a862fc52"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="description"
           content="Explore a wide range of high-quality PCB boards for your electronics projects at our e-commerce store. Find custom-designed printed circuit boards (PCBs) in various sizes and specifications. From prototype to production, we offer reliable and efficient solutions for electronic enthusiasts, hobbyists, and businesses. Shop now for top-notch PCBs to bring your innovations to life."

@@ -9,13 +9,21 @@ import { Helmet } from "react-helmet";
 import { getSingleProduct } from "./Api";
 import { useQuery } from "react-query";
 import SingleRelatedProduct from "./ChilComponents/SingleRelatedProduct";
+import Spinner from "./Spinner";
+import { DownloadSimple } from "phosphor-react";
 
 const SingleProduct = () => {
   let params = useParams();
 
   const { isLoading, data } = useQuery(
     ["singleProduct", params.id],
+
     () => getSingleProduct(params.id),
+    {
+      onError: (err) => {
+        window.location.href = "/Not-Found";
+      },
+    },
     {
       cacheTime: 5000,
     }
@@ -80,7 +88,12 @@ const SingleProduct = () => {
                         data-widget_type="trx_widget_slider.default"
                       >
                         {isLoading ? (
-                          <></>
+                          <>
+                            {" "}
+                            <Spinner class="orange" />
+                            <br />
+                            <br />
+                          </>
                         ) : (
                           <>
                             <Helmet>
@@ -88,6 +101,26 @@ const SingleProduct = () => {
                               <meta
                                 name="description"
                                 content={data.data.product.description}
+                              />
+                              <meta
+                                property="og:site_name"
+                                content="NJ Automations"
+                              />
+                              <meta
+                                property="og:url"
+                                content={
+                                  "https://njautomation.in/product" +
+                                  data.data.product._id
+                                }
+                              />
+                              <meta property="og:type" content="website" />
+                              <meta
+                                property="og:image"
+                                content="https://firebasestorage.googleapis.com/v0/b/njautomations-f8156.appspot.com/o/image-removebg-preview%5B1%5D.webp?alt=media&token=f624d0a0-f802-4e8e-9114-9534a862fc52"
+                              />
+                              <meta
+                                name="twitter:card"
+                                content="summary_large_image"
                               />
                               <meta name="robots" content="index,follow" />
                               <meta
@@ -323,6 +356,48 @@ const SingleProduct = () => {
                             </div>
                           </div>
                           <br />
+                          {data.data.product.detail !== undefined ? (
+                            <>
+                              {" "}
+                              <div
+                                className="elementor-element elementor-element-6ba1525 sc_fly_static elementor-widget elementor-widget-trx_sc_button trx_addons_parallax_layers_inited trx_addons_parallax_blocks_inited"
+                                data-id="6ba1525"
+                                data-element_type="widget"
+                                data-widget_type="trx_sc_button.default"
+                              >
+                                <div className="elementor-widget-container">
+                                  <div className="sc_item_button sc_button_wrap">
+                                    <a
+                                      href={data.data.product.detail}
+                                      download={data.data.product.detail}
+                                      target="_blank"
+                                      className="button"
+                                    >
+                                      <span className="sc_button_text">
+                                        <span
+                                          className="sc_button_title"
+                                          style={{
+                                            display: "flex",
+                                            alignItems: "center",
+                                          }}
+                                        >
+                                          View Brochoure &nbsp;&nbsp;&nbsp;
+                                          <DownloadSimple size={20} />
+                                        </span>
+                                      </span>
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                              <br />
+                              <br />
+                              <br />
+                              <br />
+                            </>
+                          ) : (
+                            <></>
+                          )}
+
                           {parseInt(data.data.product.qty) !== 0 ? (
                             <>
                               <div
@@ -436,7 +511,12 @@ const SingleProduct = () => {
                                   data-widget_type="trx_sc_services.default"
                                 >
                                   {isLoading ? (
-                                    <></>
+                                    <>
+                                      {" "}
+                                      <Spinner class="orange" />
+                                      <br />
+                                      <br />
+                                    </>
                                   ) : (
                                     <>
                                       <div className="elementor-widget-container">

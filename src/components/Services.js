@@ -11,6 +11,14 @@ const Services = () => {
     <>
       <Helmet>
         <title>Our Services</title>
+        <meta property="og:site_name" content="NJ Automations" />
+        <meta property="og:url" content="https://njautomation.in/Services" />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:image"
+          content="https://firebasestorage.googleapis.com/v0/b/njautomations-f8156.appspot.com/o/image-removebg-preview%5B1%5D.webp?alt=media&token=f624d0a0-f802-4e8e-9114-9534a862fc52"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="description"
           content="Explore our comprehensive PCB services at Nj Automations. We specialize in PCB Assembly, Programming and Testing, Electronic Component Supply, Electronic Cable Assembly, PCB Layout, and PCB Fabrication. Trust us for end-to-end solutions, ensuring top-notch quality and precision in every electronic component. Discover the excellence of our services and elevate your electronic projects with Nj Automations."

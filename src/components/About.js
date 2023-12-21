@@ -11,6 +11,14 @@ const About = () => {
     <>
       <Helmet>
         <title>About - NJ Automation</title>
+        <meta property="og:site_name" content="NJ Automations" />
+        <meta property="og:url" content="https://njautomation.in/About" />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:image"
+          content="https://firebasestorage.googleapis.com/v0/b/njautomations-f8156.appspot.com/o/image-removebg-preview%5B1%5D.webp?alt=media&token=f624d0a0-f802-4e8e-9114-9534a862fc52"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="description"
           content="Discover excellence in PCB solutions at Nj Automations. As a leading provider in the electronics industry, we specialize in manufacturing and selling high-quality printed circuit boards. Learn about our commitment to precision, innovation, and customer satisfaction. Explore our journey, expertise, and dedication to delivering cutting-edge PCB solutions for a connected world. Choose reliability, choose Nj Automations."
