@@ -15,8 +15,8 @@ const services = [
   {
     id: "02",
     name: "PROGRAMMING AND TESTING",
-    desc: "<p>NJ Automations excels in PCB programming and testing, ensuring PCB performance and reliability. With precision customization and rigorous testing, they guarantee high standards of functionality and safety. Quick issue resolution, competitive pricing, and continuous customer support make them a top choice for efficient and cost-effective services. Their emphasis on innovation, quality, and customer satisfaction sets them apart.</p>",
-    img: "https://i.ibb.co/gjf3X7T/image.png",
+    desc: "<p>NJ Automations specializes in programming and testing Printed circuit boards (PCBs). With cutting-edge equipment and skilled technicians, we customize PCBs to meet clients' device needs. Rigorous testing, including functional, in-circuit, and environmental tests, ensures high standards of performance, durability, and safety. Our experienced team ensures swift issue resolution, short turnaround times, and competitive pricing. Innovation, quality, speed, and excellent customer support define our PCB programming and testing services, making us the ideal choice for reliable and cost-effective solutions.</p>",
+    img: "https://firebasestorage.googleapis.com/v0/b/njautomations-f8156.appspot.com/o/pcb-testing.webp?alt=media&token=8df2d6ee-7722-44f1-be8f-556ada0a2a84",
   },
   {
     id: "03",
@@ -28,14 +28,14 @@ const services = [
     id: "04",
     name: "PCB FABRICATION",
     desc: "<p>NJ Automations is at the forefront of electronic circuit board fabrication, with a strong focus on innovation, precision, and customer satisfaction. They employ advanced technology and manufacturing processes to deliver high-quality PCBs efficiently. What truly distinguishes us is commitment to tailoring solutions to meet the specific needs of each client. With competitive pricing, NJ Automations ensures cost-effectiveness without compromising on quality. Their consistent track record of surpassing client expectations solidifies their position as the top choice for electronic circuit board fabrication, making them an industry leader in this field.</p>",
-    img: "https://firebasestorage.googleapis.com/v0/b/njautomation-99e2a.appspot.com/o/pcb%20layout.webp?alt=media&token=af7ea67e-1470-405f-bd84-c39b9d63fd07",
+    img: "https://firebasestorage.googleapis.com/v0/b/njautomations-f8156.appspot.com/o/FABRICATION.webp?alt=media&token=323ce357-93eb-4ac5-822a-38524bc0657b",
   },
 
   {
     id: "05",
     name: "ELECTRONIC BOX BUILD",
     desc: "<p>NJ Automations, a prominent electronic box build exporter, is a key player in organizing electronic components within protective enclosures. Their expertise is vital, especially in managing the intricacies of modern electronics, ensuring safety, compliance, efficiency, and long-term reliability. Proper wire management is fundamental for maintaining the durability and optimal performance of electronic systems. NJ Automations is a trusted and essential partner in this critical endeavour.</p>",
-    img: "https://firebasestorage.googleapis.com/v0/b/njautomations-f8156.appspot.com/o/image%5B1%5D.webp?alt=media&token=8189cad4-7d0f-4ef0-bd17-1a3b97678036",
+    img: "https://firebasestorage.googleapis.com/v0/b/njautomations-f8156.appspot.com/o/box-build.webp?alt=media&token=b1664fba-5f9f-4bc7-95f8-eca4da3e3679",
   },
   {
     id: "06",
@@ -70,7 +70,7 @@ const services = [
 
         <p>Protect your electronic investments with our conformal coating service. At NJ Automations, we're dedicated to ensuring the longevity and reliability of your electronic circuit boards. Trust us to safeguard your technology from the elements.</p>
       `,
-    img: "https://firebasestorage.googleapis.com/v0/b/njautomation-99e2a.appspot.com/o/pcb%20layout%20design.jpg?alt=media&token=9566287e-5c9f-4b65-b61c-ddce634702e8",
+    img: "https://firebasestorage.googleapis.com/v0/b/njautomations-f8156.appspot.com/o/coating-service.webp?alt=media&token=db1e91fa-9594-4a55-9030-78e1db4d2f06",
   },
   {
     id: "08",
@@ -85,7 +85,7 @@ const services = [
 
    <p>At NJ Automations, we're proud to offer cutting-edge electronic overlay services to take your products to the next level. Our overlay solutions are designed to provide advanced functionality, improved aesthetics, and unmatched quality for a wide range of applications</p>
       `,
-    img: "https://firebasestorage.googleapis.com/v0/b/njautomation-99e2a.appspot.com/o/images.jpeg?alt=media&token=d174c442-724d-4320-9d46-c255ef1c5184",
+    img: "https://firebasestorage.googleapis.com/v0/b/njautomations-f8156.appspot.com/o/pcb-overlay.webp?alt=media&token=294f7643-b2e6-4d51-8b26-924f052a8b76",
   },
 
   {
@@ -99,9 +99,20 @@ const services = [
   {
     id: "10",
     name: "ELECTRONIC CABLE ASSEMBLY",
-    desc: `<p>NJ Automations' electronic cable assembly services are essential for reliable, safe, and efficient electrical connections. These cables, acting as conduits for signals and power, offer customization options and emphasize high-quality components. NJ Automations ensures the utmost reliability, quality assurance, and safety, delivering tailored solutions at competitive prices for diverse applications, highlighting their commitment to excellence in electronic components.</p>
+    desc: `<p>Electronic cables serve as bridges for electrical signals, comprising conductive wires encased in insulating material. These cables transmit power or data in devices and industries, such as power transmission in appliances and data transfer in networking. The conductive wires, often made of materials like copper, enable the flow of electricity or data, while insulation prevents interference and short circuits.</p>
+    <br />
+    <p>Key Benefits:</p>
+    <br />
+    <p><b>Reliability: </b>Ensures consistent and stable electrical connections.</p>
+    <p><b>Quality Assurance: </b>Demonstrates a commitment to high-quality components and assembly processes for durable cable assemblies.</p>
+    <p><b>Safety: </b>Insulation materials prevent electrical mishaps.</p>
+    <p><b>Efficiency: </b>Facilitates the efficient transmission of signals or power.</p>
+    <p><b>Customization: </b>Tailorable for specific uses and lengths.</p>
+
+    <br />
+    <p>In essence, our electronic cable assembly services provide high-quality, customized solutions at competitive prices, playing a crucial role in reliable, safe, and efficient electrical and data connections across diverse applications.</p>
           `,
-    img: "https://wevolver-project-images.s3.us-west-1.amazonaws.com/0.ivtnl9cd8ktrace_pcb.jpg",
+    img: "https://firebasestorage.googleapis.com/v0/b/njautomations-f8156.appspot.com/o/CABLE.webp?alt=media&token=07ea131a-bc78-4bae-9b55-10efd1eef5b1",
   },
 
   {
@@ -112,7 +123,7 @@ const services = [
         <p>NJ Automations' PCB layout services stand as a symbol of innovation, consistently meeting and surpassing industry standards while exceeding customer expectations. This dedication ensures that their electronic products remain at the forefront of cutting-edge technology.
        </p>
           `,
-    img: "https://firebasestorage.googleapis.com/v0/b/njautomation-99e2a.appspot.com/o/abstract-background-electronic-circuit-board-technological-orange-red-generative-ai_807028-57.avif?alt=media&token=a28c1c94-6643-4a8c-90ce-067dae12b45e",
+    img: "https://firebasestorage.googleapis.com/v0/b/njautomations-f8156.appspot.com/o/pcb%20layout.webp?alt=media&token=80cf3a69-1b44-4327-b298-63c204ce956d",
   },
 ];
 

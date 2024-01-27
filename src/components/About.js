@@ -95,25 +95,11 @@ const About = () => {
                                 className="widget_area sc_widget_slider"
                               >
                                 <aside className="widget widget_slider">
-                                  <div className="slider_wrap slider_engine_swiper">
-                                    <div
-                                      id="controller-tools-3_sc_swiper_outer"
-                                      className="slider_outer slider_swiper_outer slider_style_default slider_source_custom slider_outer_direction_horizontal slider_outer_one slider_outer_nopagination slider_outer_nocontrols slider_outer_nocentered slider_outer_overflow_hidden slider_outer_notitles slider_outer_height_auto"
-                                    >
-                                      <div
-                                        id="controller-tools-3_sc_swiper"
-                                        className="slider_container slider_swiper swiper-slider-container slider_direction_horizontal slider_nopagination slider_one slider_type_bg slider_nocontrols slider_nocentered slider_overflow_hidden slider_notitles slider_resize slider_swipe slider_height_auto"
-                                      >
-                                        <div className="slider-wrapper swiper-wrapper">
-                                          <LazyLoadImage
-                                            src="https://firebasestorage.googleapis.com/v0/b/njautomation-99e2a.appspot.com/o/fa8d2fe33565c3a855de7df68a942d11.jpg?alt=media&token=7ef2acb2-f44d-434c-a9a6-16cf298b51e9"
-                                            alt="header-Img"
-                                            effect="blur"
-                                          />
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
+                                  <LazyLoadImage
+                                    src="https://firebasestorage.googleapis.com/v0/b/njautomations-f8156.appspot.com/o/pcb-assembling.webp?alt=media&token=95a606b6-7594-47bd-a6b3-8fb972de8b44"
+                                    alt="header-Img"
+                                    effect="blur"
+                                  />
                                 </aside>
                               </div>
                             </div>
@@ -357,25 +343,11 @@ const About = () => {
                           className="widget_area sc_widget_slider"
                         >
                           <aside className="widget widget_slider">
-                            <div className="slider_wrap slider_engine_swiper">
-                              <div
-                                id="controller-tools-3_sc_swiper_outer"
-                                className="slider_outer slider_swiper_outer slider_style_default slider_source_custom slider_outer_direction_horizontal slider_outer_one slider_outer_nopagination slider_outer_nocontrols slider_outer_nocentered slider_outer_overflow_hidden slider_outer_notitles slider_outer_height_auto"
-                              >
-                                <div
-                                  id="controller-tools-3_sc_swiper"
-                                  className="slider_container slider_swiper swiper-slider-container slider_direction_horizontal slider_nopagination slider_one slider_type_bg slider_nocontrols slider_nocentered slider_overflow_hidden slider_notitles slider_resize slider_swipe slider_height_auto"
-                                >
-                                  <div className="slider-wrapper swiper-wrapper">
-                                    <img
-                                      src="https://firebasestorage.googleapis.com/v0/b/njautomation-99e2a.appspot.com/o/a47l0-p3xzh.avif?alt=media&token=2d782211-0844-4db3-9ff1-6efcf361d8b7"
-                                      alt="header-Img"
-                                      effect="blur"
-                                    />
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
+                            <LazyLoadImage
+                              src="https://firebasestorage.googleapis.com/v0/b/njautomations-f8156.appspot.com/o/pcb-assembly.webp?alt=media&token=17b867d6-0479-47f6-9b09-47ae58bd6841"
+                              alt="header-Img"
+                              effect="blur"
+                            />
                           </aside>
                         </div>
                       </div>

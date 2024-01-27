@@ -310,7 +310,7 @@ const Home = () => {
                                 </span>
                                 <h1 className="sc_item_title sc_title_title sc_item_title_style_default sc_item_title_tag">
                                   <span className="sc_item_title_text">
-                                    Visson
+                                    Vission
                                   </span>
                                 </h1>
                                 <div className="sc_item_descr sc_title_descr">

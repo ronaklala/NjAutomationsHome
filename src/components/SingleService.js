@@ -94,7 +94,8 @@ const SingleService = () => {
                                               display: "block",
                                               opacity: 1,
                                               cursor: "grab",
-                                              height: "450px",
+                                              height: "auto",
+                                              maxHeight: "450px",
                                             }}
                                             data-busy={0}
                                             data-ratio="522.917:468.003"
