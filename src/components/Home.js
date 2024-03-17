@@ -171,7 +171,7 @@ const Home = () => {
                                               <LazyLoadImage
                                                 src={
                                                   process.env.PUBLIC_URL +
-                                                  "/assets/ospcb.png"
+                                                  "/assets/os.png"
                                                 }
                                                 alt="header-Img"
                                                 effect="blur"
