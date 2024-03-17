@@ -31,6 +31,7 @@ root.render(
           <Route path="/" element={<App />} title="Home" />
           <Route path="/Shop" element={<Shop />} />
           <Route path="/product/:id" element={<SingleProduct />} />
+          <Route path="/product/:id/view" element={<SingleProduct />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/Register" element={<Register />} />
           <Route path="/checkout/:id" element={<Checkout />} />
