@@ -3766,7 +3766,7 @@ div#background_video iframe,div#background_video video{
     top:0;
     left:0;
     width:100%;
-    background:transparent!important
+    background:#fff !important;
 }
 .header_position_over .top_panel .sc_layouts_row[class*=scheme_]{
     -webkit-transition:background-color .3s ease;

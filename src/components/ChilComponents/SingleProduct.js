@@ -32,28 +32,24 @@ const SingleProduct = (props) => {
             <div className="sc_services_item_header">
               <div class="post_data_inner">
                 <div class="post_header entry-header">
-                  <center>
-                    <h4 class="woocommerce-loop-props.productuct__title">
-                      <a
-                        href="#"
-                        style={{
-                          display: "-webkit-box",
-                          WebkitBoxOrient: "vertical",
-                          WebkitLineClamp: "2",
-                          overflow: "hidden",
-                          textOverflow: "ellipsis",
-                        }}
-                      >
-                        {props.product.name}
-                      </a>
-                    </h4>{" "}
-                    <br />
-                    <p>
-                      {props.product.qty > 0 ? <>In Stock</> : <>Sold Out</>}
-                    </p>
-                    <br />
-                    <p>{props.product.description}</p>
-                  </center>
+                  <h4 class="woocommerce-loop-props.productuct__title">
+                    <a
+                      href={"/product/" + props.product._id + "/view"}
+                      style={{
+                        display: "-webkit-box",
+                        WebkitBoxOrient: "vertical",
+                        WebkitLineClamp: "2",
+                        overflow: "hidden",
+                        textOverflow: "ellipsis",
+                      }}
+                    >
+                      {props.product.name}
+                    </a>
+                  </h4>{" "}
+                  <br />
+                  <p>{props.product.qty > 0 ? <>In Stock</> : <>Sold Out</>}</p>
+                  <br />
+                  {/* <p>{props.product.description}</p> */}
                 </div>
               </div>
             </div>
