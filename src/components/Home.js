@@ -78,7 +78,7 @@ const Home = () => {
                     <SwiperSlide>
                       <img
                         src={
-                          process.env.PUBLIC_URL + "/assets/20220719[1][1].webp"
+                          process.env.PUBLIC_URL + "/assets/20220719[1][1].png"
                         }
                         alt="herobanner"
                         height={80}
@@ -169,7 +169,10 @@ const Home = () => {
                                           >
                                             <div className="slider-wrapper swiper-wrapper">
                                               <LazyLoadImage
-                                                src="https://firebasestorage.googleapis.com/v0/b/njautomation-99e2a.appspot.com/o/ezgif.com-jpg-to-avif-converted.avif?alt=media&token=c602c994-4791-401b-834f-e20b2448ca40"
+                                                src={
+                                                  process.env.PUBLIC_URL +
+                                                  "/assets/ospcb.png"
+                                                }
                                                 alt="header-Img"
                                                 effect="blur"
                                               />
