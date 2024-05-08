@@ -248,34 +248,41 @@ const SingleProduct = () => {
                                   {data.data.product.name}
                                 </h1>
                                 <br />
-                                <p
-                                  className="price"
-                                  style={{
-                                    fontSize: "20px",
-                                    color: "red",
-                                    marginBottom: "10px",
-                                  }}
-                                >
-                                  <span className="woocommerce-Price-amount amount">
-                                    <bdi>
-                                      <s>
-                                        <span className="woocommerce-Price-currencySymbol">
-                                          Rs{" "}
-                                        </span>
-                                        {data.data.product.price}
-                                      </s>
-                                    </bdi>
-                                  </span>{" "}
-                                  –{" "}
-                                  <span className="woocommerce-Price-amount amount">
-                                    <bdi>
-                                      <span className="woocommerce-Price-currencySymbol">
-                                        Rs{" "}
+                                {finalUrl ? (
+                                  <> </>
+                                ) : (
+                                  <>
+                                    {" "}
+                                    <p
+                                      className="price"
+                                      style={{
+                                        fontSize: "20px",
+                                        color: "red",
+                                        marginBottom: "10px",
+                                      }}
+                                    >
+                                      <span className="woocommerce-Price-amount amount">
+                                        <bdi>
+                                          <s>
+                                            <span className="woocommerce-Price-currencySymbol">
+                                              Rs{" "}
+                                            </span>
+                                            {data.data.product.price}
+                                          </s>
+                                        </bdi>
+                                      </span>{" "}
+                                      –{" "}
+                                      <span className="woocommerce-Price-amount amount">
+                                        <bdi>
+                                          <span className="woocommerce-Price-currencySymbol">
+                                            Rs{" "}
+                                          </span>
+                                          {data.data.product.disc_price}
+                                        </bdi>
                                       </span>
-                                      {data.data.product.disc_price}
-                                    </bdi>
-                                  </span>
-                                </p>
+                                    </p>
+                                  </>
+                                )}
 
                                 <div class="product_meta">
                                   {parseInt(data.data.product.qty) !== 0 ? (

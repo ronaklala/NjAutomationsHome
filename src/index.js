@@ -18,6 +18,7 @@ import SingleService from "./components/SingleService";
 import About from "./components/About";
 
 import { QueryClient, QueryClientProvider } from "react-query";
+import SingleCategory from "./components/SingleCategory";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -41,6 +42,7 @@ root.render(
           <Route path="/About" element={<About />} />
           <Route path="/Services" element={<Services />} />
           <Route path="/Service/:id" element={<SingleService />} />
+          <Route path="/category/:id" element={<SingleCategory />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

@@ -93,3 +93,16 @@ export const useLogin = () => {
     },
   });
 };
+
+export const getCategory = () => {
+  return axios.get(
+    "https://determined-pear-apron.cyclic.app/api/admin/getAllCategories"
+  );
+};
+
+export const getProductsInCategory = (id) => {
+  return axios.get(
+    "https://determined-pear-apron.cyclic.app/api/admin/getAllProductsinCategory/" +
+      id.toString()
+  );
+};

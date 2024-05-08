@@ -2,7 +2,7 @@
   "name": "njautomation_home",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:5999/",
+  "proxy": "https://determined-pear-apron.cyclic.app/",
   "dependencies": {
     "@cashfreepayments/cashfree-js": "^1.0.4",
     "@testing-library/jest-dom": "^5.17.0",

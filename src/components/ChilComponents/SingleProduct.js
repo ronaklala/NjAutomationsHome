@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const SingleProduct = (props) => {
+  let [finalUrl, setFinalUri] = useState();
+
   const addETrimToUrl = (url) => {
     // Define the pattern to match
     const pattern = /(upload\/)(v\d+)/;
@@ -10,6 +12,11 @@ const SingleProduct = (props) => {
 
     return modifiedUrl;
   };
+
+  useEffect(() => {
+    let url = window.location.pathname;
+    setFinalUri(url.toLowerCase().includes("category") ? true : false);
+  }, []);
 
   return (
     <>
@@ -27,33 +34,45 @@ const SingleProduct = (props) => {
             />
             <div className="mask" />
           </div>
-
-          <div className="sc_services_item_info">
-            <div className="sc_services_item_header">
-              <div class="post_data_inner">
-                <div class="post_header entry-header">
-                  <h4 class="woocommerce-loop-props.productuct__title">
-                    <a
-                      href={"/product/" + props.product._id + "/view"}
-                      style={{
-                        display: "-webkit-box",
-                        WebkitBoxOrient: "vertical",
-                        WebkitLineClamp: "2",
-                        overflow: "hidden",
-                        textOverflow: "ellipsis",
-                      }}
-                    >
-                      {props.product.name}
-                    </a>
-                  </h4>{" "}
-                  <br />
-                  <p>{props.product.qty > 0 ? <>In Stock</> : <>Sold Out</>}</p>
-                  <br />
-                  {/* <p>{props.product.description}</p> */}
+          <a href={"/category/" + props.product._id}>
+            <div className="sc_services_item_info">
+              <div className="sc_services_item_header">
+                <div class="post_data_inner">
+                  <div class="post_header entry-header">
+                    <h4 class="woocommerce-loop-props.productuct__title">
+                      <a
+                        href={"/category/" + props.product._id}
+                        style={{
+                          display: "-webkit-box",
+                          WebkitBoxOrient: "vertical",
+                          WebkitLineClamp: "2",
+                          overflow: "hidden",
+                          textOverflow: "ellipsis",
+                        }}
+                      >
+                        <center>{props.product.name}</center>
+                      </a>
+                    </h4>{" "}
+                    {finalUrl ? (
+                      <>
+                        <a href={"/product/" + props.product._id + "/view"}>
+                          <button>View Product</button>
+                        </a>
+                      </>
+                    ) : (
+                      <>
+                        {" "}
+                        <a href={"/category/" + props.product._id}>
+                          <button>View Category</button>
+                        </a>
+                      </>
+                    )}
+                    {/* <p>{props.product.description}</p> */}
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </>
