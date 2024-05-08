@@ -890,7 +890,7 @@ const Home = () => {
                         className="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-53fae sc_inner_width_none sc_content_align_inherit sc_layouts_column_icons_position_left sc_fly_static"
                         data-id="53fae"
                         data-element_type="column"
-                        style={{ padding: "10px" }}
+                        style={{ padding: "50px" }}
                       >
                         <div className="elementor-widget-wrap elementor-element-populated">
                           <div
