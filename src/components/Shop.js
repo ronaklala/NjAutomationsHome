@@ -33,7 +33,7 @@ const Shop = () => {
         <meta property="og:type" content="website" />
         <meta
           property="og:image"
-          content="https://firebasestorage.googleapis.com/v0/b/njautomations-f8156.appspot.com/o/image-removebg-preview%5B1%5D.webp?alt=media&token=f624d0a0-f802-4e8e-9114-9534a862fc52"
+          content="https://res.cloudinary.com/ronaklala-games/image/upload/e_trim/v1715358539/samples/image-removebg-preview_1_gewm5o.webp"
         />
         <meta
           name="description"
@@ -51,7 +51,7 @@ const Shop = () => {
         ></meta>
         <meta
           property="og:image"
-          content="https://firebasestorage.googleapis.com/v0/b/njautomations-f8156.appspot.com/o/image-removebg-preview%5B1%5D.webp?alt=media&token=f624d0a0-f802-4e8e-9114-9534a862fc52"
+          content="https://res.cloudinary.com/ronaklala-games/image/upload/e_trim/v1715358539/samples/image-removebg-preview_1_gewm5o.webp"
         ></meta>
         <link rel="canonical" href="https://njautomation.in/Shop"></link>
         <meta
