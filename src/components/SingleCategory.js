@@ -12,17 +12,13 @@ import Spinner from "./Spinner";
 import { Helmet } from "react-helmet";
 import { useQuery } from "react-query";
 import SingleProduct from "./ChilComponents/SingleProduct";
-import { getCategory, getProductsInCategory } from "./Api";
+import { getProductsInCategory } from "./Api";
 import { useParams } from "react-router-dom";
 
 const SingleCategory = () => {
   const params = useParams();
 
-  const {
-    isLoading,
-    data: ProductsData,
-    error,
-  } = useQuery(
+  const { isLoading, data: ProductsData } = useQuery(
     ["ProductsData", params.id],
     () => getProductsInCategory(params.id), // You should pass a function here
     {

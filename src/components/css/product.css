@@ -1,0 +1,5 @@
+.additional-details-table th,
+.additional-details-table td {
+  font-size: 14px; /* Adjust font size as needed */
+  border: 1px solid #000
+}

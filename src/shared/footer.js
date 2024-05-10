@@ -1,9 +1,3 @@
-import {
-  FacebookLogo,
-  InstagramLogo,
-  TwitterLogo,
-  WhatsappLogo,
-} from "phosphor-react";
 import React from "react";
 
 const Footer = () => {

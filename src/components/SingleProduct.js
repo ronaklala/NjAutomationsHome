@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import Header from "../shared/header";
 import MobileMenu from "../shared/mobilemenu";
 import Footer from "../shared/footer";
-import { useParams, useSearchParams } from "react-router-dom";
-
+import { useParams } from "react-router-dom";
+import "./css/product.css";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { Helmet } from "react-helmet";
 import { getSingleProduct } from "./Api";
@@ -42,8 +42,6 @@ const SingleProduct = () => {
 
     // Replace the pattern with 'upload/e_trim/v169...'
     const modifiedUrl = url.replace(pattern, "upload/e_trim/$2");
-
-    console.log(modifiedUrl);
 
     return modifiedUrl;
   };
@@ -307,6 +305,7 @@ const SingleProduct = () => {
                                 </div>
                                 <br />
 
+                                <br />
                                 <div class="product_meta">
                                   <span class="product_id">
                                     Product ID:{" "}
@@ -385,6 +384,7 @@ const SingleProduct = () => {
                                       href={data.data.product.detail}
                                       download={data.data.product.detail}
                                       target="_blank"
+                                      rel="noreferrer"
                                       className="button"
                                     >
                                       <span className="sc_button_text">
@@ -442,6 +442,108 @@ const SingleProduct = () => {
                               ) : (
                                 <></>
                               )}
+                            </>
+                          ) : (
+                            <></>
+                          )}
+                          <br />
+                          <br />
+                          <br />
+                          <br />
+                          {data.data.product?.additionalData !== undefined ? (
+                            <>
+                              <div>
+                                {" "}
+                                <h1 style={{ fontSize: "20px" }}>
+                                  Additional Details
+                                </h1>
+                                <br />
+                                <table className="additional-details-table">
+                                  {data.data.product.additionalData?.p1 !==
+                                  undefined ? (
+                                    <>
+                                      <tr>
+                                        <th>p1</th>
+                                        <td>
+                                          {data.data.product.additionalData.p1}
+                                        </td>
+                                      </tr>
+                                    </>
+                                  ) : (
+                                    <></>
+                                  )}
+
+                                  {data.data.product.additionalData?.p2 !==
+                                  undefined ? (
+                                    <>
+                                      <tr>
+                                        <th>p2</th>
+                                        <td>
+                                          {data.data.product.additionalData.p2}
+                                        </td>
+                                      </tr>
+                                    </>
+                                  ) : (
+                                    <></>
+                                  )}
+
+                                  {data.data.product.additionalData?.p3 !==
+                                  undefined ? (
+                                    <>
+                                      <tr>
+                                        <th>p3</th>
+                                        <td>
+                                          {data.data.product.additionalData.p3}
+                                        </td>
+                                      </tr>
+                                    </>
+                                  ) : (
+                                    <></>
+                                  )}
+
+                                  {data.data.product.additionalData?.p4 !==
+                                  undefined ? (
+                                    <>
+                                      <tr>
+                                        <th>p4</th>
+                                        <td>
+                                          {data.data.product.additionalData.p4}
+                                        </td>
+                                      </tr>
+                                    </>
+                                  ) : (
+                                    <></>
+                                  )}
+
+                                  {data.data.product.additionalData?.p5 !==
+                                  undefined ? (
+                                    <>
+                                      <tr>
+                                        <th>p5</th>
+                                        <td>
+                                          {data.data.product.additionalData.p5}
+                                        </td>
+                                      </tr>
+                                    </>
+                                  ) : (
+                                    <></>
+                                  )}
+
+                                  {data.data.product.additionalData?.p6 !==
+                                  undefined ? (
+                                    <>
+                                      <tr>
+                                        <th>p6</th>
+                                        <td>
+                                          {data.data.product.additionalData.p6}
+                                        </td>
+                                      </tr>
+                                    </>
+                                  ) : (
+                                    <></>
+                                  )}
+                                </table>
+                              </div>
                             </>
                           ) : (
                             <></>

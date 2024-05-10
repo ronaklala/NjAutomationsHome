@@ -5,19 +5,10 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import Footer from "../shared/footer";
-import { load } from "@cashfreepayments/cashfree-js";
 import { Helmet } from "react-helmet";
 
 const Checkout = () => {
   const [user, setUesr] = useState();
-
-  let cashfree;
-  var initializeSDK = async function () {
-    cashfree = await load({
-      mode: "sandbox",
-    });
-  };
-  initializeSDK();
 
   const [order, setOrder] = useState({
     name: "",
@@ -74,8 +65,6 @@ const Checkout = () => {
   };
 
   const handleSubmit = () => {
-    const random = "order_" + Math.floor(Math.random() * 1000000000);
-
     order.email = user.email;
     order.name = user.name;
     order.phno = user.phno;
