@@ -3,3 +3,35 @@
   font-size: 14px; /* Adjust font size as needed */
   border: 1px solid #000
 }
+
+.search-container {
+  position: relative;
+  width: 70vw;
+  padding: 10px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 20px;
+  background-color: #fff; /* Changed background color to white */
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3); /* Added light drop shadow */
+  border: none;
+  margin-top: 80px;
+  display: flex;
+}
+
+.search-input {
+  width: 100%;
+  border: none !important;
+  padding-left: 10px !important;
+  border-radius: 20px;
+  font-size: 16px;
+  outline: none;
+  background-color: transparent;
+  font-family:'Roboto', sans-serif !important;
+  color: #000 !important;
+}
+
+::placeholder {
+  color: #7a7a7a !important;
+  font-family:'Roboto', sans-serif !important;
+  opacity: 1; /* Firefox */
+}

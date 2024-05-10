@@ -49,6 +49,7 @@ const SingleShopProduct = (props) => {
                           WebkitLineClamp: "2",
                           overflow: "hidden",
                           textOverflow: "ellipsis",
+                          fontSize: "16px",
                         }}
                       >
                         {props.product.name}

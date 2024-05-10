@@ -241,6 +241,7 @@ const SingleProduct = () => {
                                   style={{
                                     fontSize: "20px",
                                     marginTop: "15px",
+                                    lineHeight: "30px",
                                   }}
                                 >
                                   {data.data.product.name}
@@ -403,10 +404,6 @@ const SingleProduct = () => {
                                   </div>
                                 </div>
                               </div>
-                              <br />
-                              <br />
-                              <br />
-                              <br />
                             </>
                           ) : (
                             <></>
@@ -446,10 +443,6 @@ const SingleProduct = () => {
                           ) : (
                             <></>
                           )}
-                          <br />
-                          <br />
-                          <br />
-                          <br />
                           {data.data.product?.additionalData !== undefined ? (
                             <>
                               <div>

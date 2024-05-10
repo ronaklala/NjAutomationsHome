@@ -162,6 +162,7 @@ const SingleService = () => {
                                       style={{
                                         fontSize: "20px",
                                         marginTop: "15px",
+                                        lineHeight: "30px",
                                       }}
                                     >
                                       {service.name}

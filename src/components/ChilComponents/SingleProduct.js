@@ -34,24 +34,46 @@ const SingleProduct = (props) => {
             />
             <div className="mask" />
           </div>
+
           <a href={"/category/" + props.product._id}>
             <div className="sc_services_item_info">
               <div className="sc_services_item_header">
                 <div class="post_data_inner">
                   <div class="post_header entry-header">
                     <h4 class="woocommerce-loop-props.productuct__title">
-                      <a
-                        href={"/category/" + props.product._id}
-                        style={{
-                          display: "-webkit-box",
-                          WebkitBoxOrient: "vertical",
-                          WebkitLineClamp: "2",
-                          overflow: "hidden",
-                          textOverflow: "ellipsis",
-                        }}
-                      >
-                        <center>{props.product.name}</center>
-                      </a>
+                      {finalUrl ? (
+                        <>
+                          <a
+                            href={"/product/" + props.product._id + "/view"}
+                            style={{
+                              display: "-webkit-box",
+                              WebkitBoxOrient: "vertical",
+                              WebkitLineClamp: "2",
+                              overflow: "hidden",
+                              textOverflow: "ellipsis",
+                              fontSize: "16px",
+                            }}
+                          >
+                            <center>{props.product.name}</center>
+                          </a>
+                        </>
+                      ) : (
+                        <>
+                          <a
+                            href={"/category/" + props.product._id}
+                            style={{
+                              display: "-webkit-box",
+                              WebkitBoxOrient: "vertical",
+                              WebkitLineClamp: "2",
+                              overflow: "hidden",
+                              textOverflow: "ellipsis",
+                              fontSize: "16px",
+                            }}
+                          >
+                            <center>{props.product.name}</center>
+                          </a>
+                        </>
+                      )}
                     </h4>{" "}
                     {finalUrl ? (
                       <>

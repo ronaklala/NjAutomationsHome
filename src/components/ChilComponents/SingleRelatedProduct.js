@@ -37,7 +37,17 @@ const SingleRelatedProduct = (props) => {
               <div class="post_data_inner">
                 <div class="post_header entry-header">
                   <h4 class="woocommerce-loop-product__title">
-                    <a href={"/product/" + props.product._id}>
+                    <a
+                      href={"/product/" + props.product._id}
+                      style={{
+                        display: "-webkit-box",
+                        WebkitBoxOrient: "vertical",
+                        WebkitLineClamp: "2",
+                        overflow: "hidden",
+                        textOverflow: "ellipsis",
+                        fontSize: "16px",
+                      }}
+                    >
                       {props.product.name}
                     </a>
                   </h4>{" "}

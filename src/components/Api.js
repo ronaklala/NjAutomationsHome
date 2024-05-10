@@ -83,7 +83,7 @@ export const useLogin = () => {
       }, 1500);
     },
     onError: (err) => {
-      if (err.response.status === 500) {
+      if (err.response.status === 401) {
         toast.error("Invalid Password");
       } else if (err.response.status === 404) {
         toast.error("No Such User Found");
