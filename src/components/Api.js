@@ -1,11 +1,27 @@
 import axios from "axios";
-import { useMutation } from "react-query";
+import { useMutation, useQuery } from "react-query";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import {
+  GetCategoriesQuery,
+  GetOrdersQuery,
+  GetProductsInCategoryQuery,
+  GetProductsQuery,
+  GetSingleProductQuery,
+} from "./Queries";
 
-export const getProducts = () => {
-  return axios.get(
-    "https://determined-pear-apron.cyclic.app/api/admin/getProducts"
-  );
+export const useGetProducts = () => {
+  return useQuery("products", async () => {
+    try {
+      const response = await axios.post("http://localhost:5999/graphql", {
+        query: GetProductsQuery,
+      });
+
+      return response.data.data.products;
+    } catch (error) {
+      throw new Error("Failed to fetch products");
+    }
+  });
 };
 
 /**
@@ -14,23 +30,54 @@ export const getProducts = () => {
  * @returns the result of the axios.get() call, which is a Promise that will resolve to the response
  * data from the API endpoint.
  */
-export const getOrders = () => {
-  const userdata = JSON.parse(localStorage.getItem("user"));
+export const useGetOrdersHook = () => {
+  const navigate = useNavigate();
 
-  if (userdata === null) {
-    window.location.href = "/Not-Found";
-  } else {
-    const userId = userdata._id;
-    return axios.get(
-      "https://determined-pear-apron.cyclic.app/api/user/orders/" + userId
-    );
+  try {
+    return useQuery("Orders", async () => {
+      const userdata = JSON.parse(localStorage.getItem("user"));
+
+      // Redirect to Not-Found if userdata is null
+      if (!userdata) {
+        navigate("/Not-Found");
+        return; // Early return to prevent unnecessary query execution
+      }
+
+      const userId = userdata._id;
+
+      try {
+        const response = await axios.post("http://localhost:5999/graphql", {
+          query: GetOrdersQuery,
+          variables: { getSingleUserOrdersId: userId },
+        });
+
+        return response.data.data.getSingleUserOrders; // Assuming response.data contains the orders data
+      } catch (err) {
+        console.log("Internal Server Error", err);
+        throw err; // Re-throw for potential error handling in the component
+      }
+    });
+  } catch (error) {
+    // Handle potential errors during localStorage access (e.g., parsing issues)
+    console.error("Error accessing localStorage:", error);
+    // Optionally, navigate to an error page or display an error message
   }
 };
 
-export const getSingleProduct = (id) => {
-  return axios.get(
-    "https://determined-pear-apron.cyclic.app/api/admin/singleProduct/" + id
-  );
+export const useGetSingleProduct = (id) => {
+  return useQuery("SingleProduct", async () => {
+    try {
+      const response = await axios.post("http://localhost:5999/graphql", {
+        query: GetSingleProductQuery,
+        variables: { getSingleProductId: id },
+      });
+
+      return response.data.data.getSingleProduct; // Assuming successful response
+    } catch (error) {
+      console.error("Error fetching product:", error);
+      throw error; // Re-throw for handling in your component
+    }
+  });
 };
 
 const registerNewUser = (user) => {
@@ -94,15 +141,31 @@ export const useLogin = () => {
   });
 };
 
-export const getCategory = () => {
-  return axios.get(
-    "https://determined-pear-apron.cyclic.app/api/admin/getAllCategories"
-  );
+export const useGetCategoryHook = () => {
+  return useQuery("getCategories", async () => {
+    try {
+      const categories = await axios.post("http://localhost:5999/graphql", {
+        query: GetCategoriesQuery,
+      });
+
+      return categories.data.data.getCategories;
+    } catch (err) {
+      console.log("Internal Server Error");
+    }
+  });
 };
 
-export const getProductsInCategory = (id) => {
-  return axios.get(
-    "https://determined-pear-apron.cyclic.app/api/admin/getAllProductsinCategory/" +
-      id.toString()
-  );
+export const GetProductsInCategoryHook = (id) => {
+  return useQuery("CategoryProducts", async () => {
+    try {
+      const products = await axios.post("http://localhost:5999/graphql", {
+        query: GetProductsInCategoryQuery,
+        variables: { categoryId: id },
+      });
+
+      return products.data.data.getProductByCategory;
+    } catch (err) {
+      throw new Error("Failed to Fetch Products");
+    }
+  });
 };

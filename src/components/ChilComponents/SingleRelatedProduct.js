@@ -8,8 +8,6 @@ const SingleRelatedProduct = (props) => {
     // Replace the pattern with 'upload/e_trim/v169...'
     const modifiedUrl = url.replace(pattern, "upload/e_trim/$2");
 
-    console.log(modifiedUrl);
-
     return modifiedUrl;
   };
 

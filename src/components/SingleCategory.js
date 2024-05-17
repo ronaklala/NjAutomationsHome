@@ -7,26 +7,18 @@ import "react-toastify/dist/ReactToastify.css";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import Spinner from "./Spinner";
 import { Helmet } from "react-helmet";
-import { useQuery } from "react-query";
 import SingleProduct from "./ChilComponents/SingleProduct";
-import { getProductsInCategory } from "./Api";
+import { GetProductsInCategoryHook } from "./Api";
 import { useParams } from "react-router-dom";
 
 const SingleCategory = () => {
   const params = useParams();
 
-  const { isLoading, data: ProductsData } = useQuery(
-    ["ProductsData", params.id],
-    () => getProductsInCategory(params.id), // You should pass a function here
-    {
-      onError: () => {
-        toast.error("Internal Server Error");
-      },
-      cacheTime: 5000,
-    }
+  const { isLoading, data: ProductsData } = GetProductsInCategoryHook(
+    params.id
   );
 
   return (
@@ -155,12 +147,12 @@ const SingleCategory = () => {
                               >
                                 {isLoading !== true ? (
                                   <>
-                                    {ProductsData.data.length !== 0 ? (
+                                    {ProductsData.length !== 0 ? (
                                       <>
                                         <div className="elementor-widget-container">
                                           <div className="sc_services sc_services_unusual sc_services_featured_top">
                                             <div className="sc_services_columns_wrap sc_item_columns sc_item_posts_container sc_item_columns_3 trx_addons_columns_wrap columns_padding_bottom columns_in_single_row">
-                                              {ProductsData.data.map(
+                                              {ProductsData.map(
                                                 (category, i) => (
                                                   <SingleProduct
                                                     product={category}

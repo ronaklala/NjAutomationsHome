@@ -45,11 +45,11 @@ const Checkout = () => {
             setProduct(res.data.product);
             setLoading(false);
           } else {
-            window.location.href = "/NotFound";
+            window.location.href = "/Internal-Server-Error";
           }
         })
         .catch((err) => {
-          window.location.href = "/NotFound";
+          window.location.href = "/Internal-Server-Error";
         });
     }
   }, [params.id]);

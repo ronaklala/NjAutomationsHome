@@ -6,13 +6,12 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 import Spinner from "./Spinner";
 import { Helmet } from "react-helmet";
 import SingleOrder from "./ChilComponents/SingleOrder";
-import { getOrders } from "./Api";
-import { useQuery } from "react-query";
+import { useGetOrdersHook } from "./Api";
 
 const Orders = () => {
-  const { isLoading, data } = useQuery("orders", getOrders, {
-    cacheTime: 5000,
-  });
+  const { isLoading, data } = useGetOrdersHook();
+
+  console.log(data);
 
   return (
     <>
@@ -76,7 +75,7 @@ const Orders = () => {
                       >
                         {!isLoading ? (
                           <>
-                            {data.data.length === 0 ? (
+                            {data.length === 0 ? (
                               <>
                                 <h1 style={{ fontSize: "42px" }}>
                                   No Orders Found
@@ -84,7 +83,7 @@ const Orders = () => {
                               </>
                             ) : (
                               <>
-                                {data.data.map((o, i) => (
+                                {data.map((o, i) => (
                                   <>
                                     <SingleOrder order={o} />
                                   </>

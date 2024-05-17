@@ -6,8 +6,7 @@ import { useParams } from "react-router-dom";
 import "./css/product.css";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { Helmet } from "react-helmet";
-import { getSingleProduct } from "./Api";
-import { useQuery } from "react-query";
+import { useGetSingleProduct } from "./Api";
 import SingleRelatedProduct from "./ChilComponents/SingleRelatedProduct";
 import Spinner from "./Spinner";
 import { DownloadSimple } from "phosphor-react";
@@ -17,19 +16,7 @@ const SingleProduct = () => {
 
   let [finalUrl, setFinalUri] = useState();
 
-  const { isLoading, data } = useQuery(
-    ["singleProduct", params.id],
-
-    () => getSingleProduct(params.id),
-    {
-      onError: (err) => {
-        window.location.href = "/Not-Found";
-      },
-    },
-    {
-      cacheTime: 5000,
-    }
-  );
+  const { isLoading, data } = useGetSingleProduct(params.id);
 
   useEffect(() => {
     let url = window.location.pathname;
@@ -102,10 +89,10 @@ const SingleProduct = () => {
                         ) : (
                           <>
                             <Helmet>
-                              <title>{data.data.product.name}</title>
+                              <title>{data.product.name}</title>
                               <meta
                                 name="description"
-                                content={data.data.product.description}
+                                content={data.product.description}
                               />
                               <meta
                                 property="og:site_name"
@@ -115,7 +102,7 @@ const SingleProduct = () => {
                                 property="og:url"
                                 content={
                                   "https://njautomation.in/product" +
-                                  data.data.product._id
+                                  data.product._id
                                 }
                               />
                               <meta property="og:type" content="website" />
@@ -132,26 +119,26 @@ const SingleProduct = () => {
                                 name="keywords"
                                 content={
                                   "PCB boards, printed circuit boards, custom PCB, electronic components, circuit board design, PCB fabrication, prototype boards, electronic projects, circuit board shop, PCB manufacturing, NJ Automation, NJAutomations," +
-                                  data.data.product.name
+                                  data.product.name
                                 }
                               ></meta>
                               <meta
                                 property="og:title"
-                                content={data.data.product.name}
+                                content={data.product.name}
                               ></meta>
                               <meta
                                 property="og:description"
-                                content={data.data.product.description}
+                                content={data.product.description}
                               ></meta>
                               <meta
                                 property="og:image"
-                                content={data.data.product.image}
+                                content={data.product.image}
                               ></meta>
                               <link
                                 rel="canonical"
                                 href={
                                   "https://njautomation.in/product" +
-                                  data.data.product._id
+                                  data.product._id
                                 }
                               ></link>
                               <meta
@@ -194,7 +181,7 @@ const SingleProduct = () => {
                                             background:
                                               "url(" +
                                               addETrimToUrl(
-                                                data.data.product.image
+                                                data.product.image
                                               ) +
                                               ")",
                                             backgroundRepeat: "no-repeat",
@@ -244,7 +231,7 @@ const SingleProduct = () => {
                                     lineHeight: "30px",
                                   }}
                                 >
-                                  {data.data.product.name}
+                                  {data.product.name}
                                 </h1>
                                 <br />
                                 {finalUrl ? (
@@ -266,7 +253,7 @@ const SingleProduct = () => {
                                             <span className="woocommerce-Price-currencySymbol">
                                               Rs{" "}
                                             </span>
-                                            {data.data.product.price}
+                                            {data.product.price}
                                           </s>
                                         </bdi>
                                       </span>{" "}
@@ -276,7 +263,7 @@ const SingleProduct = () => {
                                           <span className="woocommerce-Price-currencySymbol">
                                             Rs{" "}
                                           </span>
-                                          {data.data.product.disc_price}
+                                          {data.product.disc_price}
                                         </bdi>
                                       </span>
                                     </p>
@@ -284,7 +271,7 @@ const SingleProduct = () => {
                                 )}
 
                                 <div class="product_meta">
-                                  {parseInt(data.data.product.qty) !== 0 ? (
+                                  {parseInt(data.product.qty) !== 0 ? (
                                     <>
                                       <span
                                         class="product_id"
@@ -309,8 +296,7 @@ const SingleProduct = () => {
                                 <br />
                                 <div class="product_meta">
                                   <span class="product_id">
-                                    Product ID:{" "}
-                                    <span>{data.data.product._id}</span>
+                                    Product ID: <span>{data.product._id}</span>
                                   </span>
                                 </div>
                                 <br />
@@ -321,7 +307,7 @@ const SingleProduct = () => {
                                     fontWeight: "bold",
                                   }}
                                 >
-                                  {data.data.product.description}
+                                  {data.product.description}
                                 </p>
                               </div>
                             </div>
@@ -370,7 +356,7 @@ const SingleProduct = () => {
                             </div>
                           </div>
                           <br />
-                          {data.data.product.detail !== undefined ? (
+                          {data.product.detail !== null ? (
                             <>
                               {" "}
                               <div
@@ -382,8 +368,8 @@ const SingleProduct = () => {
                                 <div className="elementor-widget-container">
                                   <div className="sc_item_button sc_button_wrap">
                                     <a
-                                      href={data.data.product.detail}
-                                      download={data.data.product.detail}
+                                      href={data.product.detail}
+                                      download={data.product.detail}
                                       target="_blank"
                                       rel="noreferrer"
                                       className="button"
@@ -410,7 +396,7 @@ const SingleProduct = () => {
                           )}{" "}
                           {!finalUrl ? (
                             <>
-                              {parseInt(data.data.product.qty) !== 0 ? (
+                              {parseInt(data.product.qty) !== 0 ? (
                                 <>
                                   <div
                                     className="elementor-element elementor-element-6ba1525 sc_fly_static elementor-widget elementor-widget-trx_sc_button trx_addons_parallax_layers_inited trx_addons_parallax_blocks_inited"
@@ -421,9 +407,7 @@ const SingleProduct = () => {
                                     <div className="elementor-widget-container">
                                       <div className="sc_item_button sc_button_wrap">
                                         <a
-                                          href={
-                                            "/checkout/" + data.data.product._id
-                                          }
+                                          href={"/checkout/" + data.product._id}
                                           className="sc_button"
                                         >
                                           <span className="sc_button_text">
@@ -443,22 +427,19 @@ const SingleProduct = () => {
                           ) : (
                             <></>
                           )}
-                          {data.data.product?.additionalData !== undefined ? (
+                          {data.product.additionalData !== null ? (
                             <>
+                              {console.log(data.product?.additionalData)}
                               <div>
                                 {" "}
-                                <h1 style={{ fontSize: "20px" }}>
-                                  Additional Details
-                                </h1>
                                 <br />
                                 <table className="additional-details-table">
-                                  {data.data.product.additionalData?.p1 !==
-                                  undefined ? (
+                                  {data.product.additionalData?.p1 !== null ? (
                                     <>
                                       <tr>
                                         <th>p1</th>
                                         <td>
-                                          {data.data.product.additionalData.p1}
+                                          {data.product.additionalData.p1}
                                         </td>
                                       </tr>
                                     </>
@@ -466,13 +447,12 @@ const SingleProduct = () => {
                                     <></>
                                   )}
 
-                                  {data.data.product.additionalData?.p2 !==
-                                  undefined ? (
+                                  {data.product.additionalData?.p2 !== null ? (
                                     <>
                                       <tr>
                                         <th>p2</th>
                                         <td>
-                                          {data.data.product.additionalData.p2}
+                                          {data.product.additionalData.p2}
                                         </td>
                                       </tr>
                                     </>
@@ -480,13 +460,12 @@ const SingleProduct = () => {
                                     <></>
                                   )}
 
-                                  {data.data.product.additionalData?.p3 !==
-                                  undefined ? (
+                                  {data.product.additionalData?.p3 !== null ? (
                                     <>
                                       <tr>
                                         <th>p3</th>
                                         <td>
-                                          {data.data.product.additionalData.p3}
+                                          {data.product.additionalData.p3}
                                         </td>
                                       </tr>
                                     </>
@@ -494,13 +473,12 @@ const SingleProduct = () => {
                                     <></>
                                   )}
 
-                                  {data.data.product.additionalData?.p4 !==
-                                  undefined ? (
+                                  {data.product.additionalData?.p4 !== null ? (
                                     <>
                                       <tr>
                                         <th>p4</th>
                                         <td>
-                                          {data.data.product.additionalData.p4}
+                                          {data.product.additionalData.p4}
                                         </td>
                                       </tr>
                                     </>
@@ -508,13 +486,12 @@ const SingleProduct = () => {
                                     <></>
                                   )}
 
-                                  {data.data.product.additionalData?.p5 !==
-                                  undefined ? (
+                                  {data.product.additionalData?.p5 !== null ? (
                                     <>
                                       <tr>
                                         <th>p5</th>
                                         <td>
-                                          {data.data.product.additionalData.p5}
+                                          {data.product.additionalData.p5}
                                         </td>
                                       </tr>
                                     </>
@@ -522,13 +499,12 @@ const SingleProduct = () => {
                                     <></>
                                   )}
 
-                                  {data.data.product.additionalData?.p6 !==
-                                  undefined ? (
+                                  {data.product.additionalData?.p6 !== null ? (
                                     <>
                                       <tr>
                                         <th>p6</th>
                                         <td>
-                                          {data.data.product.additionalData.p6}
+                                          {data.product.additionalData.p6}
                                         </td>
                                       </tr>
                                     </>
@@ -640,7 +616,7 @@ const SingleProduct = () => {
                                           <div className="elementor-widget-container">
                                             <div className="sc_services sc_services_unusual sc_services_featured_top">
                                               <div className="sc_services_columns_wrap sc_item_columns sc_item_posts_container sc_item_columns_3 trx_addons_columns_wrap columns_padding_bottom columns_in_single_row">
-                                                {data.data.relatedProducts.map(
+                                                {data.relatedProducts.map(
                                                   (r, i) => (
                                                     <>
                                                       <SingleRelatedProduct

@@ -12,12 +12,10 @@ import Spinner from "./Spinner";
 import { Helmet } from "react-helmet";
 import { useQuery } from "react-query";
 import SingleProduct from "./ChilComponents/SingleProduct";
-import { getCategory } from "./Api";
+import { getCategory, useGetCategoryHook } from "./Api";
 
 const OurProducts = () => {
-  const { isLoading, data } = useQuery("category", getCategory, {
-    cacheTime: 5000,
-  });
+  const { isLoading, data } = useGetCategoryHook();
 
   return (
     <>
@@ -145,12 +143,12 @@ const OurProducts = () => {
                               >
                                 {isLoading !== true ? (
                                   <>
-                                    {data.data.length !== 0 ? (
+                                    {data.length !== 0 ? (
                                       <>
                                         <div className="elementor-widget-container">
                                           <div className="sc_services sc_services_unusual sc_services_featured_top">
                                             <div className="sc_services_columns_wrap sc_item_columns sc_item_posts_container sc_item_columns_3 trx_addons_columns_wrap columns_padding_bottom columns_in_single_row">
-                                              {data.data.map((category, i) => (
+                                              {data.map((category, i) => (
                                                 <SingleProduct
                                                   product={category}
                                                 />

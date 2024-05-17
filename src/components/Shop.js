@@ -10,23 +10,20 @@ import "swiper/css/navigation";
 import { ToastContainer, toast } from "react-toastify";
 import Spinner from "./Spinner";
 import { Helmet } from "react-helmet";
-import { useQuery } from "react-query";
-import { getProducts } from "./Api";
+import { useGetProducts } from "./Api";
 import SingleShopProduct from "./ChilComponents/SingleShopProduct";
 import "./css/product.css";
 
 const Shop = () => {
   const [input, setInput] = useState("");
 
-  const { isLoading, isError, data } = useQuery("products", getProducts, {
-    cacheTime: 5000,
-  });
+  const { isLoading, isError, data } = useGetProducts();
 
   if (isError) {
     toast.error("Internal Server Error");
   }
 
-  let filteredData = data?.data || [];
+  let filteredData = data || [];
 
   const handleSearch = (e) => {
     e.preventDefault();
