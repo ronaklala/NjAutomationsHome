@@ -96,7 +96,10 @@ const SingleCategory = () => {
                             data-element_type="column"
                             style={{ padding: "10px" }}
                           >
-                            <div className="elementor-widget-wrap elementor-element-populated">
+                            <div
+                              className="elementor-widget-wrap elementor-element-populated"
+                              style={{ marginTop: "50px" }}
+                            >
                               <div
                                 className="elementor-element elementor-element-60d9cbb6 sc_height_huge sc_fly_static elementor-widget elementor-widget-spacer"
                                 data-id="60d9cbb6"
@@ -165,7 +168,19 @@ const SingleCategory = () => {
                                       </>
                                     ) : (
                                       <>
-                                        <h1>No Products Listed Yet</h1>
+                                        <center>
+                                          <img
+                                            src="https://res.cloudinary.com/ronaklala-games/image/upload/v1715957843/samples/FUNDS_sffs5q.webp"
+                                            style={{ height: "30vh" }}
+                                          />
+                                          <h1 style={{ fontSize: "32px" }}>
+                                            No Products Listed Yet
+                                          </h1>
+                                          <br />
+                                          <a href="/" className="sc_button">
+                                            Go To Home
+                                          </a>
+                                        </center>
                                       </>
                                     )}
                                   </>

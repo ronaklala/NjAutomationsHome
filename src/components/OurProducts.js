@@ -92,7 +92,10 @@ const OurProducts = () => {
                             data-element_type="column"
                             style={{ padding: "10px" }}
                           >
-                            <div className="elementor-widget-wrap elementor-element-populated">
+                            <div
+                              className="elementor-widget-wrap elementor-element-populated"
+                              style={{ marginTop: "50px" }}
+                            >
                               <div
                                 className="elementor-element elementor-element-60d9cbb6 sc_height_huge sc_fly_static elementor-widget elementor-widget-spacer"
                                 data-id="60d9cbb6"

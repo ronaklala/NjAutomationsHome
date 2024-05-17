@@ -72,6 +72,10 @@ export const useGetSingleProduct = (id) => {
         variables: { getSingleProductId: id },
       });
 
+      if (response.data.errors && response.data.errors.length > 0) {
+        window.location.href = "/NotFound";
+      }
+
       return response.data.data.getSingleProduct; // Assuming successful response
     } catch (error) {
       console.error("Error fetching product:", error);

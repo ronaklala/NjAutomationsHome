@@ -40,7 +40,6 @@ query($getSingleUserOrdersId: ID!) {
 `;
 
 export const GetSingleProductQuery = `
-
 query GetSingleProduct($getSingleProductId: ID!) {
     getSingleProduct(id: $getSingleProductId) {
       product {
@@ -73,7 +72,6 @@ query GetSingleProduct($getSingleProductId: ID!) {
       }
     }
   }
-
 `;
 
 export const GetCategoriesQuery = `query {
@@ -91,13 +89,6 @@ export const GetProductsInCategoryQuery = `
       _id
       name
       image
-      qty
-      description
-      price
-      disc_price
-      offerQty
-      offerDisc
-      detail
       categoryId
     }
   }`;

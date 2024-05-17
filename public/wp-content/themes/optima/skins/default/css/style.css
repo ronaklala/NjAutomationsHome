@@ -9245,6 +9245,7 @@ div.optima_tabs .nav-links{
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 20px;
     
 }
 body.sidebar_hide .post_featured.alignwide,body.sidebar_hide .post_featured.alignfull{
