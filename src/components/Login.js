@@ -64,13 +64,13 @@ const Login = () => {
         className="wrapper"
         style={{
           backgroundImage:
-            'url("https://www.pgftech.com/wp-content/uploads/2023/06/factory-1.png")',
+            'url("https://res.cloudinary.com/ronaklala-games/image/upload/v1716025445/samples/factory-1_d1h5jm.webp")',
         }}
       >
         <div className="inner">
           <div className="image-holder">
             <LazyLoadImage
-              src="https://www.pgftech.com/wp-content/uploads/2023/06/DSC_0016.png"
+              src="https://res.cloudinary.com/ronaklala-games/image/upload/v1716025444/samples/DSC_0016_tot4fi.webp"
               style={{ height: "100%" }}
               alt="register_img"
               effect="blur"

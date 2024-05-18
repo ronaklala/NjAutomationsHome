@@ -6,10 +6,9 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import Footer from "../shared/footer";
 import { Helmet } from "react-helmet";
+import { useGetCheckoutData } from "./Api";
 
 const Checkout = () => {
-  const [user, setUesr] = useState();
-
   const [order, setOrder] = useState({
     name: "",
     email: "",
@@ -24,35 +23,35 @@ const Checkout = () => {
     status: "Ordered",
     uid: "",
   });
-  const [loading, setLoading] = useState(true);
 
-  const [product, setProduct] = useState();
-
+  const [user, setUser] = useState(null);
+  const [initialized, setInitialized] = useState(false);
   const params = useParams();
 
-  useEffect(() => {
+  // Call the hook at the top level of the component
+  const { data: product, isLoading } = useGetCheckoutData(params.id);
+
+  const redirectToLoginIfUserNotFound = () => {
     if (localStorage.getItem("user") === null) {
       window.location.href = "/login";
-    } else {
-      setUesr(JSON.parse(localStorage.getItem("user")));
-      axios
-        .get(
-          "https://determined-pear-apron.cyclic.app/api/admin/singleProduct/" +
-            params.id
-        )
-        .then((res) => {
-          if (res.status === 200) {
-            setProduct(res.data.product);
-            setLoading(false);
-          } else {
-            window.location.href = "/Internal-Server-Error";
-          }
-        })
-        .catch((err) => {
-          window.location.href = "/Internal-Server-Error";
-        });
     }
-  }, [params.id]);
+  };
+
+  const getUserFromLocalStorage = () => {
+    const userData = localStorage.getItem("user");
+    if (userData) {
+      setUser(JSON.parse(userData));
+    }
+  };
+
+  // Use useEffect to run the initial logic only once
+  useEffect(() => {
+    if (!initialized) {
+      redirectToLoginIfUserNotFound();
+      getUserFromLocalStorage();
+      setInitialized(true);
+    }
+  }, [initialized]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -71,64 +70,74 @@ const Checkout = () => {
     order.pid = params.id;
     order.uid = user._id;
 
-    if (parseInt(product.qty) < order.qty) {
-      toast.error("The Entered Quantity is not in Stock At the moment");
+    if (
+      order.city === "" ||
+      order.state === "" ||
+      order.zip === "" ||
+      order.qty === "" ||
+      order.address === ""
+    ) {
+      toast.error("Please fill the whole checkout Form");
     } else {
-      let total;
-
-      if (order.qty >= product.offerQty) {
-        let price = product.disc_price * order.qty;
-        let percent = product.offerQty / 100;
-        let discount = price * percent;
-        total = price - discount;
+      if (parseInt(product.qty) < order.qty) {
+        toast.error("The Entered Quantity is not in Stock At the moment");
       } else {
-        total = product.disc_price * order.qty;
-      }
+        let total;
 
-      var options = {
-        key: process.env.REACT_APP_RAZORPAYKEY,
-        amount: total * 100,
-        currency: "INR",
-        name: process.env.REACT_APP_APP_NAME,
-        description: product.name,
-        image: process.env.REACT_APP_LOGO,
-        handler: function (response) {
-          order.razorpay_id = response.razorpay_payment_id;
-          axios
-            .post(
-              "https://determined-pear-apron.cyclic.app/api/user/checkout/",
-              order
-            )
-            .then((res) => {
-              toast.success("Payment Successfully Completed", {
-                style: {
-                  borderRadius: "10px",
-                  background: "#333",
-                  color: "#fff",
-                },
+        if (order.qty >= product.offerQty) {
+          let price = product.disc_price * order.qty;
+          let percent = product.offerQty / 100;
+          let discount = price * percent;
+          total = price - discount;
+        } else {
+          total = product.disc_price * order.qty;
+        }
+
+        var options = {
+          key: process.env.REACT_APP_RAZORPAYKEY,
+          amount: total * 100,
+          currency: "INR",
+          name: process.env.REACT_APP_APP_NAME,
+          description: product.name,
+          image: process.env.REACT_APP_LOGO,
+          handler: function (response) {
+            order.razorpay_id = response.razorpay_payment_id;
+            axios
+              .post(
+                "https://nj-automations-api.vercel.app/api/user/checkout/",
+                order
+              )
+              .then((res) => {
+                toast.success("Payment Successfully Completed", {
+                  style: {
+                    borderRadius: "10px",
+                    background: "#333",
+                    color: "#fff",
+                  },
+                });
+
+                if (res.status === 200) {
+                  setTimeout(() => {
+                    window.location.href = "/" + product._id + "/Order/Success";
+                  }, 1500);
+                }
               });
-
-              if (res.status === 200) {
-                setTimeout(() => {
-                  window.location.href = "/" + product._id + "/Order/Success";
-                }, 1500);
-              }
-            });
-        },
-        prefill: {
-          name: user.name,
-          email: user.email,
-          contact: user.phno,
-        },
-        notes: {
-          address: "Razorpay Corporate Office",
-        },
-        theme: {
-          color: "#3399cc",
-        },
-      };
-      var pay = new window.Razorpay(options);
-      pay.open();
+          },
+          prefill: {
+            name: user.name,
+            email: user.email,
+            contact: user.phno,
+          },
+          notes: {
+            address: "Razorpay Corporate Office",
+          },
+          theme: {
+            color: "#3399cc",
+          },
+        };
+        var pay = new window.Razorpay(options);
+        pay.open();
+      }
     }
   };
   return (
@@ -197,7 +206,7 @@ const Checkout = () => {
                         <section className="comments_wrap opened">
                           <div className="comments_form_wrap">
                             <div className="comments_form">
-                              {!loading ? (
+                              {!isLoading ? (
                                 <>
                                   <div id="respond" className="comment-respond">
                                     <h1
@@ -400,7 +409,9 @@ const Checkout = () => {
                                   </div>
                                 </>
                               ) : (
-                                <></>
+                                <>
+                                  <h2>Loading Checkout Data....</h2>
+                                </>
                               )}
                             </div>
                           </div>

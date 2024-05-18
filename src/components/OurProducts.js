@@ -10,9 +10,8 @@ import "swiper/css/navigation";
 import { ToastContainer } from "react-toastify";
 import Spinner from "./Spinner";
 import { Helmet } from "react-helmet";
-import { useQuery } from "react-query";
 import SingleProduct from "./ChilComponents/SingleProduct";
-import { getCategory, useGetCategoryHook } from "./Api";
+import { useGetCategoryHook } from "./Api";
 
 const OurProducts = () => {
   const { isLoading, data } = useGetCategoryHook();

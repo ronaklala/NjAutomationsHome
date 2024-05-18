@@ -92,3 +92,23 @@ export const GetProductsInCategoryQuery = `
       categoryId
     }
   }`;
+
+export const GetCheckoutQuery = `
+query GetSingleProduct($getSingleProductId: ID!) {
+  getSingleProduct(id: $getSingleProductId) {
+    product {
+      _id
+      name
+      image
+      qty
+      description
+      price
+      disc_price
+      offerQty
+      offerDisc
+      detail
+      categoryId
+    }
+  }
+}
+  `;
