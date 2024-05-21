@@ -14,9 +14,12 @@ import {
 export const useGetProducts = () => {
   return useQuery("products", async () => {
     try {
-      const response = await axios.post("http://localhost:5999/graphql", {
-        query: GetProductsQuery,
-      });
+      const response = await axios.post(
+        "https://nj-automations-api.vercel.app/graphql",
+        {
+          query: GetProductsQuery,
+        }
+      );
 
       return response.data.data.products;
     } catch (error) {
@@ -47,10 +50,13 @@ export const useGetOrdersHook = () => {
       const userId = userdata._id;
 
       try {
-        const response = await axios.post("http://localhost:5999/graphql", {
-          query: GetOrdersQuery,
-          variables: { getSingleUserOrdersId: userId },
-        });
+        const response = await axios.post(
+          "https://nj-automations-api.vercel.app/graphql",
+          {
+            query: GetOrdersQuery,
+            variables: { getSingleUserOrdersId: userId },
+          }
+        );
 
         return response.data.data.getSingleUserOrders; // Assuming response.data contains the orders data
       } catch (err) {
@@ -68,10 +74,13 @@ export const useGetOrdersHook = () => {
 export const useGetSingleProduct = (id) => {
   return useQuery("SingleProduct", async () => {
     try {
-      const response = await axios.post("http://localhost:5999/graphql", {
-        query: GetSingleProductQuery,
-        variables: { getSingleProductId: id },
-      });
+      const response = await axios.post(
+        "https://nj-automations-api.vercel.app/graphql",
+        {
+          query: GetSingleProductQuery,
+          variables: { getSingleProductId: id },
+        }
+      );
 
       if (response.data.errors && response.data.errors.length > 0) {
         window.location.href = "/NotFound";
@@ -149,9 +158,12 @@ export const useLogin = () => {
 export const useGetCategoryHook = () => {
   return useQuery("getCategories", async () => {
     try {
-      const categories = await axios.post("http://localhost:5999/graphql", {
-        query: GetCategoriesQuery,
-      });
+      const categories = await axios.post(
+        "https://nj-automations-api.vercel.app/graphql",
+        {
+          query: GetCategoriesQuery,
+        }
+      );
 
       return categories.data.data.getCategories;
     } catch (err) {
@@ -163,10 +175,13 @@ export const useGetCategoryHook = () => {
 export const GetProductsInCategoryHook = (id) => {
   return useQuery("CategoryProducts", async () => {
     try {
-      const products = await axios.post("http://localhost:5999/graphql", {
-        query: GetProductsInCategoryQuery,
-        variables: { categoryId: id },
-      });
+      const products = await axios.post(
+        "https://nj-automations-api.vercel.app/graphql",
+        {
+          query: GetProductsInCategoryQuery,
+          variables: { categoryId: id },
+        }
+      );
 
       return products.data.data.getProductByCategory;
     } catch (err) {
@@ -178,10 +193,13 @@ export const GetProductsInCategoryHook = (id) => {
 export const useGetCheckoutData = (id) => {
   return useQuery("CheckoutData", async () => {
     try {
-      const checkout = await axios.post("http://localhost:5999/graphql", {
-        query: GetCheckoutQuery,
-        variables: { getSingleProductId: id },
-      });
+      const checkout = await axios.post(
+        "https://nj-automations-api.vercel.app/graphql",
+        {
+          query: GetCheckoutQuery,
+          variables: { getSingleProductId: id },
+        }
+      );
       return checkout.data.data.getSingleProduct.product;
     } catch (err) {
       throw new Error("Failed to fetch checkout Data");
