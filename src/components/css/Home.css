@@ -2,7 +2,10 @@
     width: 99%;
     height: 90vh;
     max-height: 1100px;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Quicksand", sans-serif;;
+    font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
   }
   
   .swiper-slide {
@@ -62,7 +65,10 @@
     color: #fff;
     font-size: 62px;
     text-align: left;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
 }
 
 
@@ -74,7 +80,10 @@
     margin: 10px;
     color: #fff;
     font-size: 26px;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
 }
 }
 

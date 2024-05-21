@@ -1,6 +1,7 @@
 import moment from "moment";
 import React from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import "../css/product.css";
 
 const SingleOrder = (props) => {
   const addETrimToUrl = (url) => {
@@ -25,9 +26,9 @@ const SingleOrder = (props) => {
           data-ratio="1:1"
         >
           <LazyLoadImage
-            alt={props.order.productDetails[0].image}
+            alt={props.order.productDetails[0].productImages[0]}
             effect="blur"
-            src={addETrimToUrl(props.order.productDetails[0].image)}
+            src={addETrimToUrl(props.order.productDetails[0].productImages[0])}
             style={{ maxHeight: "250px" }}
           />
           <span className="post_thumb post_thumb_bg bg_in optima_inline_1144827720" />{" "}

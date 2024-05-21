@@ -77,9 +77,7 @@ const Home = () => {
                   >
                     <SwiperSlide>
                       <img
-                        src={
-                          process.env.PUBLIC_URL + "/assets/20220719[1][1].png"
-                        }
+                        src="https://res.cloudinary.com/ronaklala-games/image/upload/v1716218195/samples/20220719_1_1_mhnj90.webp"
                         alt="herobanner"
                         height={80}
                         width={140}
@@ -169,10 +167,7 @@ const Home = () => {
                                           >
                                             <div className="slider-wrapper swiper-wrapper">
                                               <LazyLoadImage
-                                                src={
-                                                  process.env.PUBLIC_URL +
-                                                  "/assets/os.png"
-                                                }
+                                                src="https://res.cloudinary.com/ronaklala-games/image/upload/v1716218248/samples/os_amrz5b.webp"
                                                 alt="header-Img"
                                                 effect="blur"
                                               />
@@ -418,7 +413,7 @@ const Home = () => {
                                     >
                                       <div className="slider-wrapper swiper-wrapper">
                                         <LazyLoadImage
-                                          src="https://firebasestorage.googleapis.com/v0/b/njautomation-99e2a.appspot.com/o/a47l0-p3xzh.avif?alt=media&token=2d782211-0844-4db3-9ff1-6efcf361d8b7"
+                                          src="https://res.cloudinary.com/ronaklala-games/image/upload/v1716218162/samples/0aa0cc52-1da0-403a-9530-cdb5aa22c5cf.png"
                                           alt="header-Img"
                                           effect="blur"
                                         />
@@ -919,6 +914,7 @@ const Home = () => {
                                   </span>
                                 </h1>
                               </div>
+                              <br />
                               <h5>
                                 <center>
                                   Specialized High Precision Printed Circuit
@@ -956,7 +952,7 @@ const Home = () => {
                                     >
                                       <div className="post_featured with_thumb hover_link sc_services_item_thumb">
                                         <LazyLoadImage
-                                          src="assets/6f1886097e18fbea10709a6e6037fc27[1].jpg"
+                                          src="https://res.cloudinary.com/ronaklala-games/image/upload/v1716218359/samples/6f1886097e18fbea10709a6e6037fc27_1_grb127.webp"
                                           className="attachment-optima-thumb-square size-optima-thumb-square wp-post-image"
                                           alt=""
                                           effect="blur"
@@ -995,7 +991,7 @@ const Home = () => {
                                     >
                                       <div className="post_featured with_thumb hover_link sc_services_item_thumb">
                                         <LazyLoadImage
-                                          src="assets/image[2].png"
+                                          src="https://res.cloudinary.com/ronaklala-games/image/upload/v1716218248/samples/image_2_qkg3h4.webp"
                                           className="attachment-optima-thumb-square size-optima-thumb-square wp-post-image"
                                           alt=""
                                           effect="blur"
@@ -1034,7 +1030,7 @@ const Home = () => {
                                     >
                                       <div className="post_featured with_thumb hover_link sc_services_item_thumb">
                                         <LazyLoadImage
-                                          src="assets/5076f849b5ebf4c6caf3ec1fe821c638[1].jpg"
+                                          src="https://res.cloudinary.com/ronaklala-games/image/upload/v1716218360/samples/5076f849b5ebf4c6caf3ec1fe821c638_1_nzmufm.webp"
                                           className="attachment-optima-thumb-square size-optima-thumb-square wp-post-image"
                                           alt=""
                                           effect="blur"

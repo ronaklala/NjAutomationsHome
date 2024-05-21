@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import "../css/product.css";
 
-const SingleProduct = (props) => {
+const SingleCategoryComponent = (props) => {
   let [finalUrl, setFinalUri] = useState();
 
   const addETrimToUrl = (url) => {
@@ -28,7 +27,7 @@ const SingleProduct = (props) => {
               loading="lazy"
               width={890}
               height={664}
-              src={addETrimToUrl(props.product.productImages[0])}
+              src={addETrimToUrl(props.product.image)}
               className="attachment-optima-thumb-square size-optima-thumb-square wp-post-image"
               alt=""
               decoding="async"
@@ -102,4 +101,4 @@ const SingleProduct = (props) => {
   );
 };
 
-export default SingleProduct;
+export default SingleCategoryComponent;

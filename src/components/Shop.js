@@ -8,11 +8,11 @@ import "react-toastify/dist/ReactToastify.css";
 import "swiper/css";
 import "swiper/css/navigation";
 import { ToastContainer, toast } from "react-toastify";
-import Spinner from "./Spinner";
 import { Helmet } from "react-helmet";
 import { useGetProducts } from "./Api";
 import SingleShopProduct from "./ChilComponents/SingleShopProduct";
 import "./css/product.css";
+import ContentLoader from "react-content-loader";
 
 const Shop = () => {
   const [input, setInput] = useState("");
@@ -136,34 +136,6 @@ const Shop = () => {
                           >
                             <div className="elementor-widget-wrap elementor-element-populated">
                               <div
-                                className="elementor-element elementor-element-60d9cbb6 sc_height_huge sc_fly_static elementor-widget elementor-widget-spacer"
-                                data-id="60d9cbb6"
-                                data-element_type="widget"
-                                data-widget_type="spacer.default"
-                              >
-                                <div className="elementor-widget-container">
-                                  <div className="elementor-spacer">
-                                    <div className="elementor-spacer-inner" />
-                                  </div>
-                                </div>
-                              </div>
-                              <div
-                                className="elementor-element elementor-element-b29bdd8 sc_fly_static elementor-widget elementor-widget-trx_sc_title"
-                                data-id="b29bdd8"
-                                data-element_type="widget"
-                                data-widget_type="trx_sc_title.default"
-                              >
-                                <div className="elementor-widget-container">
-                                  <div className="sc_title sc_title_default">
-                                    <h1 className="sc_item_title sc_title_title sc_align_center sc_item_title_style_default sc_item_title_tag">
-                                      <span className="sc_item_title_text">
-                                        Shop Now
-                                      </span>
-                                    </h1>
-                                  </div>
-                                </div>
-                              </div>
-                              <div
                                 className="elementor-element elementor-element-a791c01 sc_height_small sc_fly_static elementor-widget elementor-widget-spacer"
                                 data-id="a791c01"
                                 data-element_type="widget"
@@ -209,7 +181,61 @@ const Shop = () => {
                                   </>
                                 ) : (
                                   <>
-                                    <Spinner class="orange" />
+                                    {window.innerWidth < 768 ? (
+                                      <>
+                                        <div
+                                          style={{
+                                            width: "80%",
+                                            height: "auto",
+                                            margin: "0 auto",
+                                          }}
+                                        >
+                                          <ContentLoader
+                                            width="100%"
+                                            height="100%"
+                                            viewBox="0 0 1280 1450"
+                                            backgroundColor="#f3f3f3"
+                                            foregroundColor="#fff"
+                                          >
+                                            <rect
+                                              x="1%"
+                                              y="7.73%"
+                                              rx="2"
+                                              ry="2"
+                                              width="100%"
+                                              height="85%"
+                                            />
+                                          </ContentLoader>
+                                        </div>
+                                      </>
+                                    ) : (
+                                      <>
+                                        <div
+                                          style={{
+                                            width: "100%",
+                                            height: "auto",
+                                            margin: "0 auto",
+                                          }}
+                                        >
+                                          <ContentLoader
+                                            width="100%"
+                                            height="auto"
+                                            viewBox="0 0 1280 540"
+                                            backgroundColor="#f3f3f3"
+                                            foregroundColor="#ecebeb"
+                                          >
+                                            <rect
+                                              x="1%"
+                                              y="7.73%"
+                                              rx="2"
+                                              ry="2"
+                                              width="35%"
+                                              height="85%"
+                                            />
+                                          </ContentLoader>
+                                        </div>
+                                      </>
+                                    )}
                                   </>
                                 )}
                               </div>

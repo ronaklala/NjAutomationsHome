@@ -8,8 +8,9 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 import { Helmet } from "react-helmet";
 import { useGetSingleProduct } from "./Api";
 import SingleRelatedProduct from "./ChilComponents/SingleRelatedProduct";
-import Spinner from "./Spinner";
 import { DownloadSimple } from "phosphor-react";
+import ContentLoader from "react-content-loader";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const SingleProduct = () => {
   let params = useParams();
@@ -21,7 +22,11 @@ const SingleProduct = () => {
   useEffect(() => {
     let url = window.location.pathname;
     setFinalUri(url.toLowerCase().includes("view") ? true : false);
-  }, []);
+
+    if (data && data.product && data.product.productImages) {
+      setSelectedImage(addETrimToUrl(data.product.productImages[0]));
+    }
+  }, [data]);
 
   const addETrimToUrl = (url) => {
     // Define the pattern to match
@@ -32,6 +37,8 @@ const SingleProduct = () => {
 
     return modifiedUrl;
   };
+
+  const [selectedImage, setSelectedImage] = useState();
 
   return (
     <>
@@ -80,12 +87,7 @@ const SingleProduct = () => {
                         data-widget_type="trx_widget_slider.default"
                       >
                         {isLoading ? (
-                          <>
-                            {" "}
-                            <Spinner class="orange" />
-                            <br />
-                            <br />
-                          </>
+                          <> </>
                         ) : (
                           <>
                             <Helmet>
@@ -147,57 +149,34 @@ const SingleProduct = () => {
                               />
                             </Helmet>
                             <div className="elementor-widget-container">
-                              <div
-                                id="controller-tools-3_sc"
-                                className="widget_area sc_widget_slider"
-                              >
-                                <aside className="widget widget_slider">
-                                  <div className="slider_wrap slider_engine_swiper">
-                                    <div
-                                      id="controller-tools-3_sc_swiper_outer"
-                                      className="slider_outer slider_swiper_outer slider_style_default slider_source_custom slider_outer_direction_horizontal slider_outer_one slider_outer_nopagination slider_outer_nocontrols slider_outer_nocentered slider_outer_overflow_hidden slider_outer_notitles slider_outer_height_auto"
-                                    >
-                                      <div
-                                        id="controller-tools-3_sc_swiper"
-                                        className="slider_container slider_swiper swiper-slider-container slider_direction_horizontal slider_nopagination slider_one slider_type_bg slider_nocontrols slider_nocentered slider_overflow_hidden slider_notitles slider_resize slider_swipe slider_height_auto controller-tools-3_sc_swiper inited swiper-container-initialized swiper-container-horizontal"
-                                        style={{
-                                          display: "block",
-                                          opacity: 1,
-                                          cursor: "grab",
-                                          height: "450px",
-                                        }}
-                                        data-busy={0}
-                                        data-ratio="522.917:468.003"
-                                      >
-                                        <div
-                                          className="slider-wrapper swiper-wrapper"
-                                          style={{
-                                            transform:
-                                              "translate3d(0px, 0px, 0px)",
-                                            transitionDuration: "0ms",
-                                            justifyContent: "center",
-                                            alignItems: "center",
-                                            objectFit: "cover",
-                                            background:
-                                              "url(" +
-                                              addETrimToUrl(
-                                                data.product.image
-                                              ) +
-                                              ")",
-                                            backgroundRepeat: "no-repeat",
-                                            backgroundPosition: "center",
-                                            backgroundSize: "contain",
-                                          }}
-                                        ></div>
-                                        <span
-                                          className="swiper-notification"
-                                          aria-live="assertive"
-                                          aria-atomic="true"
-                                        />
-                                      </div>
-                                    </div>
-                                  </div>
-                                </aside>
+                              <div className="product-slider">
+                                <div className="thumbnails">
+                                  {data.product.productImages.map(
+                                    (image, index) => (
+                                      <LazyLoadImage
+                                        key={index}
+                                        src={addETrimToUrl(image)}
+                                        effect="blur"
+                                        alt={`Thumbnail`}
+                                        className={`thumbnail ${
+                                          image === selectedImage
+                                            ? "active"
+                                            : ""
+                                        }`}
+                                        onClick={() =>
+                                          setSelectedImage(addETrimToUrl(image))
+                                        }
+                                      />
+                                    )
+                                  )}
+                                </div>
+                                <div className="main-image">
+                                  <LazyLoadImage
+                                    effect="blur"
+                                    src={selectedImage}
+                                    alt="Selected"
+                                  />
+                                </div>
                               </div>
                             </div>
                           </>
@@ -234,6 +213,10 @@ const SingleProduct = () => {
                                   {data.product.name}
                                 </h1>
                                 <br />
+                                <p className="product_description">
+                                  {data.product.description}
+                                </p>
+                                <br />
                                 {finalUrl ? (
                                   <> </>
                                 ) : (
@@ -242,22 +225,10 @@ const SingleProduct = () => {
                                     <p
                                       className="price"
                                       style={{
-                                        fontSize: "20px",
-                                        color: "red",
-                                        marginBottom: "10px",
+                                        fontSize: "24px",
+                                        color: "#000",
                                       }}
                                     >
-                                      <span className="woocommerce-Price-amount amount">
-                                        <bdi>
-                                          <s>
-                                            <span className="woocommerce-Price-currencySymbol">
-                                              Rs{" "}
-                                            </span>
-                                            {data.product.price}
-                                          </s>
-                                        </bdi>
-                                      </span>{" "}
-                                      –{" "}
                                       <span className="woocommerce-Price-amount amount">
                                         <bdi>
                                           <span className="woocommerce-Price-currencySymbol">
@@ -266,7 +237,42 @@ const SingleProduct = () => {
                                           {data.product.disc_price}
                                         </bdi>
                                       </span>
+                                      &nbsp;&nbsp;
+                                      <span
+                                        style={{
+                                          fontSize: "18px",
+                                          color: "#002BAD",
+                                          backgroundColor: "#DDE6FF",
+                                          padding: "5px",
+                                          borderRadius: "5px",
+                                        }}
+                                      >
+                                        {Math.floor(
+                                          ((data.product.price -
+                                            data.product.disc_price) /
+                                            data.product.price) *
+                                            100
+                                        )}
+                                        % Off
+                                      </span>
                                     </p>
+                                    <span className="woocommerce-Price-amount amount">
+                                      <bdi>
+                                        <s
+                                          style={{
+                                            color: "#7d7d7d",
+                                            fontSize: "16px",
+                                          }}
+                                        >
+                                          <span className="woocommerce-Price-currencySymbol">
+                                            Rs{" "}
+                                          </span>
+                                          {data.product.price}
+                                        </s>
+                                      </bdi>
+                                    </span>{" "}
+                                    <br />
+                                    <br />
                                   </>
                                 )}
 
@@ -291,24 +297,6 @@ const SingleProduct = () => {
                                     </>
                                   )}
                                 </div>
-                                <br />
-
-                                <br />
-                                <div class="product_meta">
-                                  <span class="product_id">
-                                    Product ID: <span>{data.product._id}</span>
-                                  </span>
-                                </div>
-                                <br />
-
-                                <p
-                                  style={{
-                                    fontFamily: "'Roboto', sans-serif",
-                                    fontWeight: "bold",
-                                  }}
-                                >
-                                  {data.product.description}
-                                </p>
                               </div>
                             </div>
                           </div>
@@ -356,80 +344,81 @@ const SingleProduct = () => {
                             </div>
                           </div>
                           <br />
-                          {data.product.detail !== null ? (
-                            <>
-                              {" "}
-                              <div
-                                className="elementor-element elementor-element-6ba1525 sc_fly_static elementor-widget elementor-widget-trx_sc_button trx_addons_parallax_layers_inited trx_addons_parallax_blocks_inited"
-                                data-id="6ba1525"
-                                data-element_type="widget"
-                                data-widget_type="trx_sc_button.default"
-                              >
-                                <div className="elementor-widget-container">
-                                  <div className="sc_item_button sc_button_wrap">
-                                    <a
-                                      href={data.product.detail}
-                                      download={data.product.detail}
-                                      target="_blank"
-                                      rel="noreferrer"
-                                      className="button"
+                          <div
+                            style={{
+                              display: "flex",
+                              width: "100%",
+                              alignItems: "center",
+                            }}
+                          >
+                            {!finalUrl ? (
+                              <>
+                                {parseInt(data.product.qty) !== 0 ? (
+                                  <>
+                                    <div
+                                      className="elementor-element elementor-element-6ba1525 sc_fly_static elementor-widget elementor-widget-trx_sc_button trx_addons_parallax_layers_inited trx_addons_parallax_blocks_inited"
+                                      data-id="6ba1525"
+                                      data-element_type="widget"
+                                      data-widget_type="trx_sc_button.default"
                                     >
-                                      <span className="sc_button_text">
-                                        <span
-                                          className="sc_button_title"
-                                          style={{
-                                            display: "flex",
-                                            alignItems: "center",
-                                          }}
-                                        >
-                                          View Brochoure &nbsp;&nbsp;&nbsp;
-                                          <DownloadSimple size={20} />
-                                        </span>
-                                      </span>
-                                    </a>
-                                  </div>
-                                </div>
-                              </div>
-                            </>
-                          ) : (
-                            <></>
-                          )}{" "}
-                          {!finalUrl ? (
-                            <>
-                              {parseInt(data.product.qty) !== 0 ? (
-                                <>
-                                  <div
-                                    className="elementor-element elementor-element-6ba1525 sc_fly_static elementor-widget elementor-widget-trx_sc_button trx_addons_parallax_layers_inited trx_addons_parallax_blocks_inited"
-                                    data-id="6ba1525"
-                                    data-element_type="widget"
-                                    data-widget_type="trx_sc_button.default"
-                                  >
-                                    <div className="elementor-widget-container">
-                                      <div className="sc_item_button sc_button_wrap">
-                                        <a
-                                          href={"/checkout/" + data.product._id}
-                                          className="sc_button"
-                                        >
-                                          <span className="sc_button_text">
-                                            <span className="sc_button_title">
-                                              Buy Now
+                                      <div className="elementor-widget-container">
+                                        <div className="sc_item_button sc_button_wrap">
+                                          <a
+                                            href={
+                                              "/checkout/" + data.product._id
+                                            }
+                                            className="sc_button"
+                                            style={{ borderRadius: "5px" }}
+                                          >
+                                            <span className="sc_button_text">
+                                              <span className="sc_button_title">
+                                                Buy Now
+                                              </span>
                                             </span>
-                                          </span>
-                                        </a>
+                                          </a>
+                                        </div>
                                       </div>
                                     </div>
-                                  </div>
-                                </>
-                              ) : (
-                                <></>
-                              )}
-                            </>
-                          ) : (
-                            <></>
-                          )}
+                                  </>
+                                ) : (
+                                  <></>
+                                )}
+                              </>
+                            ) : (
+                              <></>
+                            )}
+                            &nbsp; &nbsp;
+                            {data.product.detail !== null ? (
+                              <>
+                                {" "}
+                                <a
+                                  href={data.product.detail}
+                                  download={data.product.detail}
+                                  target="_blank"
+                                  rel="noreferrer"
+                                  className="button"
+                                >
+                                  <button
+                                    className="sc_button"
+                                    style={{
+                                      width: "200px",
+                                      margin: "0",
+                                      borderRadius: "5px",
+                                      fontFamily: "'Quicksand', sans-serif",
+                                      fontWeight: 600,
+                                    }}
+                                  >
+                                    View Brochoure
+                                    <DownloadSimple size={20} color="white" />
+                                  </button>
+                                </a>
+                              </>
+                            ) : (
+                              <></>
+                            )}{" "}
+                          </div>
                           {data.product.additionalData !== null ? (
                             <>
-                              {console.log(data.product?.additionalData)}
                               <div>
                                 {" "}
                                 <br />
@@ -607,9 +596,61 @@ const SingleProduct = () => {
                                       {isLoading ? (
                                         <>
                                           {" "}
-                                          <Spinner class="orange" />
-                                          <br />
-                                          <br />
+                                          {window.innerWidth < 768 ? (
+                                            <>
+                                              <div
+                                                style={{
+                                                  width: "80%",
+                                                  height: "auto",
+                                                  margin: "0 auto",
+                                                }}
+                                              >
+                                                <ContentLoader
+                                                  width="100%"
+                                                  height="100%"
+                                                  viewBox="0 0 1280 1450"
+                                                  backgroundColor="#f3f3f3"
+                                                  foregroundColor="#fff"
+                                                >
+                                                  <rect
+                                                    x="1%"
+                                                    y="7.73%"
+                                                    rx="2"
+                                                    ry="2"
+                                                    width="100%"
+                                                    height="85%"
+                                                  />
+                                                </ContentLoader>
+                                              </div>
+                                            </>
+                                          ) : (
+                                            <>
+                                              <div
+                                                style={{
+                                                  width: "100%",
+                                                  height: "auto",
+                                                  margin: "0 auto",
+                                                }}
+                                              >
+                                                <ContentLoader
+                                                  width="100%"
+                                                  height="auto"
+                                                  viewBox="0 0 1280 540"
+                                                  backgroundColor="#f3f3f3"
+                                                  foregroundColor="#ecebeb"
+                                                >
+                                                  <rect
+                                                    x="1%"
+                                                    y="7.73%"
+                                                    rx="2"
+                                                    ry="2"
+                                                    width="35%"
+                                                    height="85%"
+                                                  />
+                                                </ContentLoader>
+                                              </div>
+                                            </>
+                                          )}
                                         </>
                                       ) : (
                                         <>

@@ -10,8 +10,8 @@ import "swiper/css/navigation";
 import { ToastContainer } from "react-toastify";
 import Spinner from "./Spinner";
 import { Helmet } from "react-helmet";
-import SingleProduct from "./ChilComponents/SingleProduct";
 import { useGetCategoryHook } from "./Api";
+import SingleCategoryComponent from "./ChilComponents/SingleCategoryComponent";
 
 const OurProducts = () => {
   const { isLoading, data } = useGetCategoryHook();
@@ -93,36 +93,14 @@ const OurProducts = () => {
                           >
                             <div
                               className="elementor-widget-wrap elementor-element-populated"
-                              style={{ marginTop: "50px" }}
+                              style={{ marginTop: "100px" }}
                             >
-                              <div
-                                className="elementor-element elementor-element-60d9cbb6 sc_height_huge sc_fly_static elementor-widget elementor-widget-spacer"
-                                data-id="60d9cbb6"
-                                data-element_type="widget"
-                                data-widget_type="spacer.default"
-                              >
-                                <div className="elementor-widget-container">
-                                  <div className="elementor-spacer">
-                                    <div className="elementor-spacer-inner" />
-                                  </div>
-                                </div>
-                              </div>
                               <div
                                 className="elementor-element elementor-element-b29bdd8 sc_fly_static elementor-widget elementor-widget-trx_sc_title"
                                 data-id="b29bdd8"
                                 data-element_type="widget"
                                 data-widget_type="trx_sc_title.default"
-                              >
-                                <div className="elementor-widget-container">
-                                  <div className="sc_title sc_title_default">
-                                    <h1 className="sc_item_title sc_title_title sc_align_center sc_item_title_style_default sc_item_title_tag">
-                                      <span className="sc_item_title_text">
-                                        Our Product Categories
-                                      </span>
-                                    </h1>
-                                  </div>
-                                </div>
-                              </div>
+                              ></div>
                               <div
                                 className="elementor-element elementor-element-a791c01 sc_height_small sc_fly_static elementor-widget elementor-widget-spacer"
                                 data-id="a791c01"
@@ -151,7 +129,7 @@ const OurProducts = () => {
                                           <div className="sc_services sc_services_unusual sc_services_featured_top">
                                             <div className="sc_services_columns_wrap sc_item_columns sc_item_posts_container sc_item_columns_3 trx_addons_columns_wrap columns_padding_bottom columns_in_single_row">
                                               {data.map((category, i) => (
-                                                <SingleProduct
+                                                <SingleCategoryComponent
                                                   product={category}
                                                 />
                                               ))}

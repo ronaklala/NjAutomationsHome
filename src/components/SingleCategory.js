@@ -172,6 +172,7 @@ const SingleCategory = () => {
                                           <img
                                             src="https://res.cloudinary.com/ronaklala-games/image/upload/v1715957843/samples/FUNDS_sffs5q.webp"
                                             style={{ height: "30vh" }}
+                                            alt="No Products"
                                           />
                                           <h1 style={{ fontSize: "32px" }}>
                                             No Products Listed Yet

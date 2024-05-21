@@ -5,7 +5,8 @@ export const GetProductsQuery = `
             _id
             name
             disc_price
-            image
+            productImages
+            detail
         }
     }
 `;
@@ -29,7 +30,7 @@ query($getSingleUserOrdersId: ID!) {
       productDetails {
         _id
         name
-        image
+        productImages
         price
         disc_price
       }
@@ -45,7 +46,7 @@ query GetSingleProduct($getSingleProductId: ID!) {
       product {
         _id
         name
-        image
+        productImages
         qty
         description
         price
@@ -68,7 +69,7 @@ query GetSingleProduct($getSingleProductId: ID!) {
         name
         price
         disc_price
-        image
+        productImages
       }
     }
   }
@@ -88,7 +89,7 @@ export const GetProductsInCategoryQuery = `
     getProductByCategory(categoryId: $categoryId) {
       _id
       name
-      image
+      productImages
       categoryId
     }
   }`;
@@ -99,7 +100,7 @@ query GetSingleProduct($getSingleProductId: ID!) {
     product {
       _id
       name
-      image
+      productImages
       qty
       description
       price

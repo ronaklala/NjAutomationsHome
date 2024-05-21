@@ -1,4 +1,5 @@
 import React from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const SingleRelatedProduct = (props) => {
   const addETrimToUrl = (url) => {
@@ -16,14 +17,14 @@ const SingleRelatedProduct = (props) => {
       <div className="trx_addons_column-1_3">
         <div
           data-post-id={951}
-          className="sc_services_item sc_item_container post_container without_content with_image sc_services_item_featured_top post-951 cpt_services type-cpt_services status-publish has-post-thumbnail hentry cpt_services_group-automation"
+          className="sc_services_item sc_item_container post_container without_content with_image sc_services_item_featured_top post-951 cpt_services type-cpt_services status-publish has-post-thumbnail hentry cpt_services_group-automation singleProduct"
         >
           <div className="post_featured with_thumb hover_link sc_services_item_thumb">
-            <img
+            <LazyLoadImage
               loading="lazy"
               width={890}
               height={664}
-              src={addETrimToUrl(props.product.image)}
+              src={addETrimToUrl(props.product.productImages[0])}
               className="attachment-optima-thumb-square size-optima-thumb-square wp-post-image"
               alt=""
               decoding="async"
@@ -54,35 +55,29 @@ const SingleRelatedProduct = (props) => {
                   <span class="price">
                     <span class="woocommerce-Price-amount amount">
                       <bdi>
-                        <s>
-                          <span class="woocommerce-Price-currencySymbol">
-                            ₹
-                          </span>
-                          {props.product.price}
-                        </s>
-                      </bdi>
-                    </span>{" "}
-                    –{" "}
-                    <span class="woocommerce-Price-amount amount">
-                      <bdi>
                         <span class="woocommerce-Price-currencySymbol">₹</span>
                         {props.product.disc_price}
                       </bdi>
                     </span>
                   </span>
+                  &nbsp;&nbsp;-&nbsp;&nbsp;
+                  <span
+                    style={{
+                      fontSize: "14px",
+                      color: "#002BAD",
+                      backgroundColor: "#DDE6FF",
+                      padding: "5px",
+                      borderRadius: "5px",
+                    }}
+                  >
+                    {Math.floor(
+                      ((props.product.price - props.product.disc_price) /
+                        props.product.price) *
+                        100
+                    )}
+                    % Off
+                  </span>
                 </div>
-                <a
-                  href={"/product/" + props.product._id}
-                  data-quantity="1"
-                  class="button product_type_variable add_to_cart_button"
-                  data-product_id="27614"
-                  data-product_sku="012"
-                  aria-label="Select options for “Adhesive tape”"
-                  aria-describedby="This product has multiple variants. The options may be chosen on the product page"
-                  rel="nofollow"
-                >
-                  Buy now
-                </a>{" "}
               </div>
             </div>
           </div>
